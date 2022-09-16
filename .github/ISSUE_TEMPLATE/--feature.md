@@ -1,15 +1,15 @@
 ---
-name: "✨ Feature"
-about: Feature 작업 사항을 작성해주세요
+name: Feature Template
+about: Suggest an idea for this project
 title: ''
 labels: ''
 assignees: ''
-
 ---
-
-## Todo
-- [ ]
 
 ## Description
 
-## ETC
+<!--어떤 기능인가요?-->
+
+## Todo List
+
+- [ ] Check List
