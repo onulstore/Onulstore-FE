@@ -1,8 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import test from './testSlice';
-const rootReducer = combineReducers({
-  test,
-});
+const rootReducer = combineReducers({});
 
 export type RootState = ReturnType<typeof rootReducer>;
 
