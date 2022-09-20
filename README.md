@@ -16,10 +16,10 @@
 
 ## 🤼‍♀️ 팀 구성
 
-|                               이화정                                |                                     김정환                                     |                                김명진                                 |
-| :-----------------------------------------------------------------: | :----------------------------------------------------------------------------: | :-------------------------------------------------------------------: |
-|                 [@Hwa-J](https://github.com/Hwa-J)                  |            [@Jung-Hwan-Kim-97](https://github.com/Jung-Hwan-Kim-97)            |                [@k-m-jin](https://github.com/k-m-jin)                 |
-| <img src="https://avatars.githubusercontent.com/Hwa-J" width="100"> | <img src="https://avatars.githubusercontent.com/Jung-Hwan-Kim-97" width="100"> | <img src="https://avatars.githubusercontent.com/k-m-jin" width="100"> |
+|                                    박지훈                                    |                               이화정                                |                                     김정환                                     |                                김명진                                 |
+| :--------------------------------------------------------------------------: | :-----------------------------------------------------------------: | :----------------------------------------------------------------------------: | :-------------------------------------------------------------------: |
+|                  [@hoona1011](https://github.com/hoona1011)                  |                 [@Hwa-J](https://github.com/Hwa-J)                  |            [@Jung-Hwan-Kim-97](https://github.com/Jung-Hwan-Kim-97)            |                [@k-m-jin](https://github.com/k-m-jin)                 |
+| <img src="https://avatars.githubusercontent.com/u/77940847?v=4" width="100"> | <img src="https://avatars.githubusercontent.com/Hwa-J" width="100"> | <img src="https://avatars.githubusercontent.com/Jung-Hwan-Kim-97" width="100"> | <img src="https://avatars.githubusercontent.com/k-m-jin" width="100"> |
 
 ## 📄 구조
 
