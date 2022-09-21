@@ -14,7 +14,7 @@ export const LargeBtn = styled.button<styleType>`
   align-items: center;
   border: none;
   border-radius: 0.5rem;
-  color: ${(props) => props.color === '#F5F5F5' ? '#2F2F33' : '#fff'};
+  color: ${(props) => props.color === '#F5F5F5' ? '#505050' : '#fff'};
   outline: none;
   padding: 1.7rem 1.2rem;
   background: ${(props) => props.color || '#2F2F33'};
@@ -29,15 +29,13 @@ export const TextContainer = styled.div<styleType>`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'MontserratRegular';
+  font-family: 'MontserratSemiBold';
   font-size: 1.8rem;
-  font-weight: 600;
   ${(props) => ( props.middleHeight || props.google ) && css`
-    font-family: 'PretendardRegular';
+    font-family: 'PretendardBold';
     font-size: 1.5rem;
-    font-weight: 700;
     `}
   & img {
-    margin: 0 .5rem;
+    margin: 0 .8rem;
   }
 `
