@@ -17,6 +17,16 @@ export const HeaderLeft = styled.div`
   cursor: pointer;
 `
 
+export const HeaderCenter = styled.div`
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: #26252A;
+  font-family: 'MontserratSemiBold';
+  font-size: 2rem;
+`
+
 export const HeaderUl = styled.ul`
   display: flex;
   list-style: none;

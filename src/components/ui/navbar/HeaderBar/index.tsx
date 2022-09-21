@@ -2,10 +2,11 @@ import React from 'react'
 import { ArrowLeftIcon, LogoIcon, SearchIcon, ShoppingBagIcon } from 'components/Icons'
 import { useLocation, useNavigate } from 'react-router-dom'
 import * as S from './style'
+import { pageName } from 'utils/constants'
 
 function HeaderBar() {
   const navigate = useNavigate()
-  const pathname = useLocation().pathname
+  const pathname: any = useLocation().pathname
 
   return (
     <S.HeaderBar>
@@ -17,6 +18,7 @@ function HeaderBar() {
         <S.HeaderLeft onClick={() => navigate(-1)}>
           <ArrowLeftIcon/>  
         </S.HeaderLeft>
+        <S.HeaderCenter>{pageName[pathname]}</S.HeaderCenter>
       </> 
     }
       <S.HeaderUl>
