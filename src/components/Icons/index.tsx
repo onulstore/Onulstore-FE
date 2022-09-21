@@ -9,8 +9,8 @@ type IconPropsType = {
 
 export const LogoIcon = ({
   color = '#505050',
-  width = '140',
-  height ='24'
+  width = '14rem',
+  height ='2.4rem'
 }: IconPropsType) => (
   <svg width={width} height={height} viewBox="0 0 140 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M23.6223 9.75774H16.5338V1.32196C20.1246 2.79591 22.8289 5.94139 23.6223 9.75774ZM11.9303 0.417969C13.071 0.417969 14.1754 0.57574 15.2202 0.869962V9.75917H0.238315C1.34561 4.43474 6.16713 0.417969 11.9303 0.417969ZM0 12.0874C0 11.7349 0.0174377 11.3866 0.0479537 11.0427H14.2916L4.16906 20.9424C1.6188 18.8005 0 15.6251 0 12.0874ZM5.22114 21.7313L15.2202 11.9509V22.2316L13.754 20.7975L12.8254 21.7057L14.6171 23.4583C13.7525 23.653 12.853 23.7568 11.9288 23.7568C9.44251 23.7568 7.13202 23.0091 5.21968 21.7313H5.22114ZM16.5338 22.8528V11.0427H23.8126C23.8446 11.3866 23.8606 11.7349 23.8606 12.0874C23.8606 16.9271 20.8322 21.0874 16.5324 22.8528H16.5338Z" fill={color}/>
@@ -43,8 +43,8 @@ export const SearchIcon = ({
 
 export const ShoppingBagIcon = ({
   color = '#505050',
-  width ='24',
-  height ='24'
+  width ='2.4rem',
+  height ='2.4rem'
 }: IconPropsType) => (
   <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M6 2L3 6V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H19C19.5304 22 20.0391 21.7893 20.4142 21.4142C20.7893 21.0391 21 20.5304 21 20V6L18 2H6Z" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -55,8 +55,8 @@ export const ShoppingBagIcon = ({
 
 export const ArrowLeftIcon = ({
   color = '#505050',
-  width ='24',
-  height ='24'
+  width ='2.4rem',
+  height ='2.4rem'
 }: IconPropsType) => (
   <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M19 12H5" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -66,8 +66,8 @@ export const ArrowLeftIcon = ({
 
 export const AngleRightIcon = ({
   color = '#F7F7FA',
-  width ='24',
-  height ='24'
+  width ='.9rem',
+  height ='1.6rem'
 }: IconPropsType) => (
   <svg width={width} height={height} viewBox="0 0 9 17" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M1 1.5L8 8.5L1 15.5" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
