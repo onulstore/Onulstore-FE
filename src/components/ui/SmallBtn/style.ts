@@ -14,12 +14,10 @@ export const SmallBtn = styled.button<styleType>`
   border-radius: 2rem;
   color: #fff;
   outline: none;
-  cursor: pointer;
   background-color: #2F2F33;
   word-break: keep-all;
   font-family: 'PretendardRegular';
   font-size: 1.2rem;
-  font-weight: 600;
 
   ${(props) => props.line && css`
     height: 2.2rem;
