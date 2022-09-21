@@ -23,8 +23,9 @@ export const HeaderCenter = styled.div`
   left: 0;
   right: 0;
   color: #26252A;
-  font-family: 'MontserratSemiBold';
+  font-family: 'Montserrat';
   font-size: 2rem;
+  font-weight: 600;
 `
 
 export const HeaderUl = styled.ul`
