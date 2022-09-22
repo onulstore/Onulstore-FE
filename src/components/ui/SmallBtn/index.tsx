@@ -5,6 +5,8 @@ type ButtonType = {
   type?: 'submit' | 'reset' | 'button'
   onClick?: () => void
   line?: boolean
+  width?: number
+  height?: number
 }
 
 function SmallBtn(props: ButtonType) {

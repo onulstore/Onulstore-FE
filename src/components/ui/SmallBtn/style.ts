@@ -2,10 +2,12 @@ import styled, { css } from "styled-components";
 
 type styleType = {
   line?: boolean
+  width?: number
+  height?: number
 }
 export const SmallBtn = styled.button<styleType>`
-  width: 9.6rem;
-  height: 2.8rem;
+  width: ${({width = 9.6}) => width}rem;
+  height:${({height = 2.8}) => height}rem;
   margin: 0.2rem;
   padding-top: 0.2rem;
   box-sizing: border-box;
@@ -21,7 +23,6 @@ export const SmallBtn = styled.button<styleType>`
   font-size: 1.2rem;
   // line 들어간 버튼
   ${(props) => props.line && css`
-    height: 2.2rem;
     border: .1rem solid #A9A9A9;
     `}
 `

@@ -5,8 +5,9 @@ type ButtonType = {
   type?: 'submit' | 'reset' | 'button'
   onClick?: () => void
   color?: string
-  middleHeight?: boolean
-  google?: boolean
+  font?: boolean
+  width?: number
+  height?: number
 }
 function LargeBtn(props: ButtonType) {
   return (
