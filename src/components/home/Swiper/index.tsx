@@ -1,28 +1,36 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Navigation, Pagination, Autoplay } from 'swiper';
+import { bannerData } from 'utils/constants';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import * as S from './style'
+import * as S from './style';
 
-export const BannerSwiper = () => {
+interface bannerDataProps {
+  data: bannerData[];
+}
+
+export const BannerSwiper = (props: bannerDataProps) => {
+  const navigate = useNavigate();
+  const { data } = props;
   return (
     <S.BannerSwiper
       modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={0}
       slidesPerView={1}
       loop={true}
-      loopedSlides= {2}
+      loopedSlides={2}
       navigation
-      pagination={{
-        type: "fraction",
-      }}
+      pagination={{ type: 'fraction' }}
       autoplay={{ delay: 2000 }}
     >
-      <S.BannerSwiperSlide>Slide 1</S.BannerSwiperSlide>
-      <S.BannerSwiperSlide>Slide 2</S.BannerSwiperSlide>
-      <S.BannerSwiperSlide>Slide 3</S.BannerSwiperSlide>
-      <S.BannerSwiperSlide>Slide 4</S.BannerSwiperSlide>
+      {data?.map((bannerData, index) => (
+        <S.BannerSwiperSlide key={index} onClick={() => navigate(bannerData.path)}>
+          <img src={bannerData.url} alt={bannerData.name} />
+        </S.BannerSwiperSlide>
+      ))}
     </S.BannerSwiper>
   );
 };

@@ -1,20 +1,20 @@
-import styled from "styled-components"
-import { Swiper, SwiperSlide } from 'swiper/react'
+import styled from 'styled-components';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 export const BannerSwiper = styled(Swiper)`
   width: 100%;
   height: 39.7rem;
   position: relative;
   display: flex;
-  align-items:center;
-  justify-content:center;
-  & .swiper-button-next::after, 
-    .swiper-button-prev::after {
+  align-items: center;
+  justify-content: center;
+  & .swiper-button-next::after,
+  .swiper-button-prev::after {
     color: #000;
     opacity: 0;
     transition: 0.3s;
   }
-  &:hover .swiper-button-next::after, 
+  &:hover .swiper-button-next::after,
   &:hover .swiper-button-prev::after {
     opacity: 0.3;
   }
@@ -23,9 +23,9 @@ export const BannerSwiper = styled(Swiper)`
     bottom: 1.8rem;
     width: 7.5rem;
     height: 3.2rem;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
     font-family: 'Montserrat';
     font-size: 1.4rem;
@@ -37,11 +37,20 @@ export const BannerSwiper = styled(Swiper)`
       width: 1.4rem;
     }
   }
-`
+`;
 export const BannerSwiperSlide = styled(SwiperSlide)`
-  text-align:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background-color: orange; // 임시 배경 색상
-`
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #777;
+  cursor: pointer;
+  & img {
+    width: 100%;
+    height: 100%;
+    // 실제 배너 크기에 따라 object-fit 속성 값을 수정할 예정
+    /* object-fit: contain; */
+    object-fit: cover;
+    margin: auto;
+  }
+`;
