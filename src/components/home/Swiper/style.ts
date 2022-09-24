@@ -18,7 +18,7 @@ export const BannerSwiper = styled(Swiper)`
   &:hover .swiper-button-prev::after {
     opacity: 0.3;
   }
-  & .swiper-pagination {
+  & .swiper-pagination-fraction {
     left: calc(50% - 3.75rem);
     bottom: 1.8rem;
     width: 7.5rem;
