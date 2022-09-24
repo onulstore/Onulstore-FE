@@ -19,7 +19,7 @@ export const BannerSwiper = styled(Swiper)`
     opacity: 0.3;
   }
   & .swiper-pagination {
-    left: calc(50vw - 3.75rem);
+    left: calc(50% - 3.75rem);
     bottom: 1.8rem;
     width: 7.5rem;
     height: 3.2rem;
@@ -43,7 +43,7 @@ export const BannerSwiperSlide = styled(SwiperSlide)`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #777;
+  background-color: #fff;
   cursor: pointer;
   & img {
     width: 100%;
