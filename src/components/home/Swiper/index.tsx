@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Navigation, Pagination, Autoplay } from 'swiper';
-// import { bannerData } from 'utils/constants';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
