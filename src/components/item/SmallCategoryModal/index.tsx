@@ -1,7 +1,7 @@
 import React from 'react';
 
-const SmallCategoryModal = () => {
-  return <></>;
+const index = () => {
+  return <div></div>;
 };
 
-export default SmallCategoryModal;
+export default index;
