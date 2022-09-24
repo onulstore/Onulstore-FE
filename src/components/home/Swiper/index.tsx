@@ -21,6 +21,7 @@ export const BannerSwiper = (props: bannerDataProps) => {
   const { data } = props;
   return (
     <S.BannerSwiper
+      className="BannerSwiper"
       modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={0}
       slidesPerView={1}
@@ -31,7 +32,11 @@ export const BannerSwiper = (props: bannerDataProps) => {
       autoplay={{ delay: 2000 }}
     >
       {data?.map((bannerData, index) => (
-        <S.BannerSwiperSlide key={index} onClick={() => navigate(bannerData.path)}>
+        <S.BannerSwiperSlide
+          className="banner"
+          key={index}
+          onClick={() => navigate(bannerData.path)}
+        >
           <img src={bannerData.url} alt={bannerData.name} />
         </S.BannerSwiperSlide>
       ))}
