@@ -1,1 +1,136 @@
-{}
+{
+  "item": [
+    {
+      "productName": "루이비통",
+      "content": "최고의 명품백",
+      "largeCategoryCode": "FASION",
+      "smallCategoryCode": "BAG",
+      "price": 1000000,
+      "quantity": 100,
+      "purchaseCount": 0,
+      "productStatus": "SALE",
+      "id": "2zueRAtXRPMigAottDhqo"
+    },
+    {
+      "productName": "샤넬",
+      "content": "고급스러운 명품백",
+      "largeCategoryCode": "FASION",
+      "smallCategoryCode": "BAG",
+      "price": 2000000,
+      "quantity": 100,
+      "purchaseCount": 0,
+      "productStatus": "SOLDOUT",
+      "id": "EC5O5lJibIclfYDhqBFh3"
+    },
+    {
+      "productName": "에르메스",
+      "content": "최상급 명품백",
+      "largeCategoryCode": "FASION",
+      "smallCategoryCode": "BAG",
+      "price": 20000000,
+      "quantity": 10,
+      "purchaseCount": 0,
+      "productStatus": "SALE",
+      "id": "P7X9jVUYhtJYfcRsK51Pq"
+    },
+    {
+      "productName": "MUSINSA STANDARD",
+      "content": "적당한 두께와 크기로 제작되어 티셔츠, 셔츠 등의 상의는 물론 가벼운 아우터까지 안정적으로 보관할 수 있다.",
+      "largeCategoryCode": "LIVING",
+      "smallCategoryCode": "LIFESTYLES",
+      "price": 15900,
+      "quantity": 1000,
+      "purchaseCount": 0,
+      "productStatus": "SALE",
+      "id": "8MdjLp-B_4tzNdIGUZHLI"
+    },
+    {
+      "productName": "포터블시트",
+      "content": "회사원, 수험생 등등 장기간 앉아있는 분들에게 편한함을 선물합니다!",
+      "largeCategoryCode": "LIVING",
+      "smallCategoryCode": "LIFESTYLES",
+      "price": 79000,
+      "quantity": 500,
+      "purchaseCount": 0,
+      "productStatus": "SOLDOUT",
+      "id": "sfwRRzUB97EOtI650Qsyu"
+    },
+    {
+      "productName": " ZIPPO X STIGMA TATTOO FLASH NI",
+      "content": "고급스러움을 자랑하는 지포라이터",
+      "largeCategoryCode": "LIVING",
+      "smallCategoryCode": "LIFESTYLES",
+      "price": 63000,
+      "quantity": 2000,
+      "purchaseCount": 0,
+      "productStatus": "SALE",
+      "id": "y67lb-sXQxFs4noP0rSyA"
+    },
+    {
+      "productName": "액티브 프리미어 우븐 맨투맨 다크네이비",
+      "content": "최상의 스포츠 퍼포먼스를 위하여 소재와 디자인에 기능을 더한 엄브로 액티브 라인",
+      "largeCategoryCode": "LIVING",
+      "smallCategoryCode": "SPORTS",
+      "price": 129000,
+      "quantity": 1500,
+      "purchaseCount": 0,
+      "productStatus": "SALE",
+      "id": "O-RzW66WKnaCc30KkoY1f"
+    },
+    {
+      "productName": "나이키 클럽 맨투맨 블랙",
+      "content": "심플한 디자인에 보온성을 첨가한 기능성 맨투맨",
+      "largeCategoryCode": "LIVING",
+      "smallCategoryCode": "SPORTS",
+      "price": 59900,
+      "quantity": 1000,
+      "purchaseCount": 0,
+      "productStatus": "SOLDOUT",
+      "id": "Sp6KODmI_qNAPZ4vgg1xG"
+    },
+    {
+      "productName": "아디다스  D.O.N. Issue 4 GX6886",
+      "content": "세계 무대를 빛내는 스포천 선수에서 평범한 사람들의 일상에 이르기까지 편함함을 제공해 주는 기능성 농구화",
+      "largeCategoryCode": "LIVING",
+      "smallCategoryCode": "SPORTS",
+      "price": 159000,
+      "quantity": 300,
+      "purchaseCount": 0,
+      "productStatus": "SALE",
+      "id": "-mMDGfxn9iJiqzeohnCpL"
+    },
+    {
+      "productName": "럽럽 컬러 픽싱 스테인 틴트",
+      "content": "입술에 닿는 순간 편안하게 스며들며 누가 발라도 예쁜 립 표현이 가능한 컬러 픽싱스테인 틴트",
+      "largeCategoryCode": "BEAUTY",
+      "smallCategoryCode": "COSME",
+      "price": 10300,
+      "quantity": 2000,
+      "purchaseCount": 0,
+      "productStatus": "SALE",
+      "id": "BqWWuVUtM_t2xZJJKuLBm"
+    },
+    {
+      "productName": "DAILY HAND WASH",
+      "content": "영양감이 느껴지는 크리미한 텍스처 자극이 적고 마일드한 텍스처로 만들어지는 핸드워시",
+      "largeCategoryCode": "BEAUTY",
+      "smallCategoryCode": "COSME",
+      "price": 26000,
+      "quantity": 1000,
+      "purchaseCount": 0,
+      "productStatus": "SOLDOUT",
+      "id": "Q08Hs2tKGGIkvs2Udo8RV"
+    },
+    {
+      "productName": "BROW PENCIL",
+      "content": "밀도있는 텍스처로 소프트한 농도감 한 올 한올 채우듯 농도 조절이 용이한 초보도 쉽게 브로우 스타일링이 가능합니다",
+      "largeCategoryCode": "BEAUTY",
+      "smallCategoryCode": "COSME",
+      "price": 16000,
+      "quantity": 3000,
+      "purchaseCount": 0,
+      "productStatus": "SALE",
+      "id": "prLUBfsg-YmkHY78baTkF"
+    }
+  ]
+}
