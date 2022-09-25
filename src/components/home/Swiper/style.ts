@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 export const BannerSwiper = styled(Swiper)`
-  &.BannerSwiper {
+  &.banner-swiper {
     width: 100%;
     height: 39.7rem;
     position: relative;

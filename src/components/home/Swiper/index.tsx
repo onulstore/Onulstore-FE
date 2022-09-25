@@ -21,7 +21,7 @@ export const BannerSwiper = (props: bannerDataProps) => {
   const { data } = props;
   return (
     <S.BannerSwiper
-      className="BannerSwiper"
+      className="banner-swiper"
       modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={0}
       slidesPerView={1}
