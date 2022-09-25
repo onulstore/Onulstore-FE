@@ -132,5 +132,25 @@
       "productStatus": "SALE",
       "id": "prLUBfsg-YmkHY78baTkF"
     }
+  ],
+  "banner": [
+    {
+      "id": "DeUY6EWzDsEGARD5XcQg_",
+      "path": "/",
+      "url": "https://onulstore.jp/web/upload/weskin33/jp/main/banner_PC_main_01_new2.png",
+      "name": "이미지01"
+    },
+    {
+      "id": "5SAetnxye-2lVNMIV35Ey",
+      "path": "/",
+      "url": "https://onulstore.jp/web/upload/weskin33/jp/main/banner_PC_main_02_new.png",
+      "name": "이미지02"
+    },
+    {
+      "id": "LnPOwcAxXCN-gREvCvFKW",
+      "path": "/",
+      "url": "https://onulstore.jp/web/upload/weskin33/jp/main/banner_PC_main_03_new.png",
+      "name": "이미지03"
+    }
   ]
 }
