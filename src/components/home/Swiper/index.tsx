@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Navigation, Pagination, Autoplay } from 'swiper';
 
@@ -42,5 +42,32 @@ export const BannerSwiper = (props: bannerDataProps) => {
         </S.BannerSwiperSlide>
       ))}
     </S.BannerSwiper>
+  );
+};
+
+export const NavbarSwiper = () => {
+  const navigate = useNavigate();
+
+  return (
+    <S.NavbarSwiper
+      className="menu-swiper"
+      modules={[Navigation, Pagination]}
+      spaceBetween={0}
+      slidesPerView={'auto'}
+    >
+      {/* navigate 경로는 임시로 넣었습니다. */}
+      <S.NavbarSwiperSlide className="menu" onClick={() => navigate('/today')}>
+        JUST FOR TODAY
+      </S.NavbarSwiperSlide>
+      <S.NavbarSwiperSlide className="menu" onClick={() => navigate('/welike')}>
+        WE LIKE
+      </S.NavbarSwiperSlide>
+      <S.NavbarSwiperSlide className="menu" onClick={() => navigate('/promotion')}>
+        PROMOTION
+      </S.NavbarSwiperSlide>
+      <S.NavbarSwiperSlide className="menu" onClick={() => navigate('/item')}>
+        ITEM
+      </S.NavbarSwiperSlide>
+    </S.NavbarSwiper>
   );
 };
