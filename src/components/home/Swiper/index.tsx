@@ -8,6 +8,7 @@ import 'swiper/css/pagination';
 import * as S from './style';
 
 interface bannerData {
+  id: string;
   path: string;
   url: string;
   name: string;
@@ -34,7 +35,7 @@ export const BannerSwiper = (props: bannerDataProps) => {
       {data?.map((bannerData) => (
         <S.BannerSwiperSlide
           className="banner"
-          key={bannerData.url}
+          key={bannerData.id}
           onClick={() => navigate(bannerData.path)}
         >
           <img src={bannerData.url} alt={bannerData.name} />
