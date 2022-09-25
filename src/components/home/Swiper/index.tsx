@@ -31,10 +31,10 @@ export const BannerSwiper = (props: bannerDataProps) => {
       pagination={{ type: 'fraction' }}
       autoplay={{ delay: 2000 }}
     >
-      {data?.map((bannerData, index) => (
+      {data?.map((bannerData) => (
         <S.BannerSwiperSlide
           className="banner"
-          key={index}
+          key={bannerData.url}
           onClick={() => navigate(bannerData.path)}
         >
           <img src={bannerData.url} alt={bannerData.name} />
