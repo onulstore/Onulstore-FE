@@ -10,7 +10,7 @@ import FilterSelectBox from 'components/item/CustomSelectBox/FilterSelectBox';
 import ItemAlbum from 'components/item/ItemAlbum/index';
 // Styled
 import * as S from './style';
-const index = () => {
+const Items = () => {
   const [isShowFilterSelectBox, setIsShowFilterSelectBox] = useState(false);
 
   const dispatch = useAppDispatch();
@@ -39,4 +39,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Items;
