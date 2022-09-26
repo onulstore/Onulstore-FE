@@ -105,7 +105,6 @@ export const ItemAlbumContainer = styled.div`
       }
     }
     .review-and-like {
-      padding: 1.1rem 0.4rem 0.4rem 0.4rem;
       box-sizing: border-box;
       .small-review-icon {
         border-right: 0.1rem solid #d9d9d9;
