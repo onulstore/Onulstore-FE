@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './style';
 import { FilterBarTitle, IFilterBarTitle } from '../../../../utils/constants';
-const index = () => {
+const FilterSelectBox = () => {
   return (
     <S.FilterSelectBoxContainer>
       {FilterBarTitle.map((item: IFilterBarTitle) => {
@@ -15,4 +15,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default FilterSelectBox;
