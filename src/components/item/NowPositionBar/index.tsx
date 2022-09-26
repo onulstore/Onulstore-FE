@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './style';
 import { CategoryArrowRightIcon } from '../../Icons';
-const index = () => {
+const NowPositionBar = () => {
   return (
     <S.NowPositionBarContainer>
       <p className="text">ALL</p>
@@ -10,4 +10,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default NowPositionBar;
