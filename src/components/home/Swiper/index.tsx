@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Navigation, Pagination, Autoplay } from 'swiper';
 
@@ -52,7 +52,7 @@ export const NavbarSwiper = () => {
     <S.NavbarSwiper
       className="menu-swiper"
       modules={[Navigation, Pagination]}
-      spaceBetween={0}
+      spaceBetween={25}
       slidesPerView={'auto'}
     >
       {/* navigate 경로는 임시로 넣었습니다. */}
