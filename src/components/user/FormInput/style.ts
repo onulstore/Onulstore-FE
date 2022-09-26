@@ -7,12 +7,12 @@ interface Props {
 }
 
 export const Container = styled.div`
-  width: ${({ width }: Props) => (width ? width + 'rem' : '5rem')};
+  font-family: 'Pretendard Variable';
+  width: ${({ width }: Props) => (width ? width + 'rem' : '31.1rem')};
   display: flex;
   flex-direction: column;
-  margin: 3.2rem;
-  font-family: 'Pretendard Variable';
-  /* border: 1px solid red; */
+  margin: 0;
+  padding: 0;
 `;
 export const Wapper = styled.div`
   display: flex;
@@ -25,6 +25,7 @@ export const Label = styled.label`
   line-height: 14px;
   letter-spacing: 0.005em;
   color: #2f2f33;
+  margin-bottom: 0.8rem;
 `;
 export const Description = styled.div`
   flex-grow: 1;
@@ -42,29 +43,30 @@ export const ErrorMsg = styled.div`
   line-height: 14px;
   letter-spacing: 0.005em;
   color: #d86145;
+  margin-top: 0.4rem;
 `;
 export const Input = styled.input<Props>`
   font-family: 'PretendardRegular';
-  width: ${({ width }) => (width ? width + 'rem' : '5rem')};
-  height: ${({ height }) => (height ? height + 'rem' : '5rem')};
-  border-radius: 0.5rem;
+  width: ${({ width }) => (width ? width + 'rem' : '31.1rem')};
+  height: ${({ height }) => (height ? height + 'rem' : '4rem')};
   border: ${({ errorMsg }) => (errorMsg ? '1px solid #D86145' : '1px solid #cfcfcf')};
   background-color: ${({ errorMsg }) => errorMsg && 'rgba(216, 97, 69, 0.04)'};
 
-  margin-top: 0.4rem;
-  margin-bottom: 0.8rem;
+  position: relative;
 
   &::placeholder {
+    position: absolute;
+    width: 112px;
+    height: 18px;
+    left: 17px;
+    top: 16px;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 18px;
-    /* identical to box height */
-
     display: flex;
     align-items: center;
     letter-spacing: 0.005em;
-
     color: #505050;
   }
 `;
