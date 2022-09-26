@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './style';
-const index = () => {
+const LargeCategoryModal = () => {
   return (
     <S.LargeCategoryModalContainer>
       <div className="content">
@@ -13,4 +13,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default LargeCategoryModal;
