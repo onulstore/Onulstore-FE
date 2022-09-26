@@ -25,7 +25,8 @@ export const Label = styled.label`
   line-height: 14px;
   letter-spacing: 0.005em;
   color: #2f2f33;
-  margin-bottom: 0.8rem;
+  display: inline-block;
+  margin-bottom: 0.4rem;
 `;
 export const Description = styled.div`
   flex-grow: 1;
@@ -43,7 +44,7 @@ export const ErrorMsg = styled.div`
   line-height: 14px;
   letter-spacing: 0.005em;
   color: #d86145;
-  margin-top: 0.4rem;
+  margin-top: 0.8rem;
 `;
 export const Input = styled.input<Props>`
   font-family: 'PretendardRegular';
