@@ -9,7 +9,7 @@ interface Props {
   isShowFilterSelectBox: boolean;
 }
 
-const index = ({ filterSeletBoxHandler, isShowFilterSelectBox }: Props) => {
+const ItemFilterBar = ({ filterSeletBoxHandler, isShowFilterSelectBox }: Props) => {
   const { allItemList } = useItemSlice();
   return (
     <S.ItemFilterBarContainer>
@@ -27,4 +27,4 @@ const index = ({ filterSeletBoxHandler, isShowFilterSelectBox }: Props) => {
   );
 };
 
-export default index;
+export default ItemFilterBar;
