@@ -10,12 +10,14 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import * as S from './style';
 import { pageName } from 'utils/constants';
 import { largeCategoryModalHandler } from 'store/slices/itemSlice';
-import { useAppDispatch } from 'store/hooks/index';
+import { useAppDispatch, useItemSlice } from 'store/hooks/index';
 
 function HeaderBar() {
   const navigate = useNavigate();
   const pathname: any = useLocation().pathname;
+
   const dispatch = useAppDispatch();
+  const { isDetailPage } = useItemSlice();
 
   return (
     <S.HeaderBar>
@@ -32,19 +34,21 @@ function HeaderBar() {
             <ArrowLeftIcon />
           </S.HeaderLeft>
 
-          <S.HeaderCenter>
-            <span
-              className="Catagory"
-              onClick={() => {
-                dispatch(largeCategoryModalHandler());
-              }}
-            >
-              ITEMS
-              {/* 개발편의상 잠시 하드 코딩해놓았습니다! */}
-              {/* {pageName[pathname]} */}
-            </span>
-            <CategoryArrowBottomIcon />
-          </S.HeaderCenter>
+          {!isDetailPage && (
+            <S.HeaderCenter>
+              <span
+                className="Catagory"
+                onClick={() => {
+                  dispatch(largeCategoryModalHandler());
+                }}
+              >
+                ITEMS
+                {/* 개발편의상 잠시 하드 코딩해놓았습니다! */}
+                {/* {pageName[pathname]} */}
+              </span>
+              <CategoryArrowBottomIcon />
+            </S.HeaderCenter>
+          )}
         </>
       )}
       <S.HeaderUl>
