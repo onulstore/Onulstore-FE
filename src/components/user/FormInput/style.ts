@@ -7,10 +7,10 @@ interface Props {
 }
 
 export const Container = styled.div`
-  width: ${({ width }: Props) => (width ? width + 'rem' : '5rem')};
+  width: ${({ width }: Props) => (width ? width + 'rem' : '31.1rem')};
   display: flex;
   flex-direction: column;
-  margin: 3.2rem;
+
   font-family: 'Pretendard Variable';
   /* border: 1px solid red; */
 `;
@@ -45,7 +45,7 @@ export const ErrorMsg = styled.div`
 `;
 export const Input = styled.input<Props>`
   font-family: 'PretendardRegular';
-  width: ${({ width }) => (width ? width + 'rem' : '5rem')};
+  width: ${({ width }) => (width ? width + 'rem' : '31.1rem')};
   height: ${({ height }) => (height ? height + 'rem' : '5rem')};
   border-radius: 0.5rem;
   border: ${({ errorMsg }) => (errorMsg ? '1px solid #D86145' : '1px solid #cfcfcf')};
