@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SmallCategoryModal = () => {
-  return <></>;
+  return <div></div>;
 };
 
 export default SmallCategoryModal;

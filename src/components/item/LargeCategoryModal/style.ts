@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 export const LargeCategoryModalContainer = styled.div`
-  height: 81.2rem;
+  height: 200rem;
   background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 5rem;
+  z-index: 9999;
   .content {
     height: 32.6rem;
     background-color: #fff;
