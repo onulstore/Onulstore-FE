@@ -2,14 +2,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 //API
 import { getItem } from 'utils/Api/dumy/dumyApi';
 
-interface StateType {
-  isShowLargeCategoryModal: Boolean;
-  LargeCategoryTitle: string;
-  isLoding: boolean;
-  allItemList: any[];
-  error: string;
-}
-
 export interface AllItemList {
   productName: string;
   content: string;
@@ -22,12 +14,24 @@ export interface AllItemList {
   id: string;
 }
 
+interface StateType {
+  isShowLargeCategoryModal: Boolean;
+  LargeCategoryTitle: string;
+  isLoding: boolean;
+  allItemList: any[];
+  singleItemList: any;
+  error: string;
+  isDetailPage: boolean;
+}
+
 const initialState: StateType = {
   isShowLargeCategoryModal: false,
   LargeCategoryTitle: '',
   isLoding: false,
   allItemList: [],
+  singleItemList: {},
   error: '요청실패!',
+  isDetailPage: false,
 };
 
 const itemSlice = createSlice({
@@ -36,6 +40,9 @@ const itemSlice = createSlice({
   reducers: {
     largeCategoryModalHandler: (state) => {
       state.isShowLargeCategoryModal = !state.isShowLargeCategoryModal;
+    },
+    headerBarHandler: (state) => {
+      state.isDetailPage = !state.isDetailPage;
     },
   },
   extraReducers: (builder) => {
@@ -53,6 +60,6 @@ const itemSlice = createSlice({
   },
 });
 
-export const { largeCategoryModalHandler } = itemSlice.actions;
+export const { largeCategoryModalHandler, headerBarHandler } = itemSlice.actions;
 
 export default itemSlice.reducer;
