@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { useItemSlice } from 'store/hooks';
 // STYLED-COMPONENTS
 import GlobalStyles from './style/global';
 import theme from '../src/style/theme';
@@ -6,17 +7,19 @@ import { ThemeProvider } from 'styled-components';
 import * as S from './components/layout/index';
 // PAGES
 import Home from './pages/Home';
-import Items from './pages/Items';
+import Items from 'pages/Items/index';
 import ItemDetail from 'pages/ItemDetail';
 import SignUP from 'pages/SignUp';
 //COMPONENTS
 import HeaderBar from 'components/ui/navbar/HeaderBar';
-
+import LargeCategoryModal from 'components/item/LargeCategoryModal';
 const App = () => {
+  const { isShowLargeCategoryModal } = useItemSlice();
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <S.Layout>
+        {isShowLargeCategoryModal && <LargeCategoryModal />}
         <HeaderBar />
         <Routes>
           <Route index element={<Home />} />
