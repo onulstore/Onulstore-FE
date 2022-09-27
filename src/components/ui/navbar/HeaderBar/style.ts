@@ -14,7 +14,6 @@ export const HeaderLeft = styled.div`
   height: 2.35rem;
   & svg {
     cursor: pointer;
-    border-color: red;
     margin-left: 2rem;
   }
 `;
