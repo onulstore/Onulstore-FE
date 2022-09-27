@@ -14,7 +14,7 @@ import { useAppDispatch, useItemSlice } from 'store/hooks/index';
 
 function HeaderBar() {
   const navigate = useNavigate();
-  const pathname: any = useLocation().pathname;
+  const pathname: string = useLocation().pathname;
 
   const dispatch = useAppDispatch();
   const { isDetailPage } = useItemSlice();
