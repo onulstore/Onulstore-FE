@@ -11,17 +11,18 @@ export const HeaderBar = styled.nav`
 `;
 
 export const HeaderLeft = styled.div`
-  width: 13rem;
   height: 2.35rem;
-  cursor: pointer;
   & svg {
+    cursor: pointer;
+    border-color: red;
     margin-left: 2rem;
   }
 `;
 
 export const HeaderCenter = styled.div`
+  width: auto;
   text-align: center;
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
   color: #26252a;
@@ -29,7 +30,13 @@ export const HeaderCenter = styled.div`
   font-size: 2rem;
   font-weight: 600;
   .Catagory {
-    margin-right: 10px;
+    cursor: pointer;
+  }
+  & svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 10px;
   }
 `;
 
