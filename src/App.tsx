@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Items from 'pages/Items/index';
 import ItemDetail from 'pages/ItemDetail';
 import SignUp from 'pages/SignUp';
+import SignIn from 'pages/SignIn';
 //COMPONENTS
 import HeaderBar from 'components/ui/navbar/HeaderBar';
 import LargeCategoryModal from 'components/item/LargeCategoryModal';
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/items" element={<Items />} />
           <Route path="/items/:id" element={<ItemDetail />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<SignIn />} />
         </Routes>
       </S.Layout>
     </ThemeProvider>

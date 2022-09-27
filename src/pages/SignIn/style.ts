@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Greeting = styled.div`
+  margin-top: 3.9rem;
   margin-left: 3.7rem;
 `;
 export const Text = styled.div`
@@ -22,4 +23,10 @@ export const Text = styled.div`
       line-height: 40px;
     }
   }
+`;
+export const BtnWrapper = styled.div`
+  margin: 0 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 `;
