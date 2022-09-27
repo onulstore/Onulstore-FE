@@ -9,6 +9,7 @@ import * as S from './components/layout/index';
 import Home from './pages/Home';
 import Items from 'pages/Items/index';
 import ItemDetail from 'pages/ItemDetail';
+import SignUp from 'pages/SignUp';
 //COMPONENTS
 import HeaderBar from 'components/ui/navbar/HeaderBar';
 import LargeCategoryModal from 'components/item/LargeCategoryModal';
@@ -24,6 +25,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/items" element={<Items />} />
           <Route path="/items/:id" element={<ItemDetail />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </S.Layout>
     </ThemeProvider>
