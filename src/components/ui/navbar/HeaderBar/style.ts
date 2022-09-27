@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-interface Props {
-  pathName: any;
-}
-
 export const HeaderBar = styled.nav`
   width: 100%;
   height: 5rem;
@@ -17,8 +13,10 @@ export const HeaderBar = styled.nav`
 export const HeaderLeft = styled.div`
   width: 13rem;
   height: 2.35rem;
-  margin-left: 1.5rem;
   cursor: pointer;
+  & svg {
+    margin-left: 2rem;
+  }
 `;
 
 export const HeaderCenter = styled.div`
