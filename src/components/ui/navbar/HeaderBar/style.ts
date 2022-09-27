@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-interface Props {
-  pathName: any;
-}
-
 export const HeaderBar = styled.nav`
   width: 100%;
   height: 5rem;
@@ -15,15 +11,17 @@ export const HeaderBar = styled.nav`
 `;
 
 export const HeaderLeft = styled.div`
-  width: 13rem;
   height: 2.35rem;
-  margin-left: 1.5rem;
-  cursor: pointer;
+  & svg {
+    cursor: pointer;
+    margin-left: 2rem;
+  }
 `;
 
 export const HeaderCenter = styled.div`
+  width: auto;
   text-align: center;
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
   color: #26252a;
@@ -31,7 +29,13 @@ export const HeaderCenter = styled.div`
   font-size: 2rem;
   font-weight: 600;
   .Catagory {
-    margin-right: 10px;
+    cursor: pointer;
+  }
+  & svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 10px;
   }
 `;
 
