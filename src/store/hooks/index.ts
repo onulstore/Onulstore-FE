@@ -35,5 +35,9 @@ const getReturnValues = (countdown: number) => {
   const minutes = Math.floor((countdown / (60 * 1000)) % 60);
   const seconds = Math.floor((countdown / 1000) % 60);
 
-  return [hours, minutes, seconds];
+  if (hours + minutes + seconds <= 0) {
+    return [0, 0, 0];
+  } else {
+    return [hours, minutes, seconds];
+  }
 };
