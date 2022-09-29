@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { AllItemList } from 'store/slices/itemSlice';
 import { useNavigate } from 'react-router-dom';
-//STYLE
+import { useItemSlice, useAppDispatch } from 'store/hooks';
+
+//STYLED
 import * as S from './style';
 //ICON
 import {
@@ -18,6 +20,8 @@ interface Props {
 }
 
 const ItemAlbum = ({ item }: Props) => {
+  const dispatch = useAppDispatch();
+
   const [isLike, setIsLike] = useState(false);
   const navigate = useNavigate();
 

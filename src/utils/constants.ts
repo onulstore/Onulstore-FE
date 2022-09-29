@@ -13,11 +13,6 @@ export const pageName: { [key: string]: string } = {
   '/qna': '문의하기',
 };
 
-export interface IFilterBarTitle {
-  id: string;
-  title: string;
-}
-
 export const signUpReg = {
   ID_REGEX: new RegExp('^[a-z0-9_-]{5,20}$'),
   PW_REGEX: new RegExp('^[a-zA-Z0-9]{8,16}$'),
@@ -35,7 +30,20 @@ export const SIGNUP_ERROR_MSG = {
   invalidName: '이름 형식 일치하지 않습니다.',
 };
 
-export const FilterBarTitle: IFilterBarTitle[] = [
+//Item 영역 타입 정의
+export interface IfilterBarTitle {
+  id: string;
+  title: string;
+}
+
+export interface IdetailNavigationData {
+  id: string;
+  title: string;
+  path: string;
+}
+
+// Item 영역 상수 모음
+export const FilterBarTitle: IfilterBarTitle[] = [
   {
     id: nanoid(),
     title: '최신순',
@@ -51,5 +59,37 @@ export const FilterBarTitle: IFilterBarTitle[] = [
   {
     id: nanoid(),
     title: '인기순',
+  },
+];
+
+export const DetailNavigationData = [
+  {
+    id: nanoid(),
+    title: '상품정보',
+    path: 'iteminfo',
+  },
+
+  {
+    id: nanoid(),
+    title: '리뷰보기',
+    path: 'reviewinfo',
+  },
+
+  {
+    id: nanoid(),
+    title: '문의하기',
+    path: 'qandainfo',
+  },
+
+  {
+    id: nanoid(),
+    title: '도움말',
+    path: 'orderguide',
+  },
+
+  {
+    id: nanoid(),
+    title: '비슷한상품',
+    path: 'similaritem',
   },
 ];

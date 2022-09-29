@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useItemSlice, useAppDispatch } from 'store/hooks';
 import { getItem } from 'utils/Api/dumy/dumyApi';
 import { AllItemList } from 'store/slices/itemSlice';
-//COMPONENT
-import LargeCategoryModal from 'components/item/LargeCategoryModal';
+//COMPONENTS
 import NowPositionBar from 'components/item/NowPositionBar';
 import ItemFilterBar from 'components/item/ItemFilterBar';
 import FilterSelectBox from 'components/item/CustomSelectBox/FilterSelectBox';
 import ItemAlbum from 'components/item/ItemAlbum/index';
-// Styled
+// STYLED
 import * as S from './style';
 const Items = () => {
   const [isShowFilterSelectBox, setIsShowFilterSelectBox] = useState(false);

@@ -19,19 +19,19 @@ interface StateType {
   LargeCategoryTitle: string;
   isLoding: boolean;
   allItemList: any[];
-  singleItemList: any;
   error: string;
   isDetailPage: boolean;
+  isLike: boolean;
 }
 
 const initialState: StateType = {
   isShowLargeCategoryModal: false,
-  LargeCategoryTitle: '',
-  isLoding: false,
-  allItemList: [],
-  singleItemList: {},
-  error: '요청실패!',
   isDetailPage: false,
+  isLike: false,
+  isLoding: false,
+  LargeCategoryTitle: '',
+  allItemList: [],
+  error: '요청실패!',
 };
 
 const itemSlice = createSlice({
