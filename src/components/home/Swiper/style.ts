@@ -58,3 +58,40 @@ export const BannerSwiperSlide = styled(SwiperSlide)`
     }
   }
 `;
+
+export const NavbarSwiper = styled(Swiper)`
+  &.menu-swiper {
+    height: 3.9rem;
+    margin: 2.6rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    & .swiper-wrapper {
+      margin-left: 2.5rem;
+    }
+  }
+`;
+export const NavbarSwiperSlide = styled(SwiperSlide)`
+  &.menu {
+    width: auto;
+    margin-right: 2.5rem;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 18px;
+    color: #c3c3c6;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      font-weight: 700;
+      color: #111;
+    }
+    &:hover::after {
+      content: '';
+      display: block;
+      width: auto;
+      height: 0.4rem;
+      margin-top: 1.2rem;
+      background-color: #111;
+    }
+  }
+`;
