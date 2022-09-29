@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTodayCountdown } from 'store/hooks/timeHooks';
+import { useTodayCountdown } from 'store/hooks/useTodayCountdown';
 import * as S from './style';
 
 interface ShowCounterProps {
