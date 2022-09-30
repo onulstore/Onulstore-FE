@@ -16,3 +16,10 @@ export interface ShowTimeProps extends FontStyleProps {
   minutes: string;
   seconds: string;
 }
+
+export interface TodayTimerProgressBarProps {
+  color?: string;
+}
+export interface ShowProgressBarProps extends TodayTimerProgressBarProps {
+  width: number;
+}
