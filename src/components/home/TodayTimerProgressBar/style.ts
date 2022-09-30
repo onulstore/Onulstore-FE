@@ -26,9 +26,14 @@ export const InnerBar = styled.div<ShowProgressBarProps>`
     margin-top: -0.4rem;
     right: 0;
   }
-  & svg {
+  & svg.left {
     position: absolute;
     right: -7.9rem;
     margin-top: 1rem;
+  }
+  & svg.white {
+    position: absolute;
+    top: -4.3rem;
+    right: 1.7rem;
   }
 `;
