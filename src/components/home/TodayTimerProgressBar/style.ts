@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 import { ShowProgressBarProps } from '../home';
 
-export const BaseBar = styled.div`
+export const BaseBar = styled.div<ShowProgressBarProps>`
   width: 100%;
   height: 0.4rem;
   border-radius: 0.2rem;
-  background-color: ${(props) => props.theme.palette.midGrey};
+  background-color: ${(props) => props.baseColor || props.theme.palette.midGrey};
 `;
 export const InnerBar = styled.div<ShowProgressBarProps>`
   position: relative;
   width: ${(props) => props.width || 0}%;
   height: 0.4rem;
   border-radius: 0.2rem;
-  background-color: ${(props) => props.color || props.theme.palette.main};
+  background-color: ${(props) => props.innerColor || props.theme.palette.main};
   &::after {
     content: '';
     display: block;

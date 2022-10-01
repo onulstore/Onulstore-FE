@@ -6,8 +6,8 @@ import { ShowProgressBarProps, TodayTimerProgressBarProps } from '../home';
 
 const ShowProgressBar = (props: ShowProgressBarProps) => {
   return (
-    <S.BaseBar>
-      <S.InnerBar width={props.width} color={props.color}>
+    <S.BaseBar baseColor={props.baseColor}>
+      <S.InnerBar width={props.width} innerColor={props.innerColor}>
         {props.className !== 'left' ? (
           <WhiteHurryIcon className="white" />
         ) : (
@@ -25,7 +25,12 @@ const TodayTimerProgressBar = (props: TodayTimerProgressBarProps) => {
   const currentProgress = (currentValue / maxValue) * 100;
 
   return (
-    <ShowProgressBar className={props.className} width={currentProgress} color={props.color} />
+    <ShowProgressBar
+      className={props.className}
+      width={currentProgress}
+      baseColor={props.baseColor}
+      innerColor={props.innerColor}
+    />
   );
 };
 
