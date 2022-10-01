@@ -31,10 +31,10 @@ const OrderGuideTitle = ({ item }: Props) => {
   };
 
   return (
-    <S.OrderGuideTitleContainer onClick={orderGuideModalHandler}>
-      <div className="test-container">
-        <p className="test-text">{item.title}</p>
-        <span className="test-icon">
+    <S.OrderGuideTitleContainer onClick={orderGuideModalHandler} changeArrowIcon={changeArrowIcon}>
+      <div className="header-container">
+        <p className="header-title">{item.title}</p>
+        <span>
           {changeArrowIcon ? (
             <ArrowTopIcon width="1rem" height="1.7rem" color="#D6D6D6" />
           ) : (
