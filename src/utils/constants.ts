@@ -42,6 +42,10 @@ export interface IdetailNavigationData {
   path: string;
 }
 
+export interface IorderGuideTitle {
+  id: string;
+  title: string;
+}
 // Item 영역 상수 모음
 export const FilterBarTitle: IfilterBarTitle[] = [
   {
@@ -62,7 +66,7 @@ export const FilterBarTitle: IfilterBarTitle[] = [
   },
 ];
 
-export const DetailNavigationData = [
+export const DetailNavigationData: IdetailNavigationData[] = [
   {
     id: nanoid(),
     title: '상품정보',
@@ -91,5 +95,20 @@ export const DetailNavigationData = [
     id: nanoid(),
     title: '비슷한상품',
     path: 'similaritem',
+  },
+];
+
+export const orderGuideTitle: IorderGuideTitle[] = [
+  {
+    id: nanoid(),
+    title: '지불 정보',
+  },
+  {
+    id: nanoid(),
+    title: '배송 정보',
+  },
+  {
+    id: nanoid(),
+    title: '교환/환불안내',
   },
 ];
