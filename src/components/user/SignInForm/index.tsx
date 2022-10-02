@@ -4,8 +4,11 @@ import * as S from './style';
 import FormInput from '../FormInput';
 import LargeBtn from 'components/ui/LargeBtn';
 import { GoogleIcon } from 'components/Icons';
+import { signUpReg, SIGNUP_ERROR_MSG } from 'utils/constants';
+import axios from 'axios';
+
 type FormInputs = {
-  id: string;
+  email: string;
   pw: string;
 };
 
@@ -19,7 +22,7 @@ function SignInForm() {
   }, []);
 
   useEffect(() => {
-    setFocus('id', { shouldSelect: true });
+    setFocus('email', { shouldSelect: true });
   }, []);
 
   return (
@@ -27,19 +30,19 @@ function SignInForm() {
       <S.Form id="form" autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
         <S.GapWrapper>
           <FormInput
-            id={'id'}
-            label={'아이디'}
+            id={'email'}
+            label={'이메일'}
             height={5}
-            errorMsg={formState.errors['id']?.message}
+            errorMsg={formState.errors['email']?.message}
             inputProps={{
               type: 'text',
-              placeholder: '아이디 또는 이메일',
-              ...register('id', {
-                // pattern: {
-                //   value: ID_REGEX,
-                //   message: ERROR_MSG.invalidId,
-                // },
-                // required: ERROR_MSG.required,
+              placeholder: '이메일',
+              ...register('email', {
+                pattern: {
+                  value: signUpReg.EMAIL_REGEX,
+                  message: SIGNUP_ERROR_MSG.invalidEmail,
+                },
+                required: SIGNUP_ERROR_MSG.required,
               }),
             }}
           />
@@ -54,11 +57,12 @@ function SignInForm() {
               autoComplete: 'off',
               formState: formState.isValid,
               ...register('pw', {
+                //추후 보완
                 // pattern: {
-                //   value: PW_REGEX,
-                //   message: ERROR_MSG.invalidPw,
+                //   value: signInReg.PW_REGEX,
+                //   message: SIGNUP_ERROR_MSG.invalidPw,
                 // },
-                // required: ERROR_MSG.required,
+                required: SIGNUP_ERROR_MSG.required,
               }),
             }}
           />
