@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ShowProgressBarProps } from '../home';
+import { LeftHurryIcon, WhiteHurryIcon } from 'components/Icons';
 
 export const BaseBar = styled.div<ShowProgressBarProps>`
   width: 100%;
@@ -27,14 +28,15 @@ export const InnerBar = styled.div<ShowProgressBarProps>`
     margin-top: -0.4rem;
     right: 0;
   }
-  & svg.left {
-    position: absolute;
-    right: -7.9rem;
-    margin-top: 1rem;
-  }
-  & svg.white {
-    position: absolute;
-    top: -4.4rem;
-    right: 1.7rem;
-  }
+`;
+
+export const LeftHurry = styled(LeftHurryIcon)`
+  position: absolute;
+  right: -7.9rem;
+  margin-top: 1rem;
+`;
+export const WhiteHurry = styled(WhiteHurryIcon)`
+  position: absolute;
+  top: -4.4rem;
+  right: 1.7rem;
 `;
