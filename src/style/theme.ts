@@ -7,6 +7,7 @@ const palette = {
   main: '#D86145',
   darkGrey: '#505050',
   midGrey: '#A9A9A9',
+  lightMidGrey: '#D6D6D6',
   whiteGrey: '#F5F5F5',
 };
 

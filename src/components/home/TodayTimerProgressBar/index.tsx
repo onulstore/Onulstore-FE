@@ -8,11 +8,7 @@ const ShowProgressBar = (props: ShowProgressBarProps) => {
   return (
     <S.BaseBar baseColor={props.baseColor}>
       <S.InnerBar width={props.width} innerColor={props.innerColor}>
-        {props.className !== 'left' ? (
-          <WhiteHurryIcon className="white" />
-        ) : (
-          <LeftHurryIcon className="left" />
-        )}
+        {props.className !== 'home' ? <S.WhiteHurry /> : <S.LeftHurry />}
       </S.InnerBar>
     </S.BaseBar>
   );

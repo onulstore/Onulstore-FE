@@ -7,8 +7,10 @@ declare module 'styled-components' {
     palette: {
       black: string;
       white: string;
+      main: string;
       darkGrey: string;
       midGrey: string;
+      lightMidGrey: string;
       whiteGrey: string;
     };
   }

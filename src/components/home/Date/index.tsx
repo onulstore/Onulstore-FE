@@ -1,13 +1,13 @@
 import React from 'react';
 import { getTodayDate } from './getDate';
 import * as S from './style';
-import { ShowDateProps, DateProps } from '../home';
+import { ShowDateProps, FontStyleProps } from '../home';
 
 const ShowDate = (props: ShowDateProps) => {
   return <S.ShowDate {...props}>{`${props.year}.${props.month}.${props.date}`}</S.ShowDate>;
 };
 
-export const TodayDate = (props: DateProps) => {
+export const TodayDate = (props: FontStyleProps) => {
   const [year, month, date] = getTodayDate();
   return (
     <ShowDate
