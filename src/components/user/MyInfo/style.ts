@@ -10,5 +10,5 @@ export const Hr = styled.hr`
   height: 1px;
   opacity: 0.08;
   border: 0;
-  background-color: ${({ theme }) => theme.palette.white};
+  background-color: ${({ theme }) => theme.palette.whiteGrey};
 `;
