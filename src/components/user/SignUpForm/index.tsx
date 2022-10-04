@@ -102,7 +102,7 @@ function SignUpForm() {
             ...register('email', {
               pattern: {
                 value: signUpReg.EMAIL_REGEX,
-                message: SIGNUP_ERROR_MSG.invaliEmail,
+                message: SIGNUP_ERROR_MSG.invalidEmail,
               },
               required: SIGNUP_ERROR_MSG.required,
             }),

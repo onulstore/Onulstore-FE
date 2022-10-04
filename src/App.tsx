@@ -17,6 +17,7 @@ import QandAInfo from 'pages/ItemDetail/DetailInfo/Q&AInfo';
 import OrderGuide from 'pages/ItemDetail/DetailInfo/OrderGuide';
 import SimilarItem from 'pages/ItemDetail/DetailInfo/SimilarItem';
 import SignUp from 'pages/SignUp';
+import SignIn from 'pages/SignIn';
 //COMPONENTS
 import HeaderBar from 'components/ui/navbar/HeaderBar';
 
@@ -38,6 +39,7 @@ const App = () => {
           </Route>
           <Route path="/payment" element={<Payment />}></Route>
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<SignIn />} />
         </Routes>
       </S.Layout>
     </ThemeProvider>
