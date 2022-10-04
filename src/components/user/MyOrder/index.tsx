@@ -4,11 +4,18 @@ import { AngleRightIcon } from 'components/Icons';
 import theme from 'style/theme';
 import MyOrderDetail from '../MyOrderDetail';
 import MyOrderCancel from '../MyOrderCancel';
+import { useNavigate } from 'react-router-dom';
 
 function MyOrder() {
+  const navigate = useNavigate();
   return (
     <S.Container>
-      <S.Title>
+      {/* 주문내역 라우터 */}
+      <S.Title
+        onClick={() => {
+          navigate('/');
+        }}
+      >
         <p className="text">내 주문 내역</p>
         <AngleRightIcon color={theme.palette.black} width="6" height="10" />
       </S.Title>
