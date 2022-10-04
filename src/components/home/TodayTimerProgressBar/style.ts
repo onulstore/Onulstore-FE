@@ -7,7 +7,6 @@ export const BaseBar = styled.div<ShowProgressBarProps>`
   height: 0.4rem;
   border-radius: 0.2rem;
   background-color: ${(props) => props.baseColor || props.theme.palette.midGrey};
-  margin: 5rem;
 `;
 export const InnerBar = styled.div<ShowProgressBarProps>`
   position: relative;
