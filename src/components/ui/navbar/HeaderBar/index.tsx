@@ -32,7 +32,7 @@ function HeaderBar() {
             <ArrowLeftIcon />
           </S.HeaderLeft>
         )}
-        {'/items/' === pathname ? (
+        {'/items/' || '/items' === pathname ? (
           !isDetailPage && (
             <S.HeaderCenter>
               <span
