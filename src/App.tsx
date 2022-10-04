@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import Items from 'pages/Items/index';
 import ItemDetail from 'pages/ItemDetail';
 import ItemInfo from 'pages/ItemDetail/DetailInfo/ItemInfo';
+import Payment from 'pages/Payment';
 import ReviewInfo from 'pages/ItemDetail/DetailInfo/ReviewInfo';
 import QandAInfo from 'pages/ItemDetail/DetailInfo/Q&AInfo';
 import OrderGuide from 'pages/ItemDetail/DetailInfo/OrderGuide';
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="orderguide" element={<OrderGuide />} />
             <Route path="similaritem" element={<SimilarItem />} />
           </Route>
+          <Route path="/payment" element={<Payment />}></Route>
           <Route path="/signup" element={<SignUp />} />
         </Routes>
       </S.Layout>
