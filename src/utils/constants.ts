@@ -20,12 +20,13 @@ export const signUpReg = {
   PHONE_REGEX: new RegExp('^[0-9]{5,15}$'),
   NAME_REGEX: new RegExp('^[ㄱ-ㅎ|가-힣]{1,9}$'),
 };
+
 export const SIGNUP_ERROR_MSG = {
   required: '필수 정보입니다.',
   invalidId: '5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.',
   invalidPw: '8~16자 영문 대 소문자와 숫자, 특수문자를 사용하세요.',
   invalidConfirmPw: '비밀번호가 일치하지 않습니다.',
-  invaliEmail: '이메일 형식에 일치하지 않습니다.',
+  invalidEmail: '이메일 형식에 일치하지 않습니다.',
   invalidPhone: '휴대폰 번호 형식에 일치하지 않습니다.',
   invalidName: '이름 형식 일치하지 않습니다.',
 };
@@ -42,6 +43,10 @@ export interface IdetailNavigationData {
   path: string;
 }
 
+export interface IorderGuideTitle {
+  id: string;
+  title: string;
+}
 // Item 영역 상수 모음
 export const FilterBarTitle: IfilterBarTitle[] = [
   {
@@ -62,7 +67,7 @@ export const FilterBarTitle: IfilterBarTitle[] = [
   },
 ];
 
-export const DetailNavigationData = [
+export const DetailNavigationData: IdetailNavigationData[] = [
   {
     id: nanoid(),
     title: '상품정보',
@@ -91,5 +96,20 @@ export const DetailNavigationData = [
     id: nanoid(),
     title: '비슷한상품',
     path: 'similaritem',
+  },
+];
+
+export const orderGuideTitle: IorderGuideTitle[] = [
+  {
+    id: nanoid(),
+    title: '지불 정보',
+  },
+  {
+    id: nanoid(),
+    title: '배송 정보',
+  },
+  {
+    id: nanoid(),
+    title: '교환/환불안내',
   },
 ];

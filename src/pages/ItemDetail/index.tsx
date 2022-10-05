@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
 import { headerBarHandler } from 'store/slices/itemSlice';
 import { useAppDispatch, useItemSlice } from 'store/hooks/index';
@@ -13,9 +13,18 @@ import { LargeLikeOffIcon, LargeLikeOnIcon } from 'components/Icons/index';
 //UI
 import PurchaseBtn from 'components/ui/PurchaseBtn';
 import WishListBtn from 'components/ui/WishListBtn';
+
+import AddWishListModal from 'components/itemDetail/AddWishListModal';
 const ItemDetail = () => {
   const { state } = useLocation();
+  const { isDetailPage } = useItemSlice();
   const dispatch = useAppDispatch();
+
+  const [isAddWishListModal, setIsAddWishListModal] = useState(false);
+
+  const addWishListModalHandler = () => {
+    setIsAddWishListModal(!isAddWishListModal);
+  };
 
   useEffect(() => {
     dispatch(headerBarHandler());
@@ -27,6 +36,7 @@ const ItemDetail = () => {
 
   return (
     <S.ItemDetailContainer>
+      {isAddWishListModal && <AddWishListModal addWishListModalHandler={addWishListModalHandler} />}
       <img className="item-bg" src={dumyBg}></img>
 
       <section className="item-info">
@@ -51,8 +61,12 @@ const ItemDetail = () => {
       <DetailNavigation />
       <Outlet />
       <section className="actions">
-        <WishListBtn />
-        <PurchaseBtn />
+        <div onClick={addWishListModalHandler}>
+          <WishListBtn />
+        </div>
+        <div>
+          <PurchaseBtn />
+        </div>
       </section>
     </S.ItemDetailContainer>
   );

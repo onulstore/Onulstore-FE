@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   ArrowLeftIcon,
   LogoIcon,
   SearchIcon,
   ShoppingBagIcon,
-  CategoryArrowBottomIcon,
+  ArrowBottomIcon,
+  ArrowTopIcon,
 } from 'components/Icons';
 import { useLocation, useNavigate } from 'react-router-dom';
 import * as S from './style';
@@ -17,7 +18,7 @@ function HeaderBar() {
   const pathname: string = useLocation().pathname;
 
   const dispatch = useAppDispatch();
-  const { isDetailPage } = useItemSlice();
+  const { isDetailPage, isShowLargeCategoryModal } = useItemSlice();
 
   return (
     <S.HeaderBar>
@@ -31,7 +32,7 @@ function HeaderBar() {
             <ArrowLeftIcon />
           </S.HeaderLeft>
         )}
-        {'/items' === pathname ? (
+        {'/items/' || '/items' === pathname ? (
           !isDetailPage && (
             <S.HeaderCenter>
               <span
@@ -42,7 +43,7 @@ function HeaderBar() {
               >
                 ITEMS
               </span>
-              <CategoryArrowBottomIcon />
+              {isShowLargeCategoryModal ? <ArrowTopIcon /> : <ArrowBottomIcon />}
             </S.HeaderCenter>
           )
         ) : (
