@@ -28,6 +28,7 @@ const App = () => {
       <GlobalStyles />
       <S.Layout>
         <HeaderBar />
+
         <Routes>
           <Route index element={<Home />} />
           <Route path="/items" element={<Items />} />
