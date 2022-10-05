@@ -31,7 +31,7 @@ function BottomTabBar() {
           </li>
           <li>
             <NavLink
-              to="mypage"
+              to="my-page"
               children={({ isActive }) =>
                 isActive ? <MyPageIcon color="#D86145" /> : <MyPageIcon />
               }

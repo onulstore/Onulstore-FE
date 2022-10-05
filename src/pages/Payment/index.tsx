@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import * as S from './style';
+import PaymentForm from 'components/payment/PaymentForm';
+import axios from 'axios';
 
-function Payment() {
-  return <div>Payment</div>;
-}
+const Payment = () => {
+  return (
+    <S.PaymentContainer>
+      <PaymentForm />
+    </S.PaymentContainer>
+  );
+};
 
 export default Payment;

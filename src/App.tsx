@@ -20,6 +20,8 @@ import SignUp from 'pages/SignUp';
 import SignIn from 'pages/SignIn';
 //COMPONENTS
 import HeaderBar from 'components/ui/navbar/HeaderBar';
+import LargeCategoryModal from 'components/item/LargeCategoryModal';
+import MyPage from 'pages/MyPage';
 import BottomTabBar from 'components/ui/navbar/BottomTabBr';
 
 const App = () => {
@@ -28,6 +30,7 @@ const App = () => {
       <GlobalStyles />
       <S.Layout>
         <HeaderBar />
+
         <Routes>
           <Route index element={<Home />} />
           <Route path="/items" element={<Items />} />
@@ -40,6 +43,7 @@ const App = () => {
           </Route>
           <Route path="/payment" element={<Payment />}></Route>
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/mypage" element={<MyPage />} />
           <Route path="/login" element={<SignIn />} />
         </Routes>
         <BottomTabBar />
