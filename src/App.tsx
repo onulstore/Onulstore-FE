@@ -22,6 +22,8 @@ import SignIn from 'pages/SignIn';
 import HeaderBar from 'components/ui/navbar/HeaderBar';
 import LargeCategoryModal from 'components/item/LargeCategoryModal';
 import MyPage from 'pages/MyPage';
+import BottomTabBar from 'components/ui/navbar/BottomTabBr';
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
@@ -44,6 +46,7 @@ const App = () => {
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/login" element={<SignIn />} />
         </Routes>
+        <BottomTabBar />
       </S.Layout>
     </ThemeProvider>
   );
