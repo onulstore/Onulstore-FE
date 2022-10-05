@@ -46,7 +46,7 @@ export const NavMenu = ({ isOpen, setIsOpen }: MenuOpenProps) => {
               <ToggleMenu menuName="FASHION" categories={['ALL', 'BAG']} />
             </li>
             <li>
-              <ToggleMenu menuName="LIVING" categories={['ALL', 'BAG']} />
+              <ToggleMenu menuName="LIVING" categories={['ALL', 'SPORTS', 'LIFESTYLE']} />
             </li>
             <li>
               <ToggleMenu menuName="BEAUTY" categories={['ALL', 'COSME']} />
