@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import * as S from './style';
-import { CategoryArrowBottomIcon } from '../../Icons/index';
+import { ArrowBottomIcon, ArrowTopIcon } from '../../Icons/index';
 import { useItemSlice } from 'store/hooks/index';
 
 interface Props {
@@ -21,7 +21,7 @@ const ItemFilterBar = ({ filterSeletBoxHandler, isShowFilterSelectBox }: Props) 
         }}
       >
         <p>최신순</p>
-        <CategoryArrowBottomIcon />
+        {isShowFilterSelectBox ? <ArrowTopIcon /> : <ArrowBottomIcon />}
       </div>
     </S.ItemFilterBarContainer>
   );
