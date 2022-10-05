@@ -4,18 +4,18 @@ import theme from 'style/theme';
 import * as S from './style';
 
 interface Props {
-  route: string;
+  path: string;
   name: string;
   count: number;
   last?: boolean | undefined;
 }
-function MyHistoryDetail({ route, name, count, last }: Props) {
+function MyHistoryDetail({ path, name, count, last }: Props) {
   const navigate = useNavigate();
   return (
     <S.Container
       last={last}
       onClick={() => {
-        navigate(`/${route}`);
+        navigate(`/${path}`);
       }}
     >
       <div className="page-name">{name}</div>
