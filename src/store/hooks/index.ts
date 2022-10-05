@@ -5,8 +5,8 @@ export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export const useItemSlice = () => {
-  const { isShowLargeCategoryModal, allItemList, isDetailPage } = useAppSelector(
+  const { isShowLargeCategoryModal, allItemList, isDetailPage, searchAddress } = useAppSelector(
     (state) => state.item,
   );
-  return { isShowLargeCategoryModal, allItemList, isDetailPage };
+  return { isShowLargeCategoryModal, allItemList, isDetailPage, searchAddress };
 };
