@@ -26,5 +26,5 @@ export const HomeBtn = styled.button`
   border: none;
   border-radius: 50%;
   background: linear-gradient(134.43deg, #d86145 8.74%, #f88367 92.08%);
-  box-shadow: 0px 4px 4px rgba(216, 97, 69, 0.2);
+  box-shadow: 0 0.4rem 0.4rem rgba(216, 97, 69, 0.2);
 `;
