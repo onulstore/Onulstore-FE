@@ -11,7 +11,7 @@ import dumyBg from 'assets/dumyBg.png';
 //ICON
 import { LargeLikeOffIcon, LargeLikeOnIcon } from 'components/Icons/index';
 //UI
-import PurchaseBtn from 'components/ui/PurchaseBtn';
+import PurchaseBtn from 'components/ui/CommonBlackBtn';
 import WishListBtn from 'components/ui/WishListBtn';
 
 import AddWishListModal from 'components/itemDetail/AddWishListModal';
@@ -65,7 +65,7 @@ const ItemDetail = () => {
           <WishListBtn />
         </div>
         <div>
-          <PurchaseBtn />
+          <PurchaseBtn width="28.7rem" height="7.1rem" title="구매하기" />
         </div>
       </section>
     </S.ItemDetailContainer>

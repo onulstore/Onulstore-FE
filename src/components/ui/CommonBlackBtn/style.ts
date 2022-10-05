@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-export const PurchaseBtnContainer = styled.button`
+interface Props {
+  width: string;
+  height: string;
+}
+
+export const PurchaseBtnContainer = styled.button<Props>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,8 +15,8 @@ export const PurchaseBtnContainer = styled.button`
   outline: none;
   border: none;
 
-  width: 28.7rem;
-  height: 7.1rem;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
 
   font-weight: 600;
   font-size: 1.7rem;
