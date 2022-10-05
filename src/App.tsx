@@ -19,7 +19,6 @@ import SignUp from 'pages/SignUp';
 //COMPONENTS
 import HeaderBar from 'components/ui/navbar/HeaderBar';
 import LargeCategoryModal from 'components/item/LargeCategoryModal';
-import MyInfo from 'components/user/MyInfo';
 import MyPage from 'pages/MyPage';
 const App = () => {
   const { isShowLargeCategoryModal } = useItemSlice();
