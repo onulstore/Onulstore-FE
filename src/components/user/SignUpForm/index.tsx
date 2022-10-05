@@ -6,6 +6,7 @@ import { signUpReg, SIGNUP_ERROR_MSG } from 'utils/constants';
 import * as S from './style';
 import LargeBtn from 'components/ui/LargeBtn';
 import api from 'utils/Api';
+import { useNavigate } from 'react-router-dom';
 
 type FormInputs = {
   email: string;
@@ -19,6 +20,7 @@ type FormInputs = {
 };
 
 function SignUpForm() {
+  const navigate = useNavigate();
   const { register, handleSubmit, setFocus, getValues, formState, trigger } = useForm<FormInputs>({
     mode: 'onChange',
   });
@@ -26,11 +28,23 @@ function SignUpForm() {
   const onSubmit: SubmitHandler<FormInputs> = useCallback(async (data) => {
     console.log(data);
 
-    await api({
+    const res = await api({
       url: 'auth/signup',
       method: 'POST',
       data,
     });
+
+    if (
+      confirm(
+        res.data.lastName +
+          res.data.firstName +
+          `님 회원가입을 축하드립니다. \n 로그인으로 이동할까요?`,
+      )
+    ) {
+      navigate('/login');
+    } else {
+      navigate(-1);
+    }
   }, []);
 
   useEffect(() => {
@@ -118,12 +132,12 @@ function SignUpForm() {
           <FormInput
             isSignUp
             width={signUpWidth / 2 - 0.6}
-            id={'firstName'}
+            id={'lastName'}
             label={'이름 (성)'}
-            errorMsg={formState.errors['firstName']?.message}
+            errorMsg={formState.errors['lastName']?.message}
             inputProps={{
               type: 'text',
-              ...register('firstName', {
+              ...register('lastName', {
                 pattern: {
                   value: signUpReg.NAME_REGEX,
                   message: SIGNUP_ERROR_MSG.invalidName,
@@ -135,12 +149,12 @@ function SignUpForm() {
           <FormInput
             isSignUp
             width={signUpWidth / 2 - 0.6}
-            id={'lastName'}
+            id={'firstName'}
             label={'이름 (이름)'}
-            errorMsg={formState.errors['lastName']?.message}
+            errorMsg={formState.errors['firstName']?.message}
             inputProps={{
               type: 'text',
-              ...register('lastName', {
+              ...register('firstName', {
                 pattern: {
                   value: signUpReg.NAME_REGEX,
                   message: SIGNUP_ERROR_MSG.invalidName,
@@ -155,12 +169,12 @@ function SignUpForm() {
           <FormInput
             isSignUp
             width={signUpWidth / 2 - 0.6}
-            id={'firstKana'}
+            id={'lastKana'}
             label={'카나 (성)'}
-            errorMsg={formState.errors['firstKana']?.message}
+            errorMsg={formState.errors['lastKana']?.message}
             inputProps={{
               type: 'text',
-              ...register('firstKana', {
+              ...register('lastKana', {
                 pattern: {
                   value: signUpReg.NAME_REGEX,
                   message: SIGNUP_ERROR_MSG.invalidName,
@@ -172,12 +186,12 @@ function SignUpForm() {
           <FormInput
             isSignUp
             width={signUpWidth / 2 - 0.6}
-            id={'lastKana'}
+            id={'firstKana'}
             label={'카나 (이름)'}
-            errorMsg={formState.errors['lastKana']?.message}
+            errorMsg={formState.errors['firstKana']?.message}
             inputProps={{
               type: 'text',
-              ...register('lastKana', {
+              ...register('firstKana', {
                 pattern: {
                   value: signUpReg.NAME_REGEX,
                   message: SIGNUP_ERROR_MSG.invalidName,
