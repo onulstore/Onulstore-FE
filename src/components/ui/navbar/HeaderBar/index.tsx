@@ -19,7 +19,7 @@ function HeaderBar() {
 
   const dispatch = useAppDispatch();
   const { isDetailPage, isShowLargeCategoryModal } = useItemSlice();
-
+  console.log(pathname);
   return (
     <S.HeaderBar>
       <>
@@ -32,7 +32,7 @@ function HeaderBar() {
             <ArrowLeftIcon />
           </S.HeaderLeft>
         )}
-        {'/items/' || '/items' === pathname ? (
+        {'/items' === pathname || '/items/' === pathname ? (
           !isDetailPage && (
             <S.HeaderCenter>
               <span
