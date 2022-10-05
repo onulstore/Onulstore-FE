@@ -5,9 +5,9 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { signUpReg, SIGNUP_ERROR_MSG } from 'utils/constants';
 import * as S from './style';
 import LargeBtn from 'components/ui/LargeBtn';
+import axios from 'axios';
 
 type FormInputs = {
-  id: string;
   pw: string;
   confirmPw: string;
   email: string;
@@ -24,12 +24,20 @@ function SignUpForm() {
       mode: 'onChange',
     });
 
-  const onSubmit: SubmitHandler<FormInputs> = useCallback((data) => {
+  const onSubmit: SubmitHandler<FormInputs> = useCallback(async (data) => {
     console.log(data);
+
+    await axios({
+      url: '/auth/login',
+      method: 'post',
+      data: {
+        data,
+      },
+    });
   }, []);
 
   useEffect(() => {
-    setFocus('id', { shouldSelect: true });
+    setFocus('email', { shouldSelect: true });
   }, []);
 
   const signUpWidth = useMemo(() => 31.1, []);
@@ -39,22 +47,20 @@ function SignUpForm() {
       <S.Form id="form" autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
         <FormInput
           isSignUp
-          id={'id'}
-          label={'아이디'}
-          height={4}
-          errorMsg={formState.errors['id']?.message}
+          id={'email'}
+          label={'이메일 주소'}
+          errorMsg={formState.errors['email']?.message}
           inputProps={{
             type: 'text',
-            ...register('id', {
+            ...register('email', {
               pattern: {
-                value: signUpReg.ID_REGEX,
-                message: SIGNUP_ERROR_MSG.invalidId,
+                value: signUpReg.EMAIL_REGEX,
+                message: SIGNUP_ERROR_MSG.invalidEmail,
               },
               required: SIGNUP_ERROR_MSG.required,
             }),
           }}
         />
-
         <FormInput
           isSignUp
           id={'pw'}
@@ -92,22 +98,6 @@ function SignUpForm() {
           }}
         />
 
-        <FormInput
-          isSignUp
-          id={'email'}
-          label={'이메일 주소'}
-          errorMsg={formState.errors['email']?.message}
-          inputProps={{
-            type: 'text',
-            ...register('email', {
-              pattern: {
-                value: signUpReg.EMAIL_REGEX,
-                message: SIGNUP_ERROR_MSG.invalidEmail,
-              },
-              required: SIGNUP_ERROR_MSG.required,
-            }),
-          }}
-        />
         <FormInput
           isSignUp
           id={'phone'}
