@@ -8,6 +8,7 @@ export const BottomTabBar = styled.nav`
   height: 8.1rem;
   background: #fff;
   box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.06);
+  z-index: 5;
 `;
 export const BottomTabList = styled.ul`
   display: flex;
