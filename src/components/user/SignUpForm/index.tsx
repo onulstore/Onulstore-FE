@@ -5,31 +5,50 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { signUpReg, SIGNUP_ERROR_MSG } from 'utils/constants';
 import * as S from './style';
 import LargeBtn from 'components/ui/LargeBtn';
+import api from 'utils/Api';
+import { useNavigate } from 'react-router-dom';
 
 type FormInputs = {
-  id: string;
-  pw: string;
-  confirmPw: string;
   email: string;
-  phone: string;
+  password: string;
+  passwordConfirm: string;
+  phoneNum: string;
   firstName: string;
   lastName: string;
-  KanaFirstName: string;
-  KanaLastName: string;
+  firstKana: string;
+  lastKana: string;
 };
 
 function SignUpForm() {
-  const { register, reset, handleSubmit, setFocus, getValues, formState, trigger } =
-    useForm<FormInputs>({
-      mode: 'onChange',
+  const navigate = useNavigate();
+  const { register, handleSubmit, setFocus, getValues, formState, trigger } = useForm<FormInputs>({
+    mode: 'onChange',
+  });
+
+  const onSubmit: SubmitHandler<FormInputs> = useCallback(async (data) => {
+    console.log(data);
+
+    const res = await api({
+      url: 'auth/signup',
+      method: 'POST',
+      data,
     });
 
-  const onSubmit: SubmitHandler<FormInputs> = useCallback((data) => {
-    console.log(data);
+    if (
+      confirm(
+        res.data.lastName +
+          res.data.firstName +
+          `님 회원가입을 축하드립니다. \n 로그인으로 이동할까요?`,
+      )
+    ) {
+      navigate('/login');
+    } else {
+      navigate(-1);
+    }
   }, []);
 
   useEffect(() => {
-    setFocus('id', { shouldSelect: true });
+    setFocus('email', { shouldSelect: true });
   }, []);
 
   const signUpWidth = useMemo(() => 31.1, []);
@@ -37,61 +56,6 @@ function SignUpForm() {
   return (
     <>
       <S.Form id="form" autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
-        <FormInput
-          isSignUp
-          id={'id'}
-          label={'아이디'}
-          height={4}
-          errorMsg={formState.errors['id']?.message}
-          inputProps={{
-            type: 'text',
-            ...register('id', {
-              pattern: {
-                value: signUpReg.ID_REGEX,
-                message: SIGNUP_ERROR_MSG.invalidId,
-              },
-              required: SIGNUP_ERROR_MSG.required,
-            }),
-          }}
-        />
-
-        <FormInput
-          isSignUp
-          id={'pw'}
-          label={'비밀번호'}
-          description="8~16자의 영문 대소문자와 숫자, 특수문자 조합"
-          errorMsg={formState.errors['pw']?.message}
-          inputProps={{
-            type: 'password',
-            autoComplete: 'off',
-            formState: formState.isValid,
-            ...register('pw', {
-              pattern: {
-                value: signUpReg.PW_REGEX,
-                message: SIGNUP_ERROR_MSG.invalidPw,
-              },
-              required: SIGNUP_ERROR_MSG.required,
-              onBlur: () => trigger('confirmPw'),
-            }),
-          }}
-        />
-        <FormInput
-          isSignUp
-          id={'confirmPw'}
-          label={'비밀번호 확인'}
-          errorMsg={formState.errors['confirmPw']?.message}
-          inputProps={{
-            type: 'password',
-            autoComplete: 'off',
-            ...register('confirmPw', {
-              validate: {
-                sameWithPw: (v) => v === getValues('pw') || SIGNUP_ERROR_MSG.invalidConfirmPw,
-              },
-              required: SIGNUP_ERROR_MSG.required,
-            }),
-          }}
-        />
-
         <FormInput
           isSignUp
           id={'email'}
@@ -110,13 +74,50 @@ function SignUpForm() {
         />
         <FormInput
           isSignUp
-          id={'phone'}
+          id={'password'}
+          label={'비밀번호'}
+          description="8~16자의 영문 대소문자와 숫자, 특수문자 조합"
+          errorMsg={formState.errors['password']?.message}
+          inputProps={{
+            type: 'password',
+            autoComplete: 'off',
+            formState: formState.isValid,
+            ...register('password', {
+              pattern: {
+                value: signUpReg.PW_REGEX,
+                message: SIGNUP_ERROR_MSG.invalidPw,
+              },
+              required: SIGNUP_ERROR_MSG.required,
+              onBlur: () => trigger('passwordConfirm'),
+            }),
+          }}
+        />
+        <FormInput
+          isSignUp
+          id={'passwordConfirm'}
+          label={'비밀번호 확인'}
+          errorMsg={formState.errors['passwordConfirm']?.message}
+          inputProps={{
+            type: 'password',
+            autoComplete: 'off',
+            ...register('passwordConfirm', {
+              validate: {
+                sameWithPw: (v) => v === getValues('password') || SIGNUP_ERROR_MSG.invalidConfirmPw,
+              },
+              required: SIGNUP_ERROR_MSG.required,
+            }),
+          }}
+        />
+
+        <FormInput
+          isSignUp
+          id={'phoneNum'}
           label={'휴대폰 번호'}
           description="하이픈이 없는 숫자로만 입력"
-          errorMsg={formState.errors['phone']?.message}
+          errorMsg={formState.errors['phoneNum']?.message}
           inputProps={{
             type: 'text',
-            ...register('phone', {
+            ...register('phoneNum', {
               pattern: {
                 value: signUpReg.PHONE_REGEX,
                 message: SIGNUP_ERROR_MSG.invalidPhone,
@@ -131,12 +132,12 @@ function SignUpForm() {
           <FormInput
             isSignUp
             width={signUpWidth / 2 - 0.6}
-            id={'firstName'}
+            id={'lastName'}
             label={'이름 (성)'}
-            errorMsg={formState.errors['firstName']?.message}
+            errorMsg={formState.errors['lastName']?.message}
             inputProps={{
               type: 'text',
-              ...register('firstName', {
+              ...register('lastName', {
                 pattern: {
                   value: signUpReg.NAME_REGEX,
                   message: SIGNUP_ERROR_MSG.invalidName,
@@ -148,12 +149,12 @@ function SignUpForm() {
           <FormInput
             isSignUp
             width={signUpWidth / 2 - 0.6}
-            id={'lastName'}
+            id={'firstName'}
             label={'이름 (이름)'}
-            errorMsg={formState.errors['lastName']?.message}
+            errorMsg={formState.errors['firstName']?.message}
             inputProps={{
               type: 'text',
-              ...register('lastName', {
+              ...register('firstName', {
                 pattern: {
                   value: signUpReg.NAME_REGEX,
                   message: SIGNUP_ERROR_MSG.invalidName,
@@ -168,12 +169,12 @@ function SignUpForm() {
           <FormInput
             isSignUp
             width={signUpWidth / 2 - 0.6}
-            id={'KanaFirstName'}
+            id={'lastKana'}
             label={'카나 (성)'}
-            errorMsg={formState.errors['KanaFirstName']?.message}
+            errorMsg={formState.errors['lastKana']?.message}
             inputProps={{
               type: 'text',
-              ...register('KanaFirstName', {
+              ...register('lastKana', {
                 pattern: {
                   value: signUpReg.NAME_REGEX,
                   message: SIGNUP_ERROR_MSG.invalidName,
@@ -185,12 +186,12 @@ function SignUpForm() {
           <FormInput
             isSignUp
             width={signUpWidth / 2 - 0.6}
-            id={'KanaLastName'}
+            id={'firstKana'}
             label={'카나 (이름)'}
-            errorMsg={formState.errors['KanaLastName']?.message}
+            errorMsg={formState.errors['firstKana']?.message}
             inputProps={{
               type: 'text',
-              ...register('KanaLastName', {
+              ...register('firstKana', {
                 pattern: {
                   value: signUpReg.NAME_REGEX,
                   message: SIGNUP_ERROR_MSG.invalidName,
