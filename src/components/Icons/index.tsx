@@ -185,35 +185,35 @@ export const PencilIcon = () => (
 
 export const AddWishListModalIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="103" height="99" viewBox="0 0 103 99" fill="none">
-    <circle cx="49.5" cy="49.5" r="48" stroke="#505050" stroke-width="3" />
+    <circle cx="49.5" cy="49.5" r="48" stroke="#505050" strokeWidth="3" />
     <path
       d="M37.5 29.1665L31.25 37.4998V66.6665C31.25 67.7716 31.689 68.8314 32.4704 69.6128C33.2518 70.3942 34.3116 70.8332 35.4167 70.8332H64.5833C65.6884 70.8332 66.7482 70.3942 67.5296 69.6128C68.311 68.8314 68.75 67.7716 68.75 66.6665V37.4998L62.5 29.1665H37.5Z"
       stroke="#505050"
-      stroke-width="3"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M31.25 37.5H68.75"
       stroke="#505050"
-      stroke-width="3"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M58.3334 45.8335C58.3334 48.0436 57.4554 50.1632 55.8926 51.7261C54.3298 53.2889 52.2102 54.1668 50 54.1668C47.7899 54.1668 45.6703 53.2889 44.1075 51.7261C42.5447 50.1632 41.6667 48.0436 41.6667 45.8335"
       stroke="#505050"
-      stroke-width="3"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
-    <circle cx="89" cy="85" r="12.5" fill="#D86145" stroke="#D86145" stroke-width="3" />
+    <circle cx="89" cy="85" r="12.5" fill="#D86145" stroke="#D86145" strokeWidth="3" />
     <path
       d="M94.798 80.8989L87.0202 88.6767L83.4849 85.1414"
       stroke="white"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -849,6 +849,31 @@ export const AngleBottomIcon = ({
     <path
       d="M9.77988 0.767679C9.6389 0.596284 9.44771 0.5 9.24837 0.5C9.04902 0.5 8.85783 0.596284 8.71685 0.767679L4.99546 5.2932L1.27408 0.767679C1.13229 0.601141 0.94238 0.50899 0.745262 0.511073C0.548144 0.513156 0.359584 0.609307 0.220195 0.778816C0.0808058 0.948324 0.00174138 1.17763 2.85701e-05 1.41734C-0.00168424 1.65705 0.0740919 1.88799 0.211038 2.06042L4.46394 7.23232C4.60492 7.40372 4.79611 7.5 4.99546 7.5C5.19481 7.5 5.386 7.40372 5.52698 7.23232L9.77988 2.06042C9.92082 1.88898 10 1.65648 10 1.41405C10 1.17163 9.92082 0.939126 9.77988 0.767679Z"
       fill={color}
+    />
+  </svg>
+);
+
+export const TimerIcon = ({
+  color = '#fff',
+  width = '2.4rem',
+  height = '2.4rem',
+}: IconPropsType) => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M18 4L20 6"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path d="M9 2H13" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="11" cy="13" r="8" stroke={color} strokeWidth="2" />
+    <path
+      d="M11 8V13"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
