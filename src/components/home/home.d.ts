@@ -1,3 +1,5 @@
+import React, { ReactNode } from 'react';
+
 export interface FontStyleProps {
   className?: string;
   fontFamily?: string;
@@ -24,4 +26,11 @@ export interface TodayTimerProgressBarProps {
 }
 export interface ShowProgressBarProps extends TodayTimerProgressBarProps {
   width?: number;
+}
+
+export interface SectionProps extends SectionTitleProps {
+  children: ReactNode;
+}
+export interface SectionTitleProps {
+  title: string;
 }
