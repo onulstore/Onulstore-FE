@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 export interface FontStyleProps {
   className?: string;
   fontFamily?: string;
-  fontWeight?: string;
+  fontWeight?: number;
   fontSize?: number;
   color?: string;
 }
