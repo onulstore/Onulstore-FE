@@ -113,3 +113,49 @@ export const orderGuideTitle: IorderGuideTitle[] = [
     title: '교환/환불안내',
   },
 ];
+
+export const BANNER: { [key: string]: string }[] = [
+  {
+    id: 'DeUY6EWzDsEGARD5XcQg_',
+    path: '/today',
+    url: 'src/assets/imageshome_banner_img_1.png',
+    name: '이미지01',
+  },
+  {
+    id: '5SAetnxye-2lVNMIV35Ey',
+    path: '/',
+    url: 'src/assets/imageshome_banner_img_2.png',
+    name: '이미지02',
+  },
+  {
+    id: 'LnPOwcAxXCN-gREvCvFKW',
+    path: '/',
+    url: 'src/assets/imageshome_banner_img_3.png',
+    name: '이미지03',
+  },
+  {
+    id: 'LnPOwcAxXCN-gREvCvFKW',
+    path: '/',
+    url: 'src/assets/imageshome_banner_img_4.png',
+    name: '이미지04',
+  },
+];
+
+export const TODAY_ITEMS: { [key: string]: string | number | {}[] }[] = [
+  {
+    id: 1,
+    brand: 'meelabs',
+    productName: '픽스 손목 보호대',
+    price: 3500,
+    productImage: [{ imageName: 'src/assets/images/today_thumbnail_1.png' }],
+    discount: 10, // 데이터 확인 필요
+  },
+  {
+    id: 2,
+    brand: 'CHIRO CARE',
+    productName: '커브 넥',
+    price: 8500,
+    productImage: [{ imageName: 'src/assets/images/today_thumbnail_2.png' }],
+    discount: 12, // 데이터 확인 필요
+  },
+];
