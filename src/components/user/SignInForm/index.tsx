@@ -27,8 +27,9 @@ function SignInForm() {
       method: 'POST',
       data,
     });
-    setCookie('accessToken', res.data.accessToken, { path: '/', expires });
+    setCookie('accessToken', res.data.accessToken, { path: '/' });
     console.log(res);
+    alert('로그인 되었습니다.');
   }, []);
 
   useEffect(() => {
