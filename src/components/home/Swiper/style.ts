@@ -58,3 +58,111 @@ export const BannerSwiperSlide = styled(SwiperSlide)`
     }
   }
 `;
+
+export const JustForTodaySwiper = styled(Swiper)`
+  &.today-swiper {
+    width: 100%;
+    padding-bottom: 6rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & .swiper-button-prev {
+      left: -0.4rem;
+    }
+    & .swiper-button-next {
+      right: -0.4rem;
+    }
+    & .swiper-button-next,
+    .swiper-button-prev {
+      top: 19.5rem;
+    }
+    & .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 3.2rem !important ;
+      color: ${({ theme }) => theme.palette.black};
+    }
+  }
+  & .swiper-pagination-bullets {
+    bottom: 5.5rem;
+    & .swiper-pagination-bullet {
+      width: 3.2rem;
+      height: 0.2rem;
+      border-radius: 0;
+      background-color: ${({ theme }) => theme.palette.black};
+      &.swiper-pagination-bullet-active {
+        height: 0.4rem;
+      }
+    }
+  }
+`;
+export const JustForTodaySwiperSlide = styled(SwiperSlide)`
+  &.today {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    cursor: pointer;
+    & img.item-img {
+      width: 25.5rem;
+      height: 25.5rem;
+      margin: 6.1rem 4rem 3.2rem;
+      border-radius: 50%;
+      // 실제 배너 크기에 따라 object-fit 속성 값을 수정할 예정
+      /* object-fit: contain; */
+      object-fit: cover;
+    }
+    & .item-info-box {
+      width: 33.5rem;
+      height: 10.2rem;
+      margin-bottom: 4rem;
+      background: #f7f7fa;
+      border-radius: 0.8rem;
+    }
+    & .item-info {
+      margin: 1.6rem 1.2rem;
+      font-family: 'Montserrat';
+      color: ${({ theme }) => theme.palette.darkGrey};
+      h2 {
+        font-weight: 300;
+        font-size: 1.4rem;
+        line-height: 130%;
+      }
+      h3 {
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 130%;
+        margin: 0.2rem 0;
+      }
+    }
+    & .price-wrapper {
+      display: flex;
+      align-items: center;
+    }
+    & .price {
+      font-weight: 600;
+      font-size: 1.8rem;
+      line-height: 150%;
+      color: ${({ theme }) => theme.palette.black};
+    }
+    & .prediscount {
+      margin: 0 0.8rem;
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: ${({ theme }) => theme.palette.midGrey};
+      text-align: center;
+      text-decoration-line: line-through;
+    }
+    & .discount-wrapper {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: ${({ theme }) => theme.palette.main};
+    }
+    & .discount {
+      font-size: 1.8rem;
+    }
+  }
+`;
