@@ -118,25 +118,25 @@ export const BANNER: { [key: string]: string }[] = [
   {
     id: 'DeUY6EWzDsEGARD5XcQg_',
     path: '/today',
-    url: 'src/assets/imageshome_banner_img_1.png',
+    url: 'src/assets/images/home_banner_img_1.png',
     name: '이미지01',
   },
   {
     id: '5SAetnxye-2lVNMIV35Ey',
     path: '/',
-    url: 'src/assets/imageshome_banner_img_2.png',
+    url: 'src/assets/images/home_banner_img_2.png',
     name: '이미지02',
   },
   {
     id: 'LnPOwcAxXCN-gREvCvFKW',
     path: '/',
-    url: 'src/assets/imageshome_banner_img_3.png',
+    url: 'src/assets/images/home_banner_img_3.png',
     name: '이미지03',
   },
   {
-    id: 'LnPOwcAxXCN-gREvCvFKW',
+    id: 'KnPOwcAxXCN-gREvCvFNW',
     path: '/',
-    url: 'src/assets/imageshome_banner_img_4.png',
+    url: 'src/assets/images/home_banner_img_4.png',
     name: '이미지04',
   },
 ];
