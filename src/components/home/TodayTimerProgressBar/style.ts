@@ -14,6 +14,7 @@ export const InnerBar = styled.div<ShowProgressBarProps>`
   height: 0.4rem;
   border-radius: 0.2rem;
   background-color: ${(props) => props.innerColor || props.theme.palette.main};
+  z-index: 5;
   &::after {
     content: '';
     display: block;
@@ -33,6 +34,7 @@ export const LeftHurry = styled(LeftHurryIcon)`
   position: absolute;
   right: -7.9rem;
   margin-top: 1rem;
+  z-index: 5;
 `;
 export const WhiteHurry = styled(WhiteHurryIcon)`
   position: absolute;
