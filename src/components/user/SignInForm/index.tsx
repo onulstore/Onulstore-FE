@@ -28,6 +28,7 @@ function SignInForm() {
       data,
     });
     setCookie('accessToken', res.data.accessToken, { path: '/' });
+    setCookie('refreshToken', res.data.refreshToken, { path: '/' });
     console.log(res);
     alert('로그인 되었습니다.');
   }, []);
