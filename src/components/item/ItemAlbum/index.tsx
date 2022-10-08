@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { AllItemList } from 'store/slices/itemSlice';
 import { useNavigate } from 'react-router-dom';
-import { useItemSlice, useAppDispatch } from 'store/hooks';
-
+import { useAppDispatch } from 'store/hooks';
+import { priceFomater } from 'store/slices/itemSlice';
 //STYLED
 import * as S from './style';
 //ICON
@@ -16,12 +15,12 @@ import {
 import dumyBg from 'assets/dumyBg.png';
 
 interface Props {
-  item: AllItemList;
+  item: any;
+  index: number;
 }
 
-const ItemAlbum = ({ item }: Props) => {
-  const dispatch = useAppDispatch();
-
+const ItemAlbum = ({ item, index }: Props) => {
+  console.log(item);
   const [isLike, setIsLike] = useState(false);
   const navigate = useNavigate();
 
@@ -29,13 +28,14 @@ const ItemAlbum = ({ item }: Props) => {
     e.stopPropagation();
     setIsLike(!isLike);
   };
+
   const moveDetailPage = () => {
     navigate(`/items/${item.id}`, { state: item });
   };
   return (
     <S.ItemAlbumContainer onClick={moveDetailPage}>
       <section className="item-bg">
-        <div className="rank-box">1</div>
+        <div className="rank-box">{index + 1}</div>
         <span className="item-icon" onClick={isLikeHandler}>
           {isLike ? <LargeLikeOnIcon /> : <LargeLikeOffIcon />}
         </span>
@@ -44,13 +44,13 @@ const ItemAlbum = ({ item }: Props) => {
 
       <section className="item-info">
         <div className="item-title-container">
-          <p className="item-title">Around ann{/* {item.productName} */}</p>
-          <p className="item-sort">신상품</p>
+          <p className="item-title">{item.brand.brandName} </p>
+          <p className="item-status">{item.productStatus}</p>
         </div>
 
-        <p className="item-description">Tweedy hobo bag ivory_Brown{/* {item.content} */}</p>
+        <p className="item-description">{item.productName}</p>
         <p className="item-price">
-          <span className="discount-purcent">40%</span> ¥3,800{/* {item.price} */}
+          <span className="discount-purcent">40%</span> ¥{priceFomater('ja-JP', item.price)}
         </p>
         <div className="review-and-like">
           <span className="small-review-icon">
