@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, Outlet } from 'react-router-dom';
+import { useLocation, Outlet, useNavigate, useParams } from 'react-router-dom';
 import { headerBarHandler } from 'store/slices/itemSlice';
 import { useAppDispatch, useItemSlice } from 'store/hooks/index';
+import { priceFomater } from 'store/slices/itemSlice';
 //COMPONENTS
 import DetailNavigation from 'components/itemDetail/DetailNavigation/index';
 //STYLED
@@ -13,20 +14,23 @@ import { LargeLikeOffIcon, LargeLikeOnIcon } from 'components/Icons/index';
 //UI
 import PurchaseBtn from 'components/ui/CommonBlackBtn';
 import WishListBtn from 'components/ui/WishListBtn';
-
 import AddWishListModal from 'components/itemDetail/AddWishListModal';
+//API
+import { getSingleItemList } from 'utils/Api/itemApi';
 const ItemDetail = () => {
-  const { state } = useLocation();
-  const { isDetailPage } = useItemSlice();
-  const dispatch = useAppDispatch();
-
   const [isAddWishListModal, setIsAddWishListModal] = useState(false);
+
+  const params = useParams();
+
+  const dispatch = useAppDispatch();
+  const { singleItemList } = useItemSlice();
 
   const addWishListModalHandler = () => {
     setIsAddWishListModal(!isAddWishListModal);
   };
 
   useEffect(() => {
+    dispatch(getSingleItemList(params.id));
     dispatch(headerBarHandler());
 
     return () => {
@@ -41,19 +45,20 @@ const ItemDetail = () => {
 
       <section className="item-info">
         <div className="item-brand">
-          <p className="brand-name">Around ann</p>
+          <p className="brand-name">{singleItemList.brand?.brandName}</p>
           <span className="like-icon">
             <LargeLikeOffIcon />
           </span>
         </div>
 
-        <p className="item-title">String bag_ light grey</p>
+        <p className="item-title">{singleItemList?.productName}</p>
 
         <div className="item-price">
           <p className="original-price">¥ 4,800</p>
           <div className="discount">
             <p className="discount-price">
-              <span className="discount-percent">40%</span>¥ 3,800
+              <span className="discount-percent">40%</span>¥
+              {priceFomater('ja-JP', singleItemList?.price)}
             </p>
           </div>
         </div>
