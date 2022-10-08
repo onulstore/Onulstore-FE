@@ -21,6 +21,10 @@ import SignIn from 'pages/SignIn';
 import Review from 'pages/Review';
 //COMPONENTS
 import HeaderBar from 'components/ui/navbar/HeaderBar';
+import LargeCategoryModal from 'components/item/LargeCategoryModal';
+import MyPage from 'pages/MyPage';
+import BottomTabBar from 'components/ui/navbar/BottomTabBr';
+import NonMember from 'pages/NonMember';
 
 const App = () => {
   return (
@@ -42,8 +46,11 @@ const App = () => {
           <Route path="/payment" element={<Payment />} />
           <Route path="/review" element={<Review />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/mypage" element={<MyPage />} />
           <Route path="/login" element={<SignIn />} />
+          <Route path="/non-member" element={<NonMember />} />
         </Routes>
+        <BottomTabBar />
       </S.Layout>
     </ThemeProvider>
   );

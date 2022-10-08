@@ -1,8 +1,4 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-import { useAppDispatch } from 'store/hooks';
-import { useItemSlice } from 'store/hooks';
-// const dispatch = useAppDispatch();
 
 const api = axios.create({
   baseURL: 'http://onulstore.dlcpop.com/',
