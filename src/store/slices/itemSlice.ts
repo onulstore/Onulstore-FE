@@ -1,19 +1,45 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { useNavigate } from 'react-router-dom';
 //API
-import { getItem, getZipCode } from 'utils/Api/dumy/dumyApi';
+import { getZipCode } from 'utils/Api/itemApi';
+import { getAllItemList, getSingleItemList } from 'utils/Api/itemApi';
 
-export interface AllItemList {
-  productName: string;
-  content: string;
-  largeCategoryCode: string;
-  smallCategoryCode: string;
-  price: number;
-  quantity: number;
-  purchaseCount: number;
-  productStatus: string;
-  id: string;
+export const priceFomater = (country: string, price: number): string => {
+  return new Intl.NumberFormat(country).format(price);
+};
+// 전체상품 관련 타입
+interface Ibarnd {
+  id: number;
+  brandName: string;
 }
 
+interface Icategory {
+  id: number;
+  categoryName: string;
+  parent: any;
+}
+
+export interface IallItemList {
+  bookmark?: boolean;
+  brand: Ibarnd;
+  category: Icategory;
+  content: string;
+  createdDate?: string;
+  id: number;
+  price: number;
+  productName: string;
+  productStatus: string;
+  purchaseCount: number;
+  quantity: number;
+  updatedDate?: number;
+}
+// 상품 상세정보 타입
+export interface IsingItemList extends IallItemList {
+  productImage: string[];
+  wishListCount: number;
+}
+
+//일본 api 주소 관련 타입
 export interface IsearchAddress {
   address1: string;
   address2: string;
@@ -24,12 +50,14 @@ export interface IsearchAddress {
   prefcode: string;
   zipcode: string;
 }
-
+// 스토어 데이터 타입
 interface StateType {
   isShowLargeCategoryModal: Boolean;
   LargeCategoryTitle: string;
   isLoding: boolean;
-  allItemList: AllItemList[];
+  allItemList: IallItemList[];
+  //Record<string, never> 는 빈 객체의 타입을 의미한다
+  singleItemList: Record<string, never> | IsingItemList;
   error: string;
   isDetailPage: boolean;
   isLike: boolean;
@@ -43,6 +71,7 @@ const initialState: StateType = {
   isLoding: false,
   LargeCategoryTitle: '',
   allItemList: [],
+  singleItemList: {},
   error: '요청실패!',
   searchAddress: [],
 };
@@ -58,18 +87,30 @@ const itemSlice = createSlice({
       state.isDetailPage = !state.isDetailPage;
     },
   },
+
   extraReducers: (builder) => {
-    builder.addCase(getItem.pending, (state) => {
-      state.isLoding = !state.isLoding;
+    builder.addCase(getAllItemList.pending, (state) => {
+      state.isLoding = true; // true false로 명시하기
     });
-    builder.addCase(getItem.fulfilled, (state, action: PayloadAction<AllItemList[]>) => {
-      state.isLoding = !state.isLoding;
+    builder.addCase(getAllItemList.fulfilled, (state, action: PayloadAction<IallItemList[]>) => {
+      state.isLoding = false;
       state.allItemList = action.payload;
     });
-    builder.addCase(getItem.rejected, (state) => {
-      state.isLoding = !state.isLoding;
-      console.log(state.error);
+    builder.addCase(getAllItemList.rejected, (state) => {
+      state.isLoding = false;
     });
+
+    builder.addCase(getSingleItemList.pending, (state) => {
+      state.isLoding = true;
+    });
+    builder.addCase(getSingleItemList.fulfilled, (state, action: PayloadAction<IsingItemList>) => {
+      state.isLoding = false;
+      state.singleItemList = action.payload;
+    });
+    builder.addCase(getSingleItemList.rejected, (state) => {
+      state.isLoding = false;
+    });
+
     builder.addCase(getZipCode.fulfilled, (state, action: PayloadAction<IsearchAddress[]>) => {
       if (action.payload === null) {
         alert('입력하신 우편번호를 조회 할 수 없습니다 다시 입력 해 주세요!');
