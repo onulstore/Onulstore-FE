@@ -6,6 +6,8 @@ type IconPropsType = {
   color?: string;
   width?: string;
   height?: string;
+  stroke?: string;
+  fill?: string;
   onClick?: () => void;
 };
 
@@ -184,35 +186,35 @@ export const PencilIcon = () => (
 
 export const AddWishListModalIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="103" height="99" viewBox="0 0 103 99" fill="none">
-    <circle cx="49.5" cy="49.5" r="48" stroke="#505050" stroke-width="3" />
+    <circle cx="49.5" cy="49.5" r="48" stroke="#505050" strokeWidth="3" />
     <path
       d="M37.5 29.1665L31.25 37.4998V66.6665C31.25 67.7716 31.689 68.8314 32.4704 69.6128C33.2518 70.3942 34.3116 70.8332 35.4167 70.8332H64.5833C65.6884 70.8332 66.7482 70.3942 67.5296 69.6128C68.311 68.8314 68.75 67.7716 68.75 66.6665V37.4998L62.5 29.1665H37.5Z"
       stroke="#505050"
-      stroke-width="3"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M31.25 37.5H68.75"
       stroke="#505050"
-      stroke-width="3"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M58.3334 45.8335C58.3334 48.0436 57.4554 50.1632 55.8926 51.7261C54.3298 53.2889 52.2102 54.1668 50 54.1668C47.7899 54.1668 45.6703 53.2889 44.1075 51.7261C42.5447 50.1632 41.6667 48.0436 41.6667 45.8335"
       stroke="#505050"
-      stroke-width="3"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
-    <circle cx="89" cy="85" r="12.5" fill="#D86145" stroke="#D86145" stroke-width="3" />
+    <circle cx="89" cy="85" r="12.5" fill="#D86145" stroke="#D86145" strokeWidth="3" />
     <path
       d="M94.798 80.8989L87.0202 88.6767L83.4849 85.1414"
       stroke="white"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -324,24 +326,12 @@ export const SmallLikeIcon = () => (
 );
 
 //REVIEW
-export const LargeReviewOffIcon = () => (
+export const LargeReviewIcon = ({ fill, stroke }: IconPropsType) => (
   <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M13.2305 1.55115C13.3402 1.32687 13.6598 1.32687 13.7695 1.55116L17.2931 8.75711C17.3365 8.84596 17.421 8.90768 17.5188 8.92212L25.4035 10.0855C25.6486 10.1217 25.7467 10.4225 25.5701 10.5962L19.8617 16.2088C19.7917 16.2776 19.7598 16.3763 19.7762 16.473L21.1229 24.3989C21.1646 24.6443 20.9064 24.8308 20.6864 24.7141L13.6407 20.9737C13.5527 20.927 13.4473 20.927 13.3593 20.9737L6.31356 24.7141C6.09364 24.8308 5.83543 24.6443 5.87713 24.3989L7.22377 16.473C7.2402 16.3763 7.2083 16.2776 7.13834 16.2088L1.42992 10.5962C1.25325 10.4225 1.35136 10.1217 1.59645 10.0855L9.48119 8.92212C9.57903 8.90768 9.66346 8.84596 9.70691 8.75711L13.2305 1.55115Z"
-      stroke="#A9A9A9"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
-export const LargeReviewOnIcon = () => (
-  <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M13.2305 1.55115C13.3402 1.32687 13.6598 1.32687 13.7695 1.55116L17.2931 8.75711C17.3365 8.84596 17.421 8.90768 17.5188 8.92212L25.4035 10.0855C25.6486 10.1217 25.7467 10.4225 25.5701 10.5962L19.8617 16.2088C19.7917 16.2776 19.7598 16.3763 19.7762 16.473L21.1229 24.3989C21.1646 24.6443 20.9064 24.8308 20.6864 24.7141L13.6407 20.9737C13.5527 20.927 13.4473 20.927 13.3593 20.9737L6.31356 24.7141C6.09364 24.8308 5.83543 24.6443 5.87713 24.3989L7.22377 16.473C7.2402 16.3763 7.2083 16.2776 7.13834 16.2088L1.42992 10.5962C1.25325 10.4225 1.35136 10.1217 1.59645 10.0855L9.48119 8.92212C9.57903 8.90768 9.66346 8.84596 9.70691 8.75711L13.2305 1.55115Z"
-      fill="#D86145"
-      stroke="#D86145"
+      stroke={stroke}
+      fill={fill}
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -369,6 +359,16 @@ export const SmallReviewOnIcon = () => (
   </svg>
 );
 
+export const UploadIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+    <path
+      d="M21.5 23.3332H5.16668V6.99984H15.6667V4.6665H5.16668C3.88334 4.6665 2.83334 5.7165 2.83334 6.99984V23.3332C2.83334 24.6165 3.88334 25.6665 5.16668 25.6665H21.5C22.7833 25.6665 23.8333 24.6165 23.8333 23.3332V12.8332H21.5V23.3332ZM12.4117 19.6348L10.125 16.8815L6.91668 20.9998H19.75L15.62 15.5048L12.4117 19.6348ZM23.8333 4.6665V1.1665H21.5V4.6665H18C18.0117 4.67817 18 6.99984 18 6.99984H21.5V10.4882C21.5117 10.4998 23.8333 10.4882 23.8333 10.4882V6.99984H27.3333V4.6665H23.8333Z"
+      fill="white"
+    />
+  </svg>
+);
+
+//HURRY ICONS
 export const LeftHurryIcon = ({
   className,
   color = '#FF5A50',
