@@ -14,7 +14,7 @@ import ItemInfo from 'pages/ItemDetail/DetailInfo/ItemInfo';
 import Payment from 'pages/Payment';
 import QnA from 'pages/QnA';
 import ReviewInfo from 'pages/ItemDetail/DetailInfo/ReviewInfo';
-import QandAInfo from 'pages/ItemDetail/DetailInfo/Q&AInfo';
+import QandAInfo from 'pages/ItemDetail/DetailInfo/QnAInfo';
 import OrderGuide from 'pages/ItemDetail/DetailInfo/OrderGuide';
 import SimilarItem from 'pages/ItemDetail/DetailInfo/SimilarItem';
 import SignUp from 'pages/SignUp';
