@@ -8,7 +8,7 @@ export const SmallItemCard = styled.section`
   img {
     width: 10rem;
     height: 10rem;
-    margin: 0 1.9rem 0 2rem;
+    margin-right: 1.9rem;
     box-sizing: border-box;
   }
   &.our-picks {
