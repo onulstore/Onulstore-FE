@@ -27,3 +27,7 @@ export const useReviewSlice = () => {
   const { base64Store, isLoding } = useAppSelector((state) => state.review);
   return { base64Store, isLoding };
 };
+
+export const useQnASlice = () => {
+  const {} = useAppSelector((state) => state.QnA);
+};
