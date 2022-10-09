@@ -44,3 +44,66 @@ export const BannerSwiper = (props: bannerDataProps) => {
     </S.BannerSwiper>
   );
 };
+
+interface itemData {
+  id: string;
+  brand: string;
+  productName: string;
+  price: number;
+  productImage: { imageName: string }[];
+  discount?: number; // 데이터 확인 필요
+}
+interface itemDataProps {
+  data: itemData[];
+}
+export const JustForTodaySwiper = (props: itemDataProps) => {
+  const navigate = useNavigate();
+  const { data } = props;
+  return (
+    <S.JustForTodaySwiper
+      className="today-swiper"
+      modules={[Navigation, Pagination]}
+      spaceBetween={0}
+      slidesPerView={1}
+      loop={true}
+      navigation
+      pagination={{ clickable: true }}
+    >
+      {data?.map((itemData, index) => (
+        <S.JustForTodaySwiperSlide
+          className="today"
+          key={itemData.id}
+          onClick={() => navigate(`/items/${itemData.id}`)}
+        >
+          <img
+            className="item-img"
+            src={itemData.productImage[0].imageName}
+            alt={itemData.productName}
+          />
+          <div className="item-info-box">
+            <div className="item-info">
+              <h2>[{itemData.brand}]</h2>
+              <h3>{itemData.productName}</h3>
+              <div className="price-wrapper">
+                {itemData.discount ? (
+                  <>
+                    <span className="price">
+                      ¥ {(itemData.price * (100 - itemData.discount)).toLocaleString('jp-JP')}
+                    </span>
+                    <span className="prediscount">¥ {itemData.price.toLocaleString('jp-JP')}</span>
+                    <div className="discount-wrapper">
+                      <span className="discount">{itemData.discount}</span>
+                      <span>%</span>
+                    </div>
+                  </>
+                ) : (
+                  <span className="price">¥ {itemData.price.toLocaleString('jp-JP')}</span>
+                )}
+              </div>
+            </div>
+          </div>
+        </S.JustForTodaySwiperSlide>
+      ))}
+    </S.JustForTodaySwiper>
+  );
+};
