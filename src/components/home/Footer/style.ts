@@ -61,3 +61,9 @@ export const InfoForCustomer = styled.section`
     margin-right: 2rem;
   }
 `;
+export const OnulInfo = styled.p`
+  padding: 3.2rem 0 5.9rem 2.8rem;
+  font-size: 1.2rem;
+  line-height: 130%;
+  opacity: 0.5;
+`;

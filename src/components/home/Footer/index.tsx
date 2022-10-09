@@ -59,12 +59,33 @@ const AboutOnul = () => {
   );
 };
 
+const OnulInfo = () => {
+  return (
+    <S.OnulInfo>
+      법인명(상호) : 주식회사 그로스 컴퍼니
+      <br />
+      대표자(이름) : 구양일
+      <br />
+      전화번호 : 050-3558-2356
+      <br />
+      사업자등록번호 : 374-81-02214
+      <br />
+      주소 : 06223 서울특별시 강남구 테헤란로 28길 42(역삼동)
+      <br />
+      개인정보관리책임자 : 구양일(info@onulstore.jp)
+      <br />
+      Contact info@onulstore.jp for more information.
+    </S.OnulInfo>
+  );
+};
+
 function Footer() {
   return (
     <S.Footer>
       <ContactInfo />
       <CustomerService />
       <AboutOnul />
+      <OnulInfo />
     </S.Footer>
   );
 }
