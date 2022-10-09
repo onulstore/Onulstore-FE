@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Footer = styled.footer`
+  color: #fff;
   background-color: ${({ theme }) => theme.palette.black};
 `;
 export const Grid = styled.div`
@@ -32,14 +33,31 @@ export const Item = styled.div`
   h2 {
     margin-bottom: 0.4rem;
     font-size: 1.2rem;
-    color: #fff;
+    /* color: #fff; */
   }
   span {
-    font-size: 16px;
+    font-size: 1.6rem;
     color: ${({ theme }) => theme.palette.main};
   }
   .contact-time {
     font-size: 1.4rem;
     color: #fff;
+  }
+`;
+
+export const InfoForCustomer = styled.section`
+  margin: 0 3rem;
+  h2 {
+    margin: 3.2rem 0 2rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+  }
+  ul {
+    display: flex;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  li {
+    margin-right: 2rem;
   }
 `;

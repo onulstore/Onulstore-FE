@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import * as S from './style';
 
 const ContactInfo = () => {
@@ -21,10 +22,49 @@ const ContactInfo = () => {
   );
 };
 
+const CustomerService = () => {
+  return (
+    <S.InfoForCustomer>
+      <h2>고객 지원</h2>
+      <ul>
+        <li>
+          <Link to={''}>특정 상거래법</Link>
+        </li>
+        <li>
+          <Link to={''}>개인 정보 보호 정책</Link>
+        </li>
+      </ul>
+    </S.InfoForCustomer>
+  );
+};
+const AboutOnul = () => {
+  return (
+    <S.InfoForCustomer>
+      <h2>기업 소개</h2>
+      <ul>
+        <li>
+          <Link to={''}>회사개요</Link>
+        </li>
+        <li>
+          <Link to={''}>회사정보</Link>
+        </li>
+        <li>
+          <Link to={''}>이용 약관</Link>
+        </li>
+        <li>
+          <Link to={''}>이용 안내</Link>
+        </li>
+      </ul>
+    </S.InfoForCustomer>
+  );
+};
+
 function Footer() {
   return (
     <S.Footer>
       <ContactInfo />
+      <CustomerService />
+      <AboutOnul />
     </S.Footer>
   );
 }
