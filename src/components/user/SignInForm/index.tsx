@@ -7,6 +7,7 @@ import { GoogleIcon } from 'components/Icons';
 import { signUpReg, SIGNUP_ERROR_MSG } from 'utils/constants';
 import { useCookies } from 'react-cookie';
 import api from 'utils/Api';
+import { useNavigate } from 'react-router-dom';
 
 type FormInputs = {
   email: string;
@@ -14,8 +15,8 @@ type FormInputs = {
 };
 
 function SignInForm() {
-  const [cookies, setCookie, removeCookie] = useCookies();
-
+  const [cookies, setCookie] = useCookies();
+  const navigate = useNavigate();
   const { register, handleSubmit, setFocus, formState } = useForm<FormInputs>({
     mode: 'onBlur',
   });
@@ -31,6 +32,7 @@ function SignInForm() {
     setCookie('refreshToken', res.data.refreshToken, { path: '/' });
     console.log(res);
     alert('로그인 되었습니다.');
+    navigate(-1);
   }, []);
 
   useEffect(() => {
