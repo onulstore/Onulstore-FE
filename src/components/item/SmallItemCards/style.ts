@@ -5,7 +5,6 @@ export const SmallItemCard = styled.section`
   height: 10rem;
   display: flex;
   font-family: 'Montserrat';
-  margin-bottom: 2rem;
   img {
     width: 10rem;
     height: 10rem;
