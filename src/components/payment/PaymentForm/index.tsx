@@ -4,7 +4,7 @@ import * as S from './style';
 // REACT-HOOK-FORM
 import { useForm } from 'react-hook-form';
 //api
-import { getZipCode } from 'utils/Api/dumy/dumyApi';
+import { getZipCode } from 'utils/Api/itemApi';
 //slice
 import { useItemSlice, useAppDispatch } from 'store/hooks/index';
 //components

@@ -63,7 +63,7 @@ export const ItemAlbumContainer = styled.div`
         line-height: 130%;
         color: #2f2f33;
       }
-      .item-sort {
+      .item-status {
         width: 4.6rem;
         height: 1.9rem;
 
