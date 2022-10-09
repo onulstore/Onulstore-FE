@@ -19,12 +19,12 @@ export const ReviewItemCard = ({ data }: any) => {
 export const OurPicksItemCard = ({ data }: any) => {
   const navigate = useNavigate();
   return (
-    <S.SmallItemCard className="pointer" onClick={() => navigate(`items/${data.id}`)}>
+    <S.SmallItemCard className="our-picks" onClick={() => navigate(`items/${data.id}`)}>
       <img src={data.productImage[0].imageName} alt={data.productName} />
       <S.ItemInfo>
         <div className="brand-name">{data.brand.brandName}</div>
         <div className="item-name">{data.productName}</div>
-        <div className="our-picks-wrapper">
+        <div className="bottom-wrapper">
           <S.PriceWrapper>
             <span className="discount">{100 - (data.price / data.originalPrice) * 100}%</span>
             <span className="price">¥ {data.price.toLocaleString('jp-JP')}</span>
@@ -51,7 +51,7 @@ export const OrderItemCard = ({ data }: any) => {
       <S.ItemInfo>
         <div className="brand-name">{data.brand.brandName}</div>
         <div className="item-name">{data.productName}</div>
-        <div className="our-picks-wrapper">
+        <div className="bottom-wrapper">
           <S.PriceWrapper>
             <span className="discount">{100 - (data.price / data.originalPrice) * 100}%</span>
             <span className="price">¥ {data.price.toLocaleString('jp-JP')}</span>
@@ -70,12 +70,11 @@ export const CartItemCard = ({ data }: any) => {
       <S.ItemInfo>
         <div className="item-name">{data.productName}</div>
         <br />
-        <div className="our-picks-wrapper">
+        <div className="bottom-wrapper">
           <S.PriceWrapper>
             <span className="discount">{100 - (data.price / data.originalPrice) * 100}%</span>
             <span className="price">¥ {data.price.toLocaleString('jp-JP')}</span>
           </S.PriceWrapper>
-          <div className="item-count">수량: 1개</div>
         </div>
       </S.ItemInfo>
     </S.SmallItemCard>

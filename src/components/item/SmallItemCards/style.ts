@@ -12,14 +12,15 @@ export const SmallItemCard = styled.section`
     margin: 0 1.9rem 0 2rem;
     box-sizing: border-box;
   }
-  &.pointer {
+  &.our-picks {
     cursor: pointer;
+    margin-top: 3.3rem;
   }
 `;
 export const ItemInfo = styled.div`
   display: flex;
   width: 100%;
-  margin: 1.35rem 2.4rem 1.35rem 0;
+  margin: 1.35rem 0;
   flex-direction: column;
   font-size: 1.2rem;
   line-height: 150%;
@@ -36,10 +37,10 @@ export const ItemInfo = styled.div`
     box-sizing: border-box;
   }
   .item-count {
-    margin-right: 0.5rem;
+    margin-right: 2.4rem;
     color: ${({ theme }) => theme.palette.darkGrey};
   }
-  .our-picks-wrapper {
+  .bottom-wrapper {
     display: flex;
     justify-content: space-between;
   }
