@@ -8,12 +8,15 @@ function SearchedKeywords({ title, data, recent, setSearched }: any) {
   const searchHandler = (searchKeyword: string) => {
     console.log(searchKeyword);
   };
-  const deleteHandler = (searchKeywordId: string) => {
-    console.log(searchKeywordId);
-    const searched = JSON.parse(localStorage.getItem('searched')!);
+  const deleteHandler = (targetKeyword: string) => {
+    console.log(targetKeyword);
+    const searched = data;
+    const restKeyword = searched.filter((keyword: string) => {
+      return keyword !== targetKeyword;
+    });
+    setSearched(restKeyword);
   };
   const allDeleteHandler = (data: any) => {
-    window.localStorage.removeItem('searched');
     setSearched([]);
   };
   return (
