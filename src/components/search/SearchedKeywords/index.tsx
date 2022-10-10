@@ -11,10 +11,10 @@ const deleteHandler = (searchKeywordId: string) => {
   console.log(searchKeywordId);
 };
 const allDeleteHandler = (data: any) => {
-  console.log(data);
+  window.localStorage.removeItem('searched');
 };
 
-function SearchedKeywords({ title, data, recent }: any) {
+function SearchedKeywords({ title, data, recent, setSearched }: any) {
   return (
     <S.RecentSearch>
       <div className="wrapper">
@@ -23,6 +23,7 @@ function SearchedKeywords({ title, data, recent }: any) {
           <button
             onClick={() => {
               allDeleteHandler(data);
+              setSearched([]);
             }}
           >
             모두 지우기

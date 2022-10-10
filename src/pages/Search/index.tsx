@@ -6,7 +6,7 @@ function Search() {
   const getSearched = localStorage.getItem('searched')
     ? JSON.parse(localStorage.getItem('searched')!)
     : [];
-  const uniqueKeywords = [...new Set(getSearched)];
+  const uniqueKeywords = [...new Set(getSearched)]; // 중복 keyword 제거
   const [searched, setSearched] = useState(uniqueKeywords);
   const checkMaximumLength = (): boolean => {
     const MAXIMUM_LENGTH = 5;
@@ -20,7 +20,7 @@ function Search() {
   return (
     <>
       <SearchHeader setSearched={setSearched} />
-      <SearchedKeywords recent title={'최근 검색어'} data={searched} />
+      <SearchedKeywords recent title={'최근 검색어'} data={searched} setSearched={setSearched} />
       <SearchedKeywords
         title={'인기 검색어'}
         data={['가방', '프리미엄 디퓨저', '에어 피트 드로즈', '손목 보호대']}
