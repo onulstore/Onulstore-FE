@@ -30,20 +30,5 @@ export const logOut = () => {
 
   removeCookie('accessToken'); // 쿠키를 삭제
   removeCookie('refreshToken'); // 쿠키를 삭제
-  navigate('/'); // 메인 페이지로 이동
+  navigate(0); // 메인 페이지로 이동
 };
-
-// export const LoginLayout = () => {
-//   const [cookies] = useCookies();
-//   const cookieValue = Object.values(cookies);
-
-//   return (
-//     <div>
-//       {cookieValue[0] === 'undefined' || cookieValue[0] === undefined ? (
-//         <Navigate to="/" />
-//       ) : (
-//         <Outlet />
-//       )}
-//     </div>
-//   );
-// };
