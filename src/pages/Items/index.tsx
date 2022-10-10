@@ -1,27 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { useItemSlice, useAppDispatch } from 'store/hooks';
-import { getItem } from 'utils/Api/dumy/dumyApi';
-import { AllItemList } from 'store/slices/itemSlice';
+import { getAllItemList } from 'utils/Api/itemApi';
+
 //COMPONENTS
 import NowPositionBar from 'components/item/NowPositionBar';
 import ItemFilterBar from 'components/item/ItemFilterBar';
 import FilterSelectBox from 'components/item/CustomSelectBox/FilterSelectBox';
 import ItemAlbum from 'components/item/ItemAlbum/index';
 import LargeCategoryModal from 'components/item/LargeCategoryModal';
+import Spinner from 'components/ui/Loading';
+
 // STYLED
 import * as S from './style';
 const Items = () => {
   const [isShowFilterSelectBox, setIsShowFilterSelectBox] = useState(false);
-
   const dispatch = useAppDispatch();
-  const { allItemList, isShowLargeCategoryModal } = useItemSlice();
+  const { allItemList, isShowLargeCategoryModal, isLoding } = useItemSlice();
 
   useEffect(() => {
-    dispatch(getItem());
+    dispatch(getAllItemList());
   }, []);
 
   return (
     <S.ItemsContainer>
+      {isLoding && <Spinner />}
       {isShowLargeCategoryModal && <LargeCategoryModal />}
       <NowPositionBar />
       <ItemFilterBar
@@ -32,8 +34,8 @@ const Items = () => {
       {isShowFilterSelectBox && <FilterSelectBox />}
       <S.ItemBox>
         {allItemList?.length > 0 &&
-          allItemList.map((item: AllItemList) => {
-            return <ItemAlbum key={item.id} item={item} />;
+          allItemList.map((item: any, index) => {
+            return <ItemAlbum key={item.id} item={item} index={index} />;
           })}
       </S.ItemBox>
     </S.ItemsContainer>

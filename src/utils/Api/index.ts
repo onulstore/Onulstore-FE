@@ -7,4 +7,16 @@ const api = axios.create({
   },
 });
 
+api.interceptors.response.use(
+  (config) => {
+    console.log(config);
+
+    return config;
+  },
+  (err) => {
+    alert('해당 페이지에 문제가 있습니다! Q&N에 문의 해 주세요!');
+    return Promise.reject(err);
+  },
+);
+
 export default api;

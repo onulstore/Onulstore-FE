@@ -18,6 +18,7 @@ import OrderGuide from 'pages/ItemDetail/DetailInfo/OrderGuide';
 import SimilarItem from 'pages/ItemDetail/DetailInfo/SimilarItem';
 import SignUp from 'pages/SignUp';
 import SignIn from 'pages/SignIn';
+import Review from 'pages/Review';
 //COMPONENTS
 import HeaderBar from 'components/ui/navbar/HeaderBar';
 import LargeCategoryModal from 'components/item/LargeCategoryModal';
@@ -43,7 +44,8 @@ const App = () => {
             <Route path="orderguide" element={<OrderGuide />} />
             <Route path="similaritem" element={<SimilarItem />} />
           </Route>
-          <Route path="/payment" element={<Payment />}></Route>
+          <Route path="/payment" element={<Payment />} />
+          <Route path="/review" element={<Review />} />
           <Route path="/signup" element={<SignUp />} />
 
           <Route element={<PrivateRoutes />}>
