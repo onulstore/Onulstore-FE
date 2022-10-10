@@ -4,17 +4,18 @@ import React from 'react';
 import theme from 'style/theme';
 import * as S from './style';
 
-const searchHandler = (searchKeyword: string) => {
-  console.log(searchKeyword);
-};
-const deleteHandler = (searchKeywordId: string) => {
-  console.log(searchKeywordId);
-};
-const allDeleteHandler = (data: any) => {
-  window.localStorage.removeItem('searched');
-};
-
 function SearchedKeywords({ title, data, recent, setSearched }: any) {
+  const searchHandler = (searchKeyword: string) => {
+    console.log(searchKeyword);
+  };
+  const deleteHandler = (searchKeywordId: string) => {
+    console.log(searchKeywordId);
+    const searched = JSON.parse(localStorage.getItem('searched')!);
+  };
+  const allDeleteHandler = (data: any) => {
+    window.localStorage.removeItem('searched');
+    setSearched([]);
+  };
   return (
     <S.RecentSearch>
       <div className="wrapper">
@@ -23,7 +24,6 @@ function SearchedKeywords({ title, data, recent, setSearched }: any) {
           <button
             onClick={() => {
               allDeleteHandler(data);
-              setSearched([]);
             }}
           >
             모두 지우기
