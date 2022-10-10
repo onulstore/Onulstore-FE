@@ -1,15 +1,15 @@
 import { ArrowLeftIcon, SearchIcon } from 'components/Icons';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import theme from 'style/theme';
 import * as S from './style';
 
-function SearchHeader() {
+function SearchHeader({ setSearched }: any) {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
-  const onSubmit = async (searchValue: any) => {
-    console.log(searchValue);
+  const onSubmit = async ({ searchValue }: any) => {
+    setSearched((prev: string[]) => [...prev, searchValue]);
   };
   return (
     <S.HeaderBar>

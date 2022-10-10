@@ -30,7 +30,7 @@ function SearchedKeywords({ title, data, recent }: any) {
         )}
       </div>
       <ul>
-        {data ? (
+        {data?.length > 0 ? (
           data.map((keyword: string, index: number) => (
             <li key={index}>
               <span
