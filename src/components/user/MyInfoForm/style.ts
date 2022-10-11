@@ -36,7 +36,7 @@ export const Content = styled.div`
   color: ${({ theme }) => theme.palette.main};
 `;
 
-export const Btn = styled.button`
+export const Btn = styled.button<{ label: string | undefined }>`
   width: 9.6rem;
   height: 2.2rem;
   border: 1px solid ${({ theme }) => theme.palette.midGrey};
