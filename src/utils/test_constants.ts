@@ -33,3 +33,30 @@ export const OUR_PICKS: any = [
     ],
   },
 ];
+
+export const ITEMS: any = [
+  {
+    brand: {
+      brandName: 'meelabs',
+      id: 0,
+    },
+    category: {
+      categoryName: null,
+      id: 0,
+    },
+    content: '픽스 손목 보호대',
+    id: 0,
+    originalPrice: 3500,
+    price: 3150,
+    productImage: [
+      {
+        imageName: 'src/assets/images/today_thumbnail_1.png',
+      },
+    ],
+    productName: '픽스 손목 보호대',
+    productStatus: 'NEW',
+    purchaseCount: 0,
+    quantity: 0,
+    wishListCount: 55,
+  },
+];
