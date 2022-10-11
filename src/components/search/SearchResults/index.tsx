@@ -4,23 +4,26 @@ import * as S from './style';
 import ItemFilterBar from 'components/item/ItemFilterBar';
 import ItemAlbum from 'components/item/ItemAlbum';
 
-function SearchResults({ allItemList }: any) {
+function SearchResults({ searchedItemList }: any) {
   const [isShowFilterSelectBox, setIsShowFilterSelectBox] = useState(false);
-  const { currentSearch } = useOutletContext<{ currentSearch: string }>();
+  const { currentSearch, clickedKeyword } = useOutletContext<any>();
   return (
     <S.SearchResults>
       <div className="search-keyword">
-        <span>{currentSearch}</span> 에 대한 검색결과 입니다.
+        <span>{currentSearch || clickedKeyword}</span> 에 대한 검색결과 입니다.
       </div>
       <ItemFilterBar
         filterSeletBoxHandler={setIsShowFilterSelectBox}
         isShowFilterSelectBox={isShowFilterSelectBox}
       />
       <S.ItemBoxCopy>
-        {allItemList?.length > 0 &&
-          allItemList.map((item: any) => {
-            return <ItemAlbum key={item.id} item={item} />;
-          })}
+        {searchedItemList?.length > 0 ? (
+          searchedItemList.map((item: any, index: number) => {
+            return <ItemAlbum key={item.id} item={item} index={index} />;
+          })
+        ) : (
+          <div className="empty">일치하는 정보를 찾을 수 없습니다.</div>
+        )}
       </S.ItemBoxCopy>
     </S.SearchResults>
   );

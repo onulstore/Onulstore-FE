@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useItemSlice } from 'store/hooks';
 import SearchedKeywords from 'components/search/SearchedKeywords';
 import SearchHeader from 'components/search/SearchHeader';
-import SearchResults from 'components/search/SearchResults';
 import { Outlet, useLocation } from 'react-router-dom';
 
 function Search() {
@@ -24,6 +22,8 @@ function Search() {
     window.localStorage.setItem('searched', JSON.stringify(newRecentKeyword));
     setSearched(newRecentKeyword);
   }, [searched]);
+  // 클릭된 검색어
+  const [clickedKeyword, setclickedKeyword] = useState('');
   return (
     <>
       <SearchHeader setSearched={setSearched} setCurrentSearch={setCurrentSearch} />
@@ -35,14 +35,16 @@ function Search() {
             title={'최근 검색어'}
             data={searched}
             setSearched={setSearched}
+            setclickedKeyword={setclickedKeyword}
           />
           <SearchedKeywords
             title={'인기 검색어'}
             data={['가방', '프리미엄 디퓨저', '에어 피트 드로즈', '손목 보호대']}
+            setclickedKeyword={setclickedKeyword}
           />
         </>
       )}
-      <Outlet context={{ currentSearch }} />
+      <Outlet context={{ currentSearch, clickedKeyword }} />
     </>
   );
 }

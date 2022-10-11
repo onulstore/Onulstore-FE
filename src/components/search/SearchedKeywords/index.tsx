@@ -1,22 +1,24 @@
-import { dividerClasses } from '@mui/material';
-import { CloseIcon } from 'components/Icons';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { CloseIcon } from 'components/Icons';
 import theme from 'style/theme';
 import * as S from './style';
 
-function SearchedKeywords({ title, data, recent, setSearched }: any) {
+function SearchedKeywords({ title, data, recent, setSearched, setclickedKeyword }: any) {
+  const navigate = useNavigate();
+
   const searchHandler = (searchKeyword: string) => {
-    console.log(searchKeyword);
+    setclickedKeyword(searchKeyword);
+    navigate(`results`);
   };
   const deleteHandler = (targetKeyword: string) => {
-    console.log(targetKeyword);
     const searched = data;
     const restKeyword = searched.filter((keyword: string) => {
       return keyword !== targetKeyword;
     });
     setSearched(restKeyword);
   };
-  const allDeleteHandler = (data: any) => {
+  const allDeleteHandler = () => {
     setSearched([]);
   };
   return (
@@ -26,7 +28,7 @@ function SearchedKeywords({ title, data, recent, setSearched }: any) {
         {recent && (
           <button
             onClick={() => {
-              allDeleteHandler(data);
+              allDeleteHandler();
             }}
           >
             모두 지우기

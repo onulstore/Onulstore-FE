@@ -25,4 +25,14 @@ export const SearchResults = styled.div`
   }
 `;
 
-export const ItemBoxCopy = styled(ItemBox)``;
+export const ItemBoxCopy = styled(ItemBox)`
+  .empty {
+    /* flex-grow: 1; */
+    width: 100%;
+    margin-top: 5.1rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-align: center;
+    color: ${({ theme }) => theme.palette.midGrey};
+  }
+`;
