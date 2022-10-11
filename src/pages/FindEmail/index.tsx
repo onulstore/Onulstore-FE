@@ -20,7 +20,7 @@ function FindEmail() {
       alert(res.data.message);
     }
   };
-  const onChangeHandler = (e) => {
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     // console.log(value);
     setPhoneNum(value);
