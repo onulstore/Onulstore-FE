@@ -5,11 +5,13 @@ import { useNavigate } from 'react-router-dom';
 import theme from 'style/theme';
 import * as S from './style';
 
-function SearchHeader({ setSearched }: any) {
+function SearchHeader({ setSearched, setCurrentSearch }: any) {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   const onSubmit = async ({ searchValue }: any) => {
     setSearched((prev: string[]) => [...prev, searchValue]);
+    setCurrentSearch(searchValue);
+    navigate('result');
   };
   return (
     <S.HeaderBar>
