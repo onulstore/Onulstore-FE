@@ -11,7 +11,7 @@ function SearchHeader({ setSearched, setCurrentSearch }: any) {
   const onSubmit = async ({ searchValue }: any) => {
     setSearched((prev: string[]) => [...prev, searchValue]);
     setCurrentSearch(searchValue);
-    navigate('result');
+    navigate(`results`);
   };
   return (
     <S.HeaderBar>
