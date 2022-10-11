@@ -1,8 +1,15 @@
+import React, { useEffect, useState } from 'react';
+import { useItemSlice } from 'store/hooks';
 import SearchedKeywords from 'components/search/SearchedKeywords';
 import SearchHeader from 'components/search/SearchHeader';
-import React, { useEffect, useState } from 'react';
+import SearchResults from 'components/search/SearchResults';
+import { Outlet, useLocation } from 'react-router-dom';
 
 function Search() {
+  const pathname: string = useLocation().pathname;
+  // 현재 검색어
+  const [currentSearch, setCurrentSearch] = useState('');
+  // 최근 검색어 저장 관련
   const getSearched = localStorage.getItem('searched')
     ? JSON.parse(localStorage.getItem('searched')!)
     : [];
@@ -19,12 +26,23 @@ function Search() {
   }, [searched]);
   return (
     <>
-      <SearchHeader setSearched={setSearched} />
-      <SearchedKeywords recent title={'최근 검색어'} data={searched} setSearched={setSearched} />
-      <SearchedKeywords
-        title={'인기 검색어'}
-        data={['가방', '프리미엄 디퓨저', '에어 피트 드로즈', '손목 보호대']}
-      />
+      <SearchHeader setSearched={setSearched} setCurrentSearch={setCurrentSearch} />
+
+      {'/search' === pathname && (
+        <>
+          <SearchedKeywords
+            recent
+            title={'최근 검색어'}
+            data={searched}
+            setSearched={setSearched}
+          />
+          <SearchedKeywords
+            title={'인기 검색어'}
+            data={['가방', '프리미엄 디퓨저', '에어 피트 드로즈', '손목 보호대']}
+          />
+        </>
+      )}
+      <Outlet context={{ currentSearch }} />
     </>
   );
 }
