@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+interface Props {
+  last?: boolean;
+}
 
-export const Container = styled.div<{ last: boolean }>`
+export const Container = styled.div<Props>`
   padding: 2rem 0;
   display: flex;
   align-items: center;

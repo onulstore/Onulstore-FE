@@ -1,6 +1,9 @@
 import styled from 'styled-components';
-
-export const Box = styled.div`
+interface Props {
+  count: number;
+  point?: boolean;
+}
+export const Box = styled.div<Props>`
   width: 83px;
   height: 71px;
   background: #fafafc;
