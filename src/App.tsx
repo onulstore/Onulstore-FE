@@ -25,6 +25,8 @@ import LargeCategoryModal from 'components/item/LargeCategoryModal';
 import MyPage from 'pages/MyPage';
 import BottomTabBar from 'components/ui/navbar/BottomTabBr';
 import NonMember from 'pages/NonMember';
+import Search from 'pages/Search';
+import SearchResults from 'components/search/SearchResults';
 
 const App = () => {
   return (
@@ -49,6 +51,9 @@ const App = () => {
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/login" element={<SignIn />} />
           <Route path="/non-member" element={<NonMember />} />
+          <Route path="/search" element={<Search />}>
+            <Route path="results" element={<SearchResults />} />
+          </Route>
         </Routes>
         <BottomTabBar />
       </S.Layout>
