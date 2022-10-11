@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { useOutletContext } from 'react-router-dom';
 import * as S from './style';
 import ItemFilterBar from 'components/item/ItemFilterBar';
 import ItemAlbum from 'components/item/ItemAlbum';
+import { useSearchResult } from '../hooks';
 
 function SearchResults({ searchedItemList }: any) {
+  const searchResult = useSearchResult();
   const [isShowFilterSelectBox, setIsShowFilterSelectBox] = useState(false);
-  const { currentSearch, clickedKeyword } = useOutletContext<any>();
   return (
     <S.SearchResults>
       <div className="search-keyword">
-        <span>{currentSearch || clickedKeyword}</span> 에 대한 검색결과 입니다.
+        <span>{searchResult}</span> 에 대한 검색결과 입니다.
       </div>
       <ItemFilterBar
         filterSeletBoxHandler={setIsShowFilterSelectBox}

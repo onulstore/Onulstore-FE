@@ -1,50 +1,59 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import SearchedKeywords from 'components/search/SearchedKeywords';
 import SearchHeader from 'components/search/SearchHeader';
 import { Outlet, useLocation } from 'react-router-dom';
+import { useSearchResult } from 'components/search/hooks';
 
 function Search() {
   const pathname: string = useLocation().pathname;
-  // 현재 검색어
-  const [currentSearch, setCurrentSearch] = useState('');
-  // 최근 검색어 저장 관련
-  const getSearched = localStorage.getItem('searched')
-    ? JSON.parse(localStorage.getItem('searched')!)
-    : [];
-  const uniqueKeywords = [...new Set(getSearched)]; // 중복 keyword 제거
-  const [searched, setSearched] = useState(uniqueKeywords);
-  const checkMaximumLength = (): boolean => {
-    const MAXIMUM_LENGTH = 5;
-    return searched.length > MAXIMUM_LENGTH;
-  };
+  const searchResult = useSearchResult();
+
+  const [searched, setSearched] = useState(() => {
+    const loadedSearched = localStorage.getItem('searched')
+      ? JSON.parse(localStorage.getItem('searched')!)
+      : [];
+    return loadedSearched as string[];
+  });
+
   useEffect(() => {
-    const newRecentKeyword = checkMaximumLength() ? [...searched.slice(0, -1)] : searched;
+    if (!searchResult) return;
+    const newRecentKeyword = [...new Set([searchResult, ...searched])].slice(0, 5);
     window.localStorage.setItem('searched', JSON.stringify(newRecentKeyword));
     setSearched(newRecentKeyword);
-  }, [searched]);
-  // 클릭된 검색어
-  const [clickedKeyword, setclickedKeyword] = useState('');
+  }, [searchResult]);
+
+  const onDeleteHandler = (targetKeyword: string) => {
+    const restKeyword = searched.filter((keyword: string) => {
+      return keyword !== targetKeyword;
+    });
+    setSearched(restKeyword);
+    window.localStorage.setItem('searched', JSON.stringify(restKeyword));
+  };
+
+  const onAllDeleteHandler = () => {
+    setSearched([]);
+    window.localStorage.setItem('searched', '[]');
+  };
+
   return (
     <>
-      <SearchHeader setSearched={setSearched} setCurrentSearch={setCurrentSearch} />
-
+      <SearchHeader />
       {'/search' === pathname && (
         <>
           <SearchedKeywords
-            recent
+            canDelete
             title={'최근 검색어'}
             data={searched}
-            setSearched={setSearched}
-            setclickedKeyword={setclickedKeyword}
+            onDelete={onDeleteHandler}
+            onAllDelete={onAllDeleteHandler}
           />
           <SearchedKeywords
             title={'인기 검색어'}
             data={['가방', '프리미엄 디퓨저', '에어 피트 드로즈', '손목 보호대']}
-            setclickedKeyword={setclickedKeyword}
           />
         </>
       )}
-      <Outlet context={{ currentSearch, clickedKeyword }} />
+      <Outlet />
     </>
   );
 }

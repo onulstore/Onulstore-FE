@@ -1,39 +1,20 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { CloseIcon } from 'components/Icons';
 import theme from 'style/theme';
 import * as S from './style';
+import { useGoSearchResults } from '../hooks';
+import { CloseIcon } from 'components/Icons';
 
-function SearchedKeywords({ title, data, recent, setSearched, setclickedKeyword }: any) {
-  const navigate = useNavigate();
-
+function SearchedKeywords({ title, data, canDelete, onDelete, onAllDelete }: any) {
+  const goSearchResult = useGoSearchResults();
   const searchHandler = (searchKeyword: string) => {
-    setclickedKeyword(searchKeyword);
-    navigate(`results`);
+    goSearchResult(searchKeyword);
   };
-  const deleteHandler = (targetKeyword: string) => {
-    const searched = data;
-    const restKeyword = searched.filter((keyword: string) => {
-      return keyword !== targetKeyword;
-    });
-    setSearched(restKeyword);
-  };
-  const allDeleteHandler = () => {
-    setSearched([]);
-  };
+
   return (
     <S.RecentSearch>
       <div className="wrapper">
         <h1>{title}</h1>
-        {recent && (
-          <button
-            onClick={() => {
-              allDeleteHandler();
-            }}
-          >
-            모두 지우기
-          </button>
-        )}
+        {canDelete && <button onClick={onAllDelete}>모두 지우기</button>}
       </div>
       <ul>
         {data?.length > 0 ? (
@@ -46,10 +27,10 @@ function SearchedKeywords({ title, data, recent, setSearched, setclickedKeyword 
               >
                 {keyword}
               </span>
-              {recent && (
+              {canDelete && (
                 <button
                   onClick={() => {
-                    deleteHandler(keyword);
+                    onDelete(keyword);
                   }}
                 >
                   <CloseIcon width="1rem" height="1rem" color={theme.palette.midGrey} />
