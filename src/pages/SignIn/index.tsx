@@ -3,12 +3,13 @@ import React from 'react';
 import * as S from './style';
 import { LogoIcon } from 'components/Icons';
 import LargeBtn from 'components/ui/LargeBtn';
+import theme from 'style/theme';
 
 function SignIn() {
   return (
     <div>
       <S.Greeting>
-        <LogoIcon color={'#2F2F33'} width={'115'} height={'19.78'} />
+        <LogoIcon color={theme.palette.black} width={'115'} height={'19.78'} />
         <S.Text>
           <div className="greeting">WECOME TO</div>
           <div className="greeting"> ONUL STORE</div>
@@ -24,7 +25,7 @@ function SignIn() {
           비밀번호 재설정
         </LargeBtn>
         <LargeBtn font color="#F5F5F5">
-          아이디/이메일 찾기
+          이메일 찾기
         </LargeBtn>
         <LargeBtn font color="#F5F5F5">
           비회원 주문조회

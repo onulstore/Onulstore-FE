@@ -5,20 +5,32 @@ import FormInput from '../FormInput';
 import LargeBtn from 'components/ui/LargeBtn';
 import { GoogleIcon } from 'components/Icons';
 import { signUpReg, SIGNUP_ERROR_MSG } from 'utils/constants';
-import axios from 'axios';
+import { useCookies } from 'react-cookie';
+import api from 'utils/Api';
 
 type FormInputs = {
   email: string;
-  pw: string;
+  password: string;
 };
 
 function SignInForm() {
+  const [cookies, setCookie, removeCookie] = useCookies();
+
   const { register, handleSubmit, setFocus, formState } = useForm<FormInputs>({
     mode: 'onBlur',
   });
 
-  const onSubmit: SubmitHandler<FormInputs> = useCallback((data) => {
+  const onSubmit: SubmitHandler<FormInputs> = useCallback(async (data) => {
     console.log(data);
+    const res = await api({
+      url: '/auth/login',
+      method: 'POST',
+      data,
+    });
+    setCookie('accessToken', res.data.accessToken, { path: '/' });
+    setCookie('refreshToken', res.data.refreshToken, { path: '/' });
+    console.log(res);
+    alert('로그인 되었습니다.');
   }, []);
 
   useEffect(() => {
@@ -47,16 +59,16 @@ function SignInForm() {
             }}
           />
           <FormInput
-            id={'pw'}
+            id={'password'}
             label={'비밀번호'}
             height={5}
-            errorMsg={formState.errors['pw']?.message}
+            errorMsg={formState.errors['password']?.message}
             inputProps={{
               type: 'password',
               placeholder: '비밀번호',
               autoComplete: 'off',
               formState: formState.isValid,
-              ...register('pw', {
+              ...register('password', {
                 //추후 보완
                 // pattern: {
                 //   value: signInReg.PW_REGEX,

@@ -68,10 +68,10 @@ export const JustForTodaySwiper = styled(Swiper)`
     align-items: center;
     justify-content: center;
     & .swiper-button-prev {
-      left: -0.4rem;
+      left: 0.1rem;
     }
     & .swiper-button-next {
-      right: -0.4rem;
+      right: 0.1rem;
     }
     & .swiper-button-next,
     .swiper-button-prev {
