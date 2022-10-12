@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as S from './style';
 import LargeBtn from 'components/ui/LargeBtn';
 import api from 'utils/Api';
+import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 
 function FindEmail() {
   const [phoneNum, setPhoneNum] = useState('');
@@ -45,4 +46,4 @@ function FindEmail() {
   );
 }
 
-export default FindEmail;
+export default SetHeaderBar(FindEmail);

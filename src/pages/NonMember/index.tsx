@@ -1,5 +1,7 @@
 import LargeBtn from 'components/ui/LargeBtn';
 import { useNavigate } from 'react-router-dom';
+import SetBottomTabBar from 'utils/HOC/SetBottomBar';
+import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 import * as S from './style';
 
 function NonMember() {
@@ -40,4 +42,4 @@ function NonMember() {
   );
 }
 
-export default NonMember;
+export default SetHeaderBar(SetBottomTabBar(NonMember));

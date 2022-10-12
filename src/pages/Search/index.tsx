@@ -3,6 +3,7 @@ import SearchedKeywords from 'components/search/SearchedKeywords';
 import SearchHeader from 'components/search/SearchHeader';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useSearchResult } from 'components/search/hooks';
+import SetBottomTabBar from 'utils/HOC/SetBottomBar';
 
 function Search() {
   const pathname: string = useLocation().pathname;
@@ -58,4 +59,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default SetBottomTabBar(Search);
