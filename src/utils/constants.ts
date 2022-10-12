@@ -23,6 +23,8 @@ export const pageName: { [key: string]: string } = {
   '/fail': 'FAIL',
   '/review': '리뷰쓰기',
   '/qna': '문의하기',
+  '/privacy-policy': ' 개인정보 처리 방침',
+  '/terms-of-service': '이용약관',
 };
 
 export const signUpReg = {
