@@ -1,6 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-import React, { useEffect } from 'react';
-import { useItemSlice } from 'store/hooks';
 // STYLED-COMPONENTS
 import GlobalStyles from './style/global';
 import theme from '../src/style/theme';
@@ -20,10 +18,7 @@ import SignUp from 'pages/SignUp';
 import SignIn from 'pages/SignIn';
 import Review from 'pages/Review';
 //COMPONENTS
-import HeaderBar from 'components/ui/navbar/HeaderBar';
-import LargeCategoryModal from 'components/item/LargeCategoryModal';
 import MyPage from 'pages/MyPage';
-import BottomTabBar from 'components/ui/navbar/BottomTabBr';
 import NonMember from 'pages/NonMember';
 import PrivateRoutes from 'components/routes/PrivataRoutes';
 import FindEmail from 'pages/FindEmail';
@@ -35,8 +30,6 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <S.Layout>
-        <HeaderBar />
-
         <Routes>
           <Route index element={<Home />} />
           <Route path="/items" element={<Items />} />
@@ -60,8 +53,6 @@ const App = () => {
             <Route path="results" element={<SearchResults />} />
           </Route>
         </Routes>
-
-        <BottomTabBar />
       </S.Layout>
     </ThemeProvider>
   );

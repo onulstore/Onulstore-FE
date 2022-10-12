@@ -1,4 +1,5 @@
 import SignUpForm from 'components/user/SignUpForm';
+import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 
 function SignUp() {
   return (
@@ -8,4 +9,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SetHeaderBar(SignUp);
