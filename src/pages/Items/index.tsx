@@ -37,7 +37,7 @@ const Items = () => {
       <S.ItemBox>
         {allItemList?.length > 0 &&
           allItemList.map((item: IallItemList, index) => {
-            return <ItemAlbum key={item.id} item={item} index={index} />;
+            return <ItemAlbum key={item.id} item={item} index={index} ranking />;
           })}
       </S.ItemBox>
     </S.ItemsContainer>
