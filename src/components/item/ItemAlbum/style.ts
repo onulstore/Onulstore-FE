@@ -10,6 +10,7 @@ export const ItemAlbumContainer = styled.div`
 
   overflow-y: auto;
   &::-webkit-scrollbar {
+    display: none;
   }
   .item-bg {
     width: 16.2rem;
@@ -37,6 +38,8 @@ export const ItemAlbumContainer = styled.div`
       box-sizing: border-box;
       padding: 1.1rem 0.9rem;
       z-index: 2;
+
+      height: 3rem;
     }
     .item-bg {
       width: 16.2rem;
