@@ -9,15 +9,15 @@ const api = axios.create({
   },
 });
 
-api.interceptors.request.use(
-  (config) => {
-    if (!config.headers['Authorization']) {
-      config.headers['Authorization'] = `Bearer ${user?.token}`;
-    }
-    return config;
-  },
-  (err) => Promise.reject(err),
-);
+// api.interceptors.request.use(
+//   (config) => {
+//     if (!config.headers['Authorization']) {
+//       config.headers['Authorization'] = `Bearer ${user?.token}`;
+//     }
+//     return config;
+//   },
+//   (err) => Promise.reject(err),
+// );
 
 api.interceptors.response.use(
   (config) => {
