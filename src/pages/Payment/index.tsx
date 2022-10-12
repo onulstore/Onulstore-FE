@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import * as S from './style';
 import PaymentForm from 'components/payment/PaymentForm';
 import axios from 'axios';
+import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 
 const Payment = () => {
   return (
@@ -11,4 +12,4 @@ const Payment = () => {
   );
 };
 
-export default Payment;
+export default SetHeaderBar(Payment);
