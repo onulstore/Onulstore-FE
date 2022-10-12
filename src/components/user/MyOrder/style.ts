@@ -34,8 +34,8 @@ export const Title = styled.div`
 
   .text {
     font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
     letter-spacing: 0.005em;
     color: ${({ theme }) => theme.palette.black};
     margin-right: 1rem;

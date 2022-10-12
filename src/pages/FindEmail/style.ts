@@ -15,14 +15,14 @@ export const Container = styled.div`
     font-weight: 600;
     letter-spacing: 0.005em;
     .title {
-      font-size: 20px;
-      line-height: 24px;
+      font-size: 2rem;
+      line-height: 2.4rem;
       color: ${({ theme }) => theme.palette.black};
       margin-bottom: 1.3rem;
     }
     .description {
-      font-size: 16px;
-      line-height: 19px;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
       color: ${({ theme }) => theme.palette.midGrey};
     }
   }
