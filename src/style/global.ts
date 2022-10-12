@@ -27,4 +27,17 @@ a{
   text-decoration: none;
   color: inherit;
 }
+/* Mobile First CSS */
+
+/* default - 가로 해상도가 768px 이하*/
+
+/* 가로 해상도가 768px 이상*/
+@media (min-width: 768px) {
+  html {font-size: 87.5%} // 14px
+}
+
+/* 가로 해상도가 1024px 이상*/
+@media (min-width: 1024px) {
+  html {font-size: 100%} // 16px
+}
 `;
