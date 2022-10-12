@@ -1,5 +1,8 @@
 import axios from 'axios';
+import { Cookies } from 'react-cookie';
 import { refresh } from 'utils/authUtils';
+
+const cookies = new Cookies();
 
 const getCookie = (name: string) => {
   let matches = document.cookie.match(
@@ -16,15 +19,20 @@ const api = axios.create({
   },
 });
 
-// api.interceptors.request.use(
-//   (config) => {
-//     if (!config.headers['Authorization']) {
-//       config.headers['Authorization'] = `Bearer ${user?.token}`;
-//     }
-//     return config;
-//   },
-//   (err) => Promise.reject(err),
-// );
+api.interceptors.request.use(
+  (config) => {
+    const token = cookies.get('accessToken');
+    // if (!config.headers['Authorization']) {
+    //   config.headers['Authorization'] = `Bearer ${user?.token}`;
+    // }
+    // return config;
+    config.headers = {
+      Authorization: ` bearer ${token}`,
+    };
+    return config;
+  },
+  (err) => Promise.reject(err),
+);
 
 api.interceptors.response.use(
   (config) => {
