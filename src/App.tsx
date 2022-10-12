@@ -30,6 +30,8 @@ import PrivateRoutes from 'components/routes/PrivataRoutes';
 import FindEmail from 'pages/FindEmail';
 import Search from 'pages/Search';
 import SearchResults from 'components/search/SearchResults';
+import Privacy from 'components/user/Privacy';
+import Terms from 'components/user/Terms';
 
 const App = () => {
   return (
@@ -61,6 +63,9 @@ const App = () => {
             <Route path="/find-email" element={<FindEmail />} />
           </Route>
           <Route path="/non-member" element={<NonMember />} />
+
+          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path="/terms-of-service" element={<Terms />} />
 
           <Route path="/search" element={<Search />}>
             <Route path="results" element={<SearchResults />} />
