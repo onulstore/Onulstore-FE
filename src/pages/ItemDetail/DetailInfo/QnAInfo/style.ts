@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 export const QandAInfoContainer = styled.div`
-  padding: 3rem 3rem 3.5rem 2.5rem;
   box-sizing: border-box;
+
+  min-height: 60rem;
+
+  position: relative;
   .q-and-a-header {
+    padding: 3rem 3rem 2.5rem 2.5rem;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     .q-and-a-count {
@@ -22,5 +27,13 @@ export const QandAInfoContainer = styled.div`
         box-sizing: border-box;
       }
     }
+  }
+  .none-msg {
+    position: absolute;
+    top: 12.2rem;
+    left: 10.9rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #a9a9a9;
   }
 `;

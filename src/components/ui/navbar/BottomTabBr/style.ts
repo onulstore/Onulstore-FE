@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const BottomTabBar = styled.nav`
   position: fixed;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  /* left: 0; */
+  width: 37.5rem;
   height: 8.1rem;
   background: #fff;
   box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.06);

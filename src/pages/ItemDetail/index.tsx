@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, Outlet, useNavigate, useParams } from 'react-router-dom';
-import { headerBarHandler } from 'store/slices/itemSlice';
-import { useAppDispatch, useItemSlice } from 'store/hooks/index';
-import { priceFomater } from 'store/slices/itemSlice';
+//STORE
+import { headerBarHandler, priceFomater } from 'store/slices/itemSlice';
+import { useAppDispatch, useItemSlice, useCartSlice } from 'store/hooks/index';
 //COMPONENTS
 import DetailNavigation from 'components/itemDetail/DetailNavigation/index';
 //STYLED
@@ -17,6 +17,8 @@ import WishListBtn from 'components/ui/WishListBtn';
 import AddWishListModal from 'components/itemDetail/AddWishListModal';
 //API
 import { getSingleItemList } from 'utils/Api/itemApi';
+import { addCart } from 'utils/Api/cartApi';
+
 const ItemDetail = () => {
   const [isAddWishListModal, setIsAddWishListModal] = useState(false);
 
@@ -24,9 +26,11 @@ const ItemDetail = () => {
 
   const dispatch = useAppDispatch();
   const { singleItemList } = useItemSlice();
+  const { userData } = useCartSlice();
 
   const addWishListModalHandler = () => {
     setIsAddWishListModal(!isAddWishListModal);
+    // dispatch
   };
 
   useEffect(() => {
