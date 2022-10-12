@@ -1,6 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-import React, { useEffect } from 'react';
-import { useItemSlice } from 'store/hooks';
 // STYLED-COMPONENTS
 import GlobalStyles from './style/global';
 import theme from '../src/style/theme';
@@ -25,22 +23,22 @@ import SignUp from 'pages/SignUp';
 import SignIn from 'pages/SignIn';
 
 //COMPONENTS
-import HeaderBar from 'components/ui/navbar/HeaderBar';
-import LargeCategoryModal from 'components/item/LargeCategoryModal';
 import MyPage from 'pages/MyPage';
-import BottomTabBar from 'components/ui/navbar/BottomTabBr';
 import NonMember from 'pages/NonMember';
-import { useCookies } from 'react-cookie';
+
+import PrivateRoutes from 'components/routes/PrivataRoutes';
+import FindEmail from 'pages/FindEmail';
+import Search from 'pages/Search';
+import SearchResults from 'components/search/SearchResults';
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <S.Layout>
-        <HeaderBar />
-
         <Routes>
           <Route index element={<Home />} />
+
           <Route path="/items" element={<Items />} />
 
           <Route path="/items/:id" element={<ItemDetail />}>
@@ -56,12 +54,18 @@ const App = () => {
           <Route path="qna" element={<QnA />} />
           <Route path="/cart" element={<Cart />} />
 
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/mypage" element={<MyPage />} />
           <Route path="/login" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route element={<PrivateRoutes />}>
+            <Route path="/my-page" element={<MyPage />} />
+            <Route path="/find-email" element={<FindEmail />} />
+          </Route>
           <Route path="/non-member" element={<NonMember />} />
+
+          <Route path="/search" element={<Search />}>
+            <Route path="results" element={<SearchResults />} />
+          </Route>
         </Routes>
-        {/* <BottomTabBar /> */}
       </S.Layout>
     </ThemeProvider>
   );

@@ -20,8 +20,8 @@ function Magazine({ data, home }: any) {
         </p>
       </S.CurationTextBox>
       <S.CurationItemBox home={home}>
-        <ItemAlbum item={data[0]} />
-        <ItemAlbum item={data[0]} />
+        <ItemAlbum item={data} index={1} />
+        <ItemAlbum item={data} index={2} />
       </S.CurationItemBox>
     </S.Magazine>
 

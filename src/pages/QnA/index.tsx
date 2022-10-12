@@ -6,6 +6,7 @@ import CommonBlackBtn from 'components/ui/CommonBlackBtn';
 import { useAppDispatch } from 'store/hooks';
 //api
 import { addQuestion } from 'utils/Api/QnA_Api';
+import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 const QnA = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -105,4 +106,4 @@ const QnA = () => {
   );
 };
 
-export default QnA;
+export default SetHeaderBar(QnA);

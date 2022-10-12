@@ -12,6 +12,8 @@ import Spinner from 'components/ui/Loading';
 
 // STYLED
 import * as S from './style';
+import SetHeaderBar from 'utils/HOC/SetHeaderBar';
+import SetBottomTabBar from 'utils/HOC/SetBottomBar';
 const Items = () => {
   const [isShowFilterSelectBox, setIsShowFilterSelectBox] = useState(false);
   const dispatch = useAppDispatch();
@@ -42,4 +44,4 @@ const Items = () => {
   );
 };
 
-export default Items;
+export default SetHeaderBar(SetBottomTabBar(Items));

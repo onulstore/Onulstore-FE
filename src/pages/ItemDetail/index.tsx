@@ -33,8 +33,6 @@ const ItemDetail = () => {
     // dispatch
   };
 
-  console.log(singleItemList);
-  console.log(userData);
   useEffect(() => {
     dispatch(getSingleItemList(params.id));
     dispatch(headerBarHandler());

@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { getUser } from 'utils/Api/cartApi';
 //hooks
 import { useAppDispatch, useCartSlice } from 'store/hooks/index';
+import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 
 const Cart = () => {
   const dispatch = useAppDispatch();
-  const { userData } = useCartSlice();
 
   useEffect(() => {
     dispatch(getUser());
@@ -15,4 +15,4 @@ const Cart = () => {
   return <div></div>;
 };
 
-export default Cart;
+export default SetHeaderBar(Cart);

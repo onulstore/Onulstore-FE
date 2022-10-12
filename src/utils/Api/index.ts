@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { refresh } from 'utils/authUtils';
 
 const getCookie = (name: string) => {
   let matches = document.cookie.match(
@@ -15,15 +16,34 @@ const api = axios.create({
   },
 });
 
+// api.interceptors.request.use(
+//   (config) => {
+//     if (!config.headers['Authorization']) {
+//       config.headers['Authorization'] = `Bearer ${user?.token}`;
+//     }
+//     return config;
+//   },
+//   (err) => Promise.reject(err),
+// );
+
 api.interceptors.response.use(
   (config) => {
     console.log(config);
 
     return config;
   },
-  (err) => {
+  async (error) => {
     alert('해당 페이지에 문제가 있습니다! Q&N에 문의 해 주세요!');
-    return Promise.reject(err);
+    const prevRequest = error?.config;
+    if (error?.response?.status === 403 && !prevRequest?.sent) {
+      prevRequest.sent = true;
+      const newAccessToken = await refresh();
+      console.log('New Access Token is', newAccessToken);
+      console.log('Previous request', prevRequest);
+      prevRequest.headers['Authorization'] = `Bearer ${newAccessToken.payload}`;
+      return;
+    }
+    return Promise.reject(error);
   },
 );
 

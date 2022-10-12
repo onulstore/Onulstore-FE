@@ -21,6 +21,7 @@ import { addBase64Img, Ibase64 } from 'store/slices/reviewSlice';
 //api
 import { IsingItemList } from 'store/slices/itemSlice';
 import { addReview } from 'utils/Api/reviewApi';
+import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 
 interface LocationStateType {
   state: IsingItemList;
@@ -151,4 +152,4 @@ const Review = () => {
     </>
   );
 };
-export default Review;
+export default SetHeaderBar(Review);
