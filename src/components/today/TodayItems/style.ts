@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const TodayItems = styled.section`
+  font-family: 'Montserrat';
   margin: 0 2rem;
   h1 {
     margin-top: 3.2rem;
@@ -35,7 +36,6 @@ export const TodayItem = styled.div`
 `;
 
 export const TodayItemInfo = styled.div`
-  font-family: 'Montserrat';
   color: ${({ theme }) => theme.palette.black};
   & .item-info {
     margin: 1.9rem 0 0.9rem;
