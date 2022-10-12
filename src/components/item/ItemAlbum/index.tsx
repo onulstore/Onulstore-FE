@@ -18,9 +18,10 @@ import dumyBg from 'assets/dumyBg.png';
 interface Props {
   item: IallItemList;
   index: number;
+  ranking?: boolean;
 }
 
-const ItemAlbum = ({ item, index }: Props) => {
+const ItemAlbum = ({ item, index, ranking }: Props) => {
   const [isLike, setIsLike] = useState(false);
   const navigate = useNavigate();
 
@@ -35,7 +36,7 @@ const ItemAlbum = ({ item, index }: Props) => {
   return (
     <S.ItemAlbumContainer onClick={moveDetailPage}>
       <section className="item-bg">
-        <div className="rank-box">{index + 1}</div>
+        {ranking && <div className="rank-box">{index + 1}</div>}
         <span className="item-icon" onClick={isLikeHandler}>
           {isLike ? <LargeLikeOnIcon /> : <LargeLikeOffIcon />}
         </span>

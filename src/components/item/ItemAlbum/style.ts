@@ -19,6 +19,7 @@ export const ItemAlbumContainer = styled.div`
 
     display: flex;
     justify-content: space-between;
+    position: relative;
     .rank-box {
       width: 3.7rem;
       height: 3.7rem;
@@ -38,6 +39,10 @@ export const ItemAlbumContainer = styled.div`
       box-sizing: border-box;
       padding: 1.1rem 0.9rem;
       z-index: 2;
+
+      position: absolute;
+      right: 0;
+      top: 0;
 
       height: 3rem;
     }
