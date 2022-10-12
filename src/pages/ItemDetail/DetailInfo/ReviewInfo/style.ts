@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 export const ReviewInfoContainer = styled.div`
   position: relative;
-
+  min-height: 60rem;
   padding: 3rem 3rem 3.5rem 2.5rem;
   box-sizing: border-box;
 

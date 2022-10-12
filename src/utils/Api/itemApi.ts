@@ -4,7 +4,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const getAllItemList = createAsyncThunk('itemSlice/getAllItemList', async () => {
   const { data } = await item({
-    url: '/products/list?page=3',
+    url: '/products/list',
     method: 'GET',
   });
   return data.content;
@@ -20,6 +20,16 @@ const getSingleItemList = createAsyncThunk(
     return data;
   },
 );
+
+//delete
+// const deleteItem = async (id: number) => {
+//   const { data } = await item({
+//     url: `/products/${id}`,
+//     method: 'DELETE',
+//   });
+//   console.log(data);
+//   return data;
+// };
 
 const getZipCode = createAsyncThunk('itemSlice/getZipCode', async (zipCode: string) => {
   const { data } = await axios({

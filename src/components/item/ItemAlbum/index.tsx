@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from 'store/hooks';
 import { priceFomater } from 'store/slices/itemSlice';
+import { IallItemList } from 'store/slices/itemSlice';
 //STYLED
 import * as S from './style';
 //ICON
@@ -15,12 +16,11 @@ import {
 import dumyBg from 'assets/dumyBg.png';
 
 interface Props {
-  item: any;
+  item: IallItemList;
   index: number;
 }
 
 const ItemAlbum = ({ item, index }: Props) => {
-  console.log(item);
   const [isLike, setIsLike] = useState(false);
   const navigate = useNavigate();
 
