@@ -46,7 +46,7 @@ function TodayItems({ data }: any) {
                     <div className="discount-wrapper">
                       <span className="discount">{item.discount}%</span>
                       <span className="price">
-                        ¥ {(item.price * (100 - item.discount)).toLocaleString('jp-JP')}
+                        ¥ {(item.price * ((100 - item.discount) / 100)).toLocaleString('jp-JP')}
                       </span>
                     </div>
                   </div>
