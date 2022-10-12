@@ -18,7 +18,7 @@ export const signUpReg = {
   PW_REGEX: new RegExp('^[a-zA-Z0-9]{8,16}$'),
   EMAIL_REGEX: new RegExp('^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
   PHONE_REGEX: new RegExp('^[0-9]{5,15}$'),
-  NAME_REGEX: new RegExp('^[ㄱ-ㅎ|가-힣]{1,9}$'),
+  NAME_REGEX: new RegExp('^[ㄱ-ㅎ|가-힣|a-z|A-Z]{1,9}$'),
 };
 
 export const SIGNUP_ERROR_MSG = {
