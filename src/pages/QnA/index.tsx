@@ -22,10 +22,10 @@ const QnA = () => {
     setContent(e.currentTarget.value);
   };
   const test = {
-    answerStatus: 'before',
+    secret: isSecret,
     content,
     title,
-    productId: state.id,
+    productId: parseInt(state.id),
   };
   const finishQuestion = () => {
     dispatch(

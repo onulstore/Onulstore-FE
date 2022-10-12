@@ -1,9 +1,17 @@
 import axios from 'axios';
 
+const getCookie = (name: string) => {
+  let matches = document.cookie.match(
+    new RegExp('(?:^|; )' + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'),
+  );
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+};
+
 const api = axios.create({
-  baseURL: 'http://onulstore.dlcpop.com/',
+  baseURL: 'http://15.164.124.56/',
   headers: {
     'content-type': 'application/json',
+    Authorization: `${document.cookie ? `Bearer ${getCookie('accessToken')}` : ''}`,
   },
 });
 

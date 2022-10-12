@@ -4,6 +4,7 @@ import { AppDispatch, RootState } from '../index';
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
+//Item
 export const useItemSlice = () => {
   const {
     isShowLargeCategoryModal,
@@ -23,11 +24,20 @@ export const useItemSlice = () => {
   };
 };
 
+//REVIEW
 export const useReviewSlice = () => {
   const { base64Store, isLoding } = useAppSelector((state) => state.review);
   return { base64Store, isLoding };
 };
-
+//QnA
 export const useQnASlice = () => {
   const {} = useAppSelector((state) => state.QnA);
+
+  return {};
+};
+//CART
+export const useCartSlice = () => {
+  const { isLoding, userData } = useAppSelector((state) => state.cart);
+
+  return { userData };
 };
