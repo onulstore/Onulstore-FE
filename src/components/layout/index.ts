@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Layout = styled.div`
-  margin: 0 auto;
   width: 37.5rem;
-  height: 87.5rem;
+  margin: auto;
   position: relative;
-  overflow-y: scroll;
+  /* padding-bottom: 8.6rem; */
+
   ::-webkit-scrollbar {
     display: none;
   }
