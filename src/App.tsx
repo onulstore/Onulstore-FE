@@ -24,6 +24,7 @@ import PrivateRoutes from 'components/routes/PrivataRoutes';
 import FindEmail from 'pages/FindEmail';
 import Search from 'pages/Search';
 import SearchResults from 'components/search/SearchResults';
+import Today from 'pages/Today';
 
 const App = () => {
   return (
@@ -52,6 +53,7 @@ const App = () => {
           <Route path="/search" element={<Search />}>
             <Route path="results" element={<SearchResults />} />
           </Route>
+          <Route path="/today" element={<Today />} />
         </Routes>
       </S.Layout>
     </ThemeProvider>
