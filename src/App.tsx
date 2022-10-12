@@ -42,7 +42,7 @@ const App = () => {
           </Route>
           <Route path="/payment" element={<Payment />} />
           <Route path="/review" element={<Review />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/sign-up" element={<SignUp />} />
           <Route element={<PrivateRoutes />}>
             <Route path="/my-page" element={<MyPage />} />
             <Route path="/find-email" element={<FindEmail />} />
