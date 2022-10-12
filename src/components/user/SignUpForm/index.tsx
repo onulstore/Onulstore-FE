@@ -41,7 +41,7 @@ function SignUpForm() {
           `님 회원가입을 축하드립니다. \n 로그인으로 이동할까요?`,
       )
     ) {
-      navigate('/login');
+      navigate('/login', { state: { data } });
     } else {
       navigate(-1);
     }
