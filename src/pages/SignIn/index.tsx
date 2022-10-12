@@ -5,6 +5,7 @@ import { LogoIcon } from 'components/Icons';
 import LargeBtn from 'components/ui/LargeBtn';
 import theme from 'style/theme';
 import { useLocation, useNavigate } from 'react-router-dom';
+import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 
 function SignIn() {
   const navigate = useNavigate();
@@ -59,4 +60,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default SetHeaderBar(SignIn);
