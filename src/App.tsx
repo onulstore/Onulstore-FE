@@ -26,6 +26,7 @@ import MyPage from 'pages/MyPage';
 import BottomTabBar from 'components/ui/navbar/BottomTabBr';
 import NonMember from 'pages/NonMember';
 import PrivateRoutes from 'components/routes/PrivataRoutes';
+import FindEmail from 'pages/FindEmail';
 
 const App = () => {
   return (
@@ -50,6 +51,7 @@ const App = () => {
 
           <Route element={<PrivateRoutes />}>
             <Route path="/my-page" element={<MyPage />} />
+            <Route path="/find-email" element={<FindEmail />} />
           </Route>
           <Route path="/login" element={<SignIn />} />
           <Route path="/non-member" element={<NonMember />} />
