@@ -27,6 +27,8 @@ import BottomTabBar from 'components/ui/navbar/BottomTabBr';
 import NonMember from 'pages/NonMember';
 import PrivateRoutes from 'components/routes/PrivataRoutes';
 import FindEmail from 'pages/FindEmail';
+import Search from 'pages/Search';
+import SearchResults from 'components/search/SearchResults';
 
 const App = () => {
   return (
@@ -48,14 +50,17 @@ const App = () => {
           <Route path="/payment" element={<Payment />} />
           <Route path="/review" element={<Review />} />
           <Route path="/signup" element={<SignUp />} />
-
           <Route element={<PrivateRoutes />}>
             <Route path="/my-page" element={<MyPage />} />
             <Route path="/find-email" element={<FindEmail />} />
           </Route>
           <Route path="/login" element={<SignIn />} />
           <Route path="/non-member" element={<NonMember />} />
+          <Route path="/search" element={<Search />}>
+            <Route path="results" element={<SearchResults />} />
+          </Route>
         </Routes>
+
         <BottomTabBar />
       </S.Layout>
     </ThemeProvider>

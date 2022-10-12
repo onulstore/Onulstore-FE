@@ -51,7 +51,7 @@ function HeaderBar() {
         )}
       </>
       <S.HeaderUl>
-        <S.HeaderLi>
+        <S.HeaderLi onClick={() => navigate('/search')}>
           <SearchIcon />
         </S.HeaderLi>
         <S.HeaderLi onClick={() => navigate('/cart')}>
