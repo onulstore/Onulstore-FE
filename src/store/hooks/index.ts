@@ -41,3 +41,33 @@ export const useCartSlice = () => {
 
   return { userData };
 };
+
+//User
+export const useUserSlice = () => {
+  const {
+    buildingName,
+    detailAddress,
+    email,
+    firstKana,
+    firstName,
+    lastKana,
+    lastName,
+    phoneNum,
+    postalCode,
+    roadAddress,
+    username,
+  } = useAppSelector((state) => state.user);
+  return {
+    buildingName,
+    detailAddress,
+    email,
+    firstKana,
+    firstName,
+    lastKana,
+    lastName,
+    phoneNum,
+    postalCode,
+    roadAddress,
+    username,
+  };
+};
