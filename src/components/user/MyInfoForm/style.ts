@@ -5,15 +5,21 @@ export const FormBox = styled.div`
   margin: 1rem;
   font-family: 'Pretendard';
   font-style: normal;
+  .name-wrapper {
+    display: flex;
+    flex-grow: 1;
+    .name {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: 0.005em;
+      color: #ffffff;
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+  }
 `;
-export const UserName = styled.div`
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
-  letter-spacing: 0.005em;
-  color: #ffffff;
-  flex-grow: 1;
-`;
+
 export const Label = styled.label`
   width: 8rem;
   height: 17px;
