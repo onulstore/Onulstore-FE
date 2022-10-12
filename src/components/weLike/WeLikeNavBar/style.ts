@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const WeLikeNavBar = styled.nav`
-  margin: 1.3rem 7.9rem;
+  padding: 1.3rem 7.9rem;
   font-family: 'Montserrat';
   font-size: 1.6rem;
   color: ${({ theme }) => theme.palette.midGrey};
+  border-bottom: 1px solid ${({ theme }) => theme.palette.lightMidGrey};
   ul {
     display: flex;
     justify-content: space-evenly;
@@ -14,6 +15,7 @@ export const WeLikeNavBar = styled.nav`
   li {
     width: 100%;
     display: flex;
+    line-height: 150%;
     align-items: center;
     text-align: center;
   }
