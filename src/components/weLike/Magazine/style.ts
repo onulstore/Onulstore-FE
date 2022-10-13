@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
 export const Magazine = styled.div<{ home?: boolean }>`
-  margin-bottom: ${({ home }) => (home ? '' : '10rem')};
+  margin-bottom: ${({ home }) => (home ? '' : '4.5rem')};
+  .img-container {
+    width: 37.5rem;
+    height: 37.5rem;
+  }
   img {
     width: 100%;
-    height: 46rem;
+    height: 100%;
+    object-fit: cover;
   }
 `;
 export const CurationTextBox = styled.div`
@@ -49,7 +54,7 @@ export const CurationTextBox = styled.div`
 `;
 export const CurationItemBox = styled.div<{ home?: boolean }>`
   width: 100%;
-  margin: ${({ home }) => (home ? '' : '0 2rem')};
+  padding: ${({ home }) => (home ? '' : '0 2rem')};
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ home }) => (home ? 'space-between' : 'space-evenly')};
 `;

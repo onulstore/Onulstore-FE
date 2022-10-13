@@ -1,13 +1,14 @@
+import magazineImg from 'assets/images/we-like_magazine_1.png';
 import ItemAlbum from 'components/item/ItemAlbum';
-import React from 'react';
-import { useItemSlice } from 'store/hooks';
+import { ITEMS } from 'utils/test_constants';
 import * as S from './style';
 
 function Magazine({ data, home }: any) {
-  // 임시 type
   return (
     <S.Magazine home={home}>
-      <img src="src/assets/images/we-like_magazine_1.png" alt="magazine" />
+      <div className="img-container">
+        <img src={magazineImg} alt="magazine" />
+      </div>
       <S.CurationTextBox>
         <h2>
           <span>향기가 있어 더욱 즐거운 드라이브</span>
@@ -20,8 +21,8 @@ function Magazine({ data, home }: any) {
         </p>
       </S.CurationTextBox>
       <S.CurationItemBox home={home}>
-        <ItemAlbum item={data} index={1} />
-        <ItemAlbum item={data} index={2} />
+        <ItemAlbum item={ITEMS[0]} index={0} />
+        <ItemAlbum item={ITEMS[0]} index={1} />
       </S.CurationItemBox>
     </S.Magazine>
 
