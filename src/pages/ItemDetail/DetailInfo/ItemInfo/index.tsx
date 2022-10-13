@@ -11,9 +11,9 @@ const ItemInfo = () => {
 
   return (
     <S.ItemInfoContainer>
-      <img src={itemDumyImg[dumyImageIndex]?.itemDetail1} width="375" />
-      <img src={itemDumyImg[dumyImageIndex]?.itemDetail2} width="375" />
-      <img src={itemDumyImg[dumyImageIndex]?.itemDetail3} width="375" />
+      <img src={itemDumyImg[dumyImageIndex]?.itemDetail1} className="img-box" />
+      <img src={itemDumyImg[dumyImageIndex]?.itemDetail2} className="img-box" />
+      <img src={itemDumyImg[dumyImageIndex]?.itemDetail3} className="img-box" />
     </S.ItemInfoContainer>
   );
 };
