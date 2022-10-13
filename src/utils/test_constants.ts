@@ -2,7 +2,12 @@ import curationImg1 from 'assets/images/we-like_our-picks_img_1.png';
 import curationImg2 from 'assets/images/we-like_our-picks_img_2.png';
 import curationImg3 from 'assets/images/we-like_our-picks_img_3.png';
 import curationImg4 from 'assets/images/we-like_our-picks_img_4.png';
+import curationImg5 from 'assets/images/we-like_our-picks_img_5.png';
+import curationImg6 from 'assets/images/we-like_our-picks_img_6.png';
+import curationImg7 from 'assets/images/we-like_our-picks_img_7.png';
+import curationImg8 from 'assets/images/we-like_our-picks_img_8.png';
 import todayTumbnail1 from 'assets/images/today_thumbnail_1.png';
+import ourPicksTumbnail1 from 'assets/images/we-like_our-picks_thumbnail_1.png';
 
 export const BANNER: { [key: string]: string }[] = [
   {
@@ -53,6 +58,7 @@ export const TODAY_ITEMS: { [key: string]: string | number | {}[] }[] = [
 export const OUR_PICKS: any = [
   {
     id: 1,
+    createDate: '2022.09.26',
     contents: [
       {
         id: 1,
@@ -84,6 +90,40 @@ export const OUR_PICKS: any = [
       },
     ],
   },
+  {
+    id: 2,
+    createDate: '2022.09.19',
+    contents: [
+      {
+        id: 1,
+        title: '9월 4째주 pick - meeLabs 에어핏 배게',
+        curationImg: curationImg5,
+        content:
+          '휴대폰 때문인지, 컴퓨터 때문인지 아니면 잘못된 잠버릇 때문인지.. 심해지는 거북복에 좀처럼 깊은 잠을 잘 수 없는 요즘의 저입니다. 그래서 오늘은 저의 새로운 거북목 베게, 목디스크베게인 미랩스의 에어핏 배게의 후기입니다.',
+      },
+      {
+        id: 2,
+        title: '9월 4째주 pick - meeLabs 에어핏 배게',
+        curationImg: curationImg6,
+        content:
+          '우선 언박싱해보니 큰 박스를 열어보니 베게와 커버가 오염을 방지하기 위한 비닐과 부직포에 쌓여있었구요. 오염방지용 부직포를 벗겨내니 보라색과 삼각셀의 구조가 강렬하게 눈을 끌었습니다. 베게의 모양은 목 부분은 높고, 머리 부분은 낮은 일반적인 C커브형입니다. 목 끝 부분까지 자연스럽게 받쳐주도록, 머리와 목이 닿는 부분을 살짝 들어가도록 디자인 되어있습니다. 이렇게 인체공학적으로 설계된 ',
+      },
+      {
+        id: 3,
+        title: '9월 4째주 pick - meeLabs 에어핏 배게',
+        curationImg: curationImg7,
+        content:
+          'C커브존이 목과 어깨를 안정적으로 받쳐주기 때문에, 어떤 자세에서도 목의 각도를 바르게 유지 시켜준다고 합니다. 높이는 머리를 받칠 가장 낮은 곳이 5cm,  가장 높은 곳이 8cm입니다. 실제로 목에 부담없는 자연스럽고 이상적인 높이가 8cm라고 하네요. 실제로 낮은 베게에서는 잠을 못자는 제가, 편안하게 잠든 것으로 봐서 8cm는 이상 적인 높이가 맞는 거 같습니다 :)',
+      },
+      {
+        id: 4,
+        title: '9월 4째주 pick - meeLabs 에어핏 배게',
+        curationImg: curationImg8,
+        content:
+          '높은 베게를 선호하는 저는 좋았지만, 낮은 베게를 선호하는 남편도 마음에 든다고 하네요. 크게 높게 느끼지 않으면서도 머리와 목이 매우 편하다고 합니다. 그동안 메모리폼, 라텍스 베게를 사용해도 편하지 않는 분들이라면 TPE의 친환경소재로 제작된 미랩스 에어핏배게를 한번 사용해보시라 추천드리고싶습니다. 확실히 써보면 다른제품과의 차별점을 느끼실 수 있으리라 장담하니까요!',
+      },
+    ],
+  },
 ];
 
 export const ITEMS: any = [
@@ -97,7 +137,7 @@ export const ITEMS: any = [
       id: 0,
     },
     content: '픽스 손목 보호대',
-    id: 0,
+    id: 57,
     originalPrice: 3500,
     price: 3150,
     productImage: [
@@ -106,6 +146,30 @@ export const ITEMS: any = [
       },
     ],
     productName: '픽스 손목 보호대',
+    productStatus: 'NEW',
+    purchaseCount: 0,
+    quantity: 0,
+    wishListCount: 55,
+  },
+  {
+    brand: {
+      brandName: 'meelabs',
+      id: 0,
+    },
+    category: {
+      categoryName: null,
+      id: 0,
+    },
+    content: '픽스 손목 보호대',
+    id: 58,
+    originalPrice: 3500,
+    price: 3150,
+    productImage: [
+      {
+        imageName: ourPicksTumbnail1,
+      },
+    ],
+    productName: '에어핏 배게',
     productStatus: 'NEW',
     purchaseCount: 0,
     quantity: 0,
