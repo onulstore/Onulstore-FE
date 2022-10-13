@@ -7,6 +7,9 @@ import { GoogleIcon } from 'components/Icons';
 import { signUpReg, SIGNUP_ERROR_MSG } from 'utils/constants';
 import { useCookies } from 'react-cookie';
 import api from 'utils/Api';
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from 'store/hooks';
+import { setUserInfo } from 'store/slices/userSlice';
 
 type FormInputs = {
   email: string;
@@ -14,23 +17,39 @@ type FormInputs = {
 };
 
 function SignInForm() {
-  const [cookies, setCookie, removeCookie] = useCookies();
+  const [, setCookie] = useCookies();
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const user = useAppSelector((state) => state.user);
 
   const { register, handleSubmit, setFocus, formState } = useForm<FormInputs>({
     mode: 'onBlur',
   });
 
-  const onSubmit: SubmitHandler<FormInputs> = useCallback(async (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<FormInputs> = useCallback(async (inputvalue) => {
+    console.log(inputvalue);
     const res = await api({
       url: '/auth/login',
       method: 'POST',
-      data,
+      data: inputvalue,
     });
     setCookie('accessToken', res.data.accessToken, { path: '/' });
     setCookie('refreshToken', res.data.refreshToken, { path: '/' });
-    console.log(res);
+    // console.log(res);
     alert('로그인 되었습니다.');
+
+    const membersRes = await api({
+      url: 'members',
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${res.data.accessToken}`,
+      },
+    });
+    const userInfo = membersRes.data;
+    console.log('user', userInfo);
+    dispatch(setUserInfo(userInfo));
+
+    navigate(-1);
   }, []);
 
   useEffect(() => {

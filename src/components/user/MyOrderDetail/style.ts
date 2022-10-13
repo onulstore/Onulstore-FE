@@ -4,8 +4,8 @@ interface Props {
   point?: boolean;
 }
 export const Box = styled.div<Props>`
-  width: 83px;
-  height: 71px;
+  width: 8.3rem;
+  height: 7.1rem;
   background: #fafafc;
   display: flex;
   flex-direction: column;
@@ -20,12 +20,12 @@ export const Box = styled.div<Props>`
 
   .count {
     font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 2rem;
+    line-height: 2.4rem;
   }
   .description {
     font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
   }
 `;

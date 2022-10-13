@@ -41,7 +41,7 @@ function SignUpForm() {
           `님 회원가입을 축하드립니다. \n 로그인으로 이동할까요?`,
       )
     ) {
-      navigate('/login');
+      navigate('/login', { state: { data } });
     } else {
       navigate(-1);
     }
@@ -205,11 +205,11 @@ function SignUpForm() {
         <S.Terms>
           아래의 회원가입 버튼을 누르면,
           <br />
-          <a href="" title="이용규약">
+          <a onClick={() => navigate('/terms-of-service')} title="이용규약">
             이용규약
           </a>
           과
-          <a href="" title="프라이버시정책">
+          <a onClick={() => navigate('/privacy-policy')} title="프라이버시정책">
             프라이버시 정책
           </a>
           에 동의한 것이 됩니다.

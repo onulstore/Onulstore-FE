@@ -1,7 +1,7 @@
 import React from 'react';
-
+import * as S from './style';
 const SmallCategoryModal = () => {
-  return <div></div>;
+  return <S.SmallCategoryModalContainer></S.SmallCategoryModalContainer>;
 };
 
 export default SmallCategoryModal;

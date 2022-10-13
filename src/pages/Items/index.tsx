@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useItemSlice, useAppDispatch } from 'store/hooks';
 import { getAllItemList } from 'utils/Api/itemApi';
-
+import { IallItemList } from 'store/slices/itemSlice';
 //COMPONENTS
 import NowPositionBar from 'components/item/NowPositionBar';
 import ItemFilterBar from 'components/item/ItemFilterBar';
@@ -12,6 +12,8 @@ import Spinner from 'components/ui/Loading';
 
 // STYLED
 import * as S from './style';
+import SetHeaderBar from 'utils/HOC/SetHeaderBar';
+import SetBottomTabBar from 'utils/HOC/SetBottomBar';
 const Items = () => {
   const [isShowFilterSelectBox, setIsShowFilterSelectBox] = useState(false);
   const dispatch = useAppDispatch();
@@ -34,12 +36,12 @@ const Items = () => {
       {isShowFilterSelectBox && <FilterSelectBox />}
       <S.ItemBox>
         {allItemList?.length > 0 &&
-          allItemList.map((item: any, index) => {
-            return <ItemAlbum key={item.id} item={item} index={index} />;
+          allItemList.map((item: IallItemList, index) => {
+            return <ItemAlbum key={item.id} item={item} index={index} ranking />;
           })}
       </S.ItemBox>
     </S.ItemsContainer>
   );
 };
 
-export default Items;
+export default SetHeaderBar(SetBottomTabBar(Items));

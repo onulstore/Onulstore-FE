@@ -13,13 +13,13 @@ export const Box = styled.div<{ count: number }>`
   letter-spacing: 0.005em;
   .count {
     font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 2rem;
+    line-height: 2.4rem;
   }
   .description {
     font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
     margin-right: 1.9rem;
   }
 `;

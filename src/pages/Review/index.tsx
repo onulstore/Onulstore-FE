@@ -21,6 +21,7 @@ import { addBase64Img, Ibase64 } from 'store/slices/reviewSlice';
 //api
 import { IsingItemList } from 'store/slices/itemSlice';
 import { addReview } from 'utils/Api/reviewApi';
+import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 
 interface LocationStateType {
   state: IsingItemList;
@@ -77,14 +78,14 @@ const Review = () => {
       alert('리뷰를 10자 이상 입력 해 주세요!');
       return;
     }
-    // dispatch(
-    //   addReview({
-    //     productId: state.id,
-    //     rate: rating,
-    //     title: '타이틀은 사용되지 않음',
-    //     content: review,
-    //   }),
-    // );
+    dispatch(
+      addReview({
+        productId: state.id,
+        rate: rating,
+        title: '타이틀은 사용되지 않음',
+        content: review,
+      }),
+    );
     console.log(test);
     alert('리뷰등록이 완료되었습니다');
     navigate(`/items/${state.id}/reviewinfo`);
@@ -151,4 +152,4 @@ const Review = () => {
     </>
   );
 };
-export default Review;
+export default SetHeaderBar(Review);

@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+//Api
+import { getUser } from 'utils/Api/cartApi';
+//hooks
+import { useAppDispatch, useCartSlice } from 'store/hooks/index';
+import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 
-function Cart() {
-  return <div>Cart</div>;
-}
+const Cart = () => {
+  const dispatch = useAppDispatch();
 
-export default Cart;
+  useEffect(() => {
+    dispatch(getUser());
+  }, []);
+
+  return <div></div>;
+};
+
+export default SetHeaderBar(Cart);

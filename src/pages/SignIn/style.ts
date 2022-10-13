@@ -14,13 +14,13 @@ export const Text = styled.div`
     letter-spacing: 0.005em;
     &:first-child {
       font-weight: 400;
-      font-size: 20px;
-      line-height: 24px;
+      font-size: 2rem;
+      line-height: 2.4rem;
     }
     &:last-child {
       font-weight: 500;
-      font-size: 34px;
-      line-height: 40px;
+      font-size: 3.4rem;
+      line-height: 4rem;
     }
   }
 `;

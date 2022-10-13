@@ -3,14 +3,28 @@ import { nanoid } from 'nanoid';
 export const pageName: { [key: string]: string } = {
   // key 이름은 페이지의 path가 정확히 정해지면 수정할 예정
   '/login': 'LOGIN',
-  '/join': 'JOIN',
-  '/mypage': 'MY PAGE',
-  '/today': 'TODAY',
-  '/welike': 'WE LIKE',
-  '/detail': '',
+  '/sign-up': 'JOIN',
+  '/my-page': 'MY PAGE',
+  '/user-edit': '회원정보 변경',
+  '/my-coupons': '내 쿠폰',
+  '/my-points': '내 포인트',
+  '/my-orders': '내 주문 내역',
+  '/my-reviews': 'MY REVIEWS',
+  '/find-email': '이메일 찾기',
+  '/my-qna': 'MY Q&A',
   '/cart': 'CART',
+  '/payment': 'CHECKOUT',
+  '/order-confirm': 'APPOINTENT',
+  '/today': 'TODAY',
+  '/we-like': 'WE LIKE',
+  '/wish-list': 'WISH LIST',
+  '/recent': 'RECENT',
+  '/completed': 'COMPLETED',
+  '/fail': 'FAIL',
   '/review': '리뷰쓰기',
   '/qna': '문의하기',
+  '/privacy-policy': ' 개인정보 처리 방침',
+  '/terms-of-service': '이용약관',
 };
 
 export const signUpReg = {
@@ -18,7 +32,7 @@ export const signUpReg = {
   PW_REGEX: new RegExp('^[a-zA-Z0-9]{8,16}$'),
   EMAIL_REGEX: new RegExp('^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
   PHONE_REGEX: new RegExp('^[0-9]{5,15}$'),
-  NAME_REGEX: new RegExp('^[ㄱ-ㅎ|가-힣]{1,9}$'),
+  NAME_REGEX: new RegExp('^[ㄱ-ㅎ|가-힣|a-z|A-Z]{1,9}$'),
 };
 
 export const SIGNUP_ERROR_MSG = {
