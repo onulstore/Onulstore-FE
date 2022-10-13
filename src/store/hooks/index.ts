@@ -13,6 +13,7 @@ export const useItemSlice = () => {
     isDetailPage,
     isLoding,
     searchAddress,
+    dumyImageIndex,
   } = useAppSelector((state) => state.item);
   return {
     isShowLargeCategoryModal,
@@ -21,6 +22,7 @@ export const useItemSlice = () => {
     isDetailPage,
     searchAddress,
     isLoding,
+    dumyImageIndex,
   };
 };
 
@@ -40,4 +42,34 @@ export const useCartSlice = () => {
   const { isLoding, userData } = useAppSelector((state) => state.cart);
 
   return { userData };
+};
+
+//User
+export const useUserSlice = () => {
+  const {
+    buildingName,
+    detailAddress,
+    email,
+    firstKana,
+    firstName,
+    lastKana,
+    lastName,
+    phoneNum,
+    postalCode,
+    roadAddress,
+    username,
+  } = useAppSelector((state) => state.user);
+  return {
+    buildingName,
+    detailAddress,
+    email,
+    firstKana,
+    firstName,
+    lastKana,
+    lastName,
+    phoneNum,
+    postalCode,
+    roadAddress,
+    username,
+  };
 };
