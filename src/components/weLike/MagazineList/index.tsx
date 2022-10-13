@@ -5,7 +5,7 @@ import ItemAlbum from 'components/item/ItemAlbum';
 import { ITEMS } from 'utils/test_constants';
 import * as S from './style';
 
-export function Magazine({ data, home }: any) {
+export function MagazineList({ data, home }: any) {
   return (
     <>
       <S.Magazine home={home}>
@@ -114,4 +114,4 @@ export function TestMagazine({ data, home }: any) {
   );
 }
 
-// export default Magazine;
+// export default MagazineList;
