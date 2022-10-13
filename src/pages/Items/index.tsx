@@ -14,6 +14,8 @@ import Spinner from 'components/ui/Loading';
 import * as S from './style';
 import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 import SetBottomTabBar from 'utils/HOC/SetBottomBar';
+
+//DUMY
 const Items = () => {
   const [isShowFilterSelectBox, setIsShowFilterSelectBox] = useState(false);
   const dispatch = useAppDispatch();

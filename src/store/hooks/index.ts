@@ -13,6 +13,7 @@ export const useItemSlice = () => {
     isDetailPage,
     isLoding,
     searchAddress,
+    dumyImageIndex,
   } = useAppSelector((state) => state.item);
   return {
     isShowLargeCategoryModal,
@@ -21,6 +22,7 @@ export const useItemSlice = () => {
     isDetailPage,
     searchAddress,
     isLoding,
+    dumyImageIndex,
   };
 };
 
