@@ -32,6 +32,7 @@ import Search from 'pages/Search';
 import SearchResults from 'components/search/SearchResults';
 import Privacy from 'components/user/Privacy';
 import Terms from 'components/user/Terms';
+import Today from 'pages/Today';
 
 const App = () => {
   return (
@@ -70,6 +71,7 @@ const App = () => {
           <Route path="/search" element={<Search />}>
             <Route path="results" element={<SearchResults />} />
           </Route>
+          <Route path="/today" element={<Today />} />
         </Routes>
       </S.Layout>
     </ThemeProvider>
