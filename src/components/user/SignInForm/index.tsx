@@ -52,6 +52,13 @@ function SignInForm() {
     navigate(-1);
   }, []);
 
+  const googleLogin = async () => {
+    const res = await api({
+      url: 'oauth2/authorization/google',
+      method: 'GET',
+    });
+    console.log(res);
+  };
   useEffect(() => {
     setFocus('email', { shouldSelect: true });
   }, []);
@@ -100,7 +107,7 @@ function SignInForm() {
         </S.GapWrapper>
         <S.GapWrapper>
           <LargeBtn type="submit">로그인</LargeBtn>
-          <LargeBtn font color="#F5F5F5">
+          <LargeBtn font color="#F5F5F5" onClick={() => googleLogin()}>
             <GoogleIcon />
             <p>Google 계정으로 로그인</p>
           </LargeBtn>
