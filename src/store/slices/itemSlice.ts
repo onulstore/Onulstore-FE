@@ -62,6 +62,7 @@ interface StateType {
   isDetailPage: boolean;
   isLike: boolean;
   searchAddress: IsearchAddress[];
+  dumyImageIndex: number;
 }
 
 const initialState: StateType = {
@@ -74,6 +75,7 @@ const initialState: StateType = {
   singleItemList: {},
   error: '요청실패!',
   searchAddress: [],
+  dumyImageIndex: 0,
 };
 
 const itemSlice = createSlice({
@@ -85,6 +87,9 @@ const itemSlice = createSlice({
     },
     headerBarHandler: (state) => {
       state.isDetailPage = !state.isDetailPage;
+    },
+    getDumyImageIndex: (state, action: PayloadAction<number>) => {
+      state.dumyImageIndex = action.payload;
     },
   },
 
@@ -120,6 +125,6 @@ const itemSlice = createSlice({
   },
 });
 
-export const { largeCategoryModalHandler, headerBarHandler } = itemSlice.actions;
+export const { largeCategoryModalHandler, headerBarHandler, getDumyImageIndex } = itemSlice.actions;
 
 export default itemSlice.reducer;

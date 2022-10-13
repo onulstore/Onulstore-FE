@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { Cookies } from 'react-cookie';
-import { refresh } from 'utils/authUtils';
 
 const cookies = new Cookies();
 
@@ -12,44 +11,53 @@ const getCookie = (name: string) => {
 };
 
 const api = axios.create({
-  baseURL: 'http://15.164.124.56/',
+  baseURL: 'https://onulstore.breon.ml',
   headers: {
     'content-type': 'application/json',
-    Authorization: `${document.cookie ? `Bearer ${getCookie('accessToken')}` : ''}`,
   },
 });
 
-api.interceptors.request.use(
-  (config) => {
-    const token = cookies.get('accessToken');
-    // if (!config.headers['Authorization']) {
-    //   config.headers['Authorization'] = `Bearer ${user?.token}`;
-    // }
-    // return config;
-    config.headers = {
-      Authorization: ` bearer ${token}`,
-    };
-    return config;
-  },
-  (err) => Promise.reject(err),
-);
+api.interceptors.request.use((config) => {
+  const token = cookies.get('accessToken');
+  config.headers = {
+    Authorization: ` Bearer ${token}`,
+  };
+  return config;
+});
 
 api.interceptors.response.use(
   (config) => {
     console.log(config);
-
     return config;
   },
   async (error) => {
-    alert('해당 페이지에 문제가 있습니다! Q&N에 문의 해 주세요!');
-    const prevRequest = error?.config;
-    if (error?.response?.status === 403 && !prevRequest?.sent) {
-      prevRequest.sent = true;
-      const newAccessToken = await refresh();
-      console.log('New Access Token is', newAccessToken);
+    console.log('해당 페이지에 문제가 있습니다! Q&N에 문의 해 주세요!');
+    if (error?.response?.status === 403) {
+      const prevRequest = error?.config;
+      const actoken = cookies.get('accessToken');
+      const retoken = cookies.get('refreshToken');
+
+      const { new_at, new_rt }: any = await api
+        .post('auth/refresh', {
+          accessToken: actoken,
+          refreshToken: retoken,
+        })
+        .then((res) => {
+          return {
+            new_at: res.data.accessToken,
+            new_rt: res.data.refreshToken,
+          };
+        })
+        .catch((err) => {
+          //로그아웃 처리
+        });
+      prevRequest.headers['Authorization'] = `Bearer ${new_at}`;
+      //setToken
+
+      console.log('New Access Token is', new_at);
+      console.log('New refresh Token is', new_rt);
       console.log('Previous request', prevRequest);
-      prevRequest.headers['Authorization'] = `Bearer ${newAccessToken.payload}`;
-      return;
+      // return request(prevRequest)
     }
     return Promise.reject(error);
   },

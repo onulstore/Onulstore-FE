@@ -44,7 +44,8 @@ export const AddWishListModalContainer = styled.div`
   }
   .btn-container {
     display: flex;
-
+    position: absolute;
+    bottom: 0;
     .btn {
       width: 15.1rem;
       padding: 2rem 2.8rem;
