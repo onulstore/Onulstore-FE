@@ -6,8 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import * as S from './style';
 
-export const OurPicksSwiper = (props: any) => {
-  const { data } = props;
+export const OurPicksSwiper = ({ data }: any) => {
   return (
     <S.OurPicksSwiper
       modules={[Navigation, Pagination, Autoplay]}
@@ -16,7 +15,7 @@ export const OurPicksSwiper = (props: any) => {
       navigation
       pagination={{ type: 'fraction' }}
     >
-      {data[0].contents?.map((curation: any, index: number) => {
+      {data.contents?.map((curation: any, index: number) => {
         const firstTitle = curation.title.split(' - ');
         return (
           <S.OurPicksSwiperSlide key={curation.id}>

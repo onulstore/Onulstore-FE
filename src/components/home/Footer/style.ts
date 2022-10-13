@@ -67,3 +67,7 @@ export const OnulInfo = styled.p`
   line-height: 130%;
   opacity: 0.5;
 `;
+
+export const Instar = styled.div`
+  padding-top: 3rem;
+`;
