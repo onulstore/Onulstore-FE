@@ -7,7 +7,7 @@ import * as S from './style';
 const Instar = () => {
   return (
     <S.Instar>
-      <Section title={'INSTAGRAM'}>
+      <Section title={'INSTAGRAM'} instar>
         <Instargram />
       </Section>
     </S.Instar>
