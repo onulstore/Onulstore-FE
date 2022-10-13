@@ -1,18 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Section from '../Section';
-import Instargram from './Instargram';
 import * as S from './style';
-
-const Instar = () => {
-  return (
-    <S.Instar>
-      <Section title={'INSTAGRAM'} instar>
-        <Instargram />
-      </Section>
-    </S.Instar>
-  );
-};
 
 const ContactInfo = () => {
   return (
@@ -94,7 +82,6 @@ const OnulInfo = () => {
 function Footer() {
   return (
     <S.Footer>
-      <Instar />
       <ContactInfo />
       <CustomerService />
       <AboutOnul />
