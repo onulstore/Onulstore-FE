@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
 export const Magazine = styled.div<{ home?: boolean }>`
-  margin-bottom: ${({ home }) => (home ? '' : '10rem')};
+  margin-bottom: ${({ home }) => (home ? '' : '4.5rem')};
+  .img-container {
+    width: 100%;
+    height: 100%;
+  }
   img {
     width: 100%;
-    height: 46rem;
+    height: 100%;
+    object-fit: cover;
   }
 `;
 export const CurationTextBox = styled.div`
@@ -37,11 +42,8 @@ export const CurationTextBox = styled.div`
     word-break: keep-all;
   }
   p {
-    width: 100%;
-    margin: 1.4rem 0 1.8rem;
-    box-sizing: content-box;
+    margin: 1.4rem 2rem 1.8rem 0;
     font-family: 'Montserrat';
-    font-weight: 400;
     font-size: 1.4rem;
     line-height: 1.7rem;
     word-break: keep-all;
@@ -49,7 +51,7 @@ export const CurationTextBox = styled.div`
 `;
 export const CurationItemBox = styled.div<{ home?: boolean }>`
   width: 100%;
-  margin: ${({ home }) => (home ? '' : '0 2rem')};
+  padding: ${({ home }) => (home ? '' : '0 2rem')};
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ home }) => (home ? 'space-between' : 'space-evenly')};
 `;

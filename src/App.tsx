@@ -33,6 +33,9 @@ import SearchResults from 'components/search/SearchResults';
 import Privacy from 'components/user/Privacy';
 import Terms from 'components/user/Terms';
 import Today from 'pages/Today';
+import WeLike from 'pages/WeLike';
+import OurPicks from 'components/weLike/OurPicks';
+import Magazine from 'pages/WeLike/Magazine';
 
 const App = () => {
   return (
@@ -72,6 +75,10 @@ const App = () => {
             <Route path="results" element={<SearchResults />} />
           </Route>
           <Route path="/today" element={<Today />} />
+          <Route path="/we-like" element={<WeLike />}>
+            <Route path="magazine" element={<Magazine />} />
+            <Route path="our-picks" element={<OurPicks />} />
+          </Route>
         </Routes>
       </S.Layout>
     </ThemeProvider>
