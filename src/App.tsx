@@ -32,6 +32,7 @@ import Search from 'pages/Search';
 import SearchResults from 'components/search/SearchResults';
 import Privacy from 'components/user/Privacy';
 import Terms from 'components/user/Terms';
+import Recent from 'pages/Recent';
 
 const App = () => {
   return (
@@ -60,6 +61,7 @@ const App = () => {
           <Route path="/sign-up" element={<SignUp />} />
           <Route element={<PrivateRoutes />}>
             <Route path="/my-page" element={<MyPage />} />
+            <Route path="/recent" element={<Recent />} />
             <Route path="/find-email" element={<FindEmail />} />
           </Route>
           <Route path="/non-member" element={<NonMember />} />
