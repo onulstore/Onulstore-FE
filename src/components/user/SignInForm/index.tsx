@@ -49,7 +49,7 @@ function SignInForm() {
     console.log('user', userInfo);
     dispatch(setUserInfo(userInfo));
 
-    // navigate(-1);
+    navigate(-1);
   }, []);
 
   useEffect(() => {

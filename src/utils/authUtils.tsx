@@ -37,12 +37,3 @@ export const refresh = async () => {
   console.log('AuthService: refresh response is', response.data.accessToken);
   return response.data.accessToken;
 };
-
-export const logOut = () => {
-  const [cookies, setCookie, removeCookie] = useCookies();
-  const navigate = useNavigate();
-
-  removeCookie('accessToken');
-  removeCookie('refreshToken');
-  navigate(0); // 새로고침
-};

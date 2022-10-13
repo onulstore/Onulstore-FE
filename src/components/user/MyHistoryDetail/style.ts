@@ -14,8 +14,8 @@ export const Container = styled.div<Props>`
   color: ${({ theme }) => theme.palette.darkGrey};
   font-family: 'Pretendard';
   font-style: normal;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   letter-spacing: 0.005em;
 
   .page-name {
