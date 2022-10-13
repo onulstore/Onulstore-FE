@@ -31,7 +31,7 @@ const ItemAlbum = ({ item, index, ranking }: Props) => {
   };
 
   const moveDetailPage = () => {
-    navigate(`/items/${item.id}`, { state: item });
+    navigate(`/items/${item.id}/iteminfo`, { state: item });
   };
   return (
     <S.ItemAlbumContainer onClick={moveDetailPage}>
