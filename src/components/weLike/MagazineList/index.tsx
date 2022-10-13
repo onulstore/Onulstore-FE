@@ -33,10 +33,10 @@ export function MagazineList({ data, home }: any) {
   );
 }
 
-export function TestMagazine({ data, home }: any) {
+export function TestMagazine() {
   return (
     <>
-      <S.Magazine home={home}>
+      <S.Magazine>
         <div className="img-container">
           <img src={magazineImg1} alt="magazine" />
         </div>
@@ -52,13 +52,13 @@ export function TestMagazine({ data, home }: any) {
             달리는 여정 속 어디든 좋은 향기를 꽉 채워보아요.
           </p>
         </S.CurationTextBox>
-        <S.CurationItemBox home={home}>
+        <S.CurationItemBox>
           <ItemAlbum item={ITEMS[1]} index={11} />
           <ItemAlbum item={ITEMS[2]} index={13} />
         </S.CurationItemBox>
       </S.Magazine>
 
-      <S.Magazine home={home}>
+      <S.Magazine>
         <div className="img-container">
           <img src={magazineImg2} alt="magazine" />
         </div>
@@ -71,13 +71,13 @@ export function TestMagazine({ data, home }: any) {
             Around ann만의 다채로운 컬러로 표현된 사랑스러운 무드를 소개합니다.
           </p>
         </S.CurationTextBox>
-        <S.CurationItemBox home={home}>
+        <S.CurationItemBox>
           <ItemAlbum item={ITEMS[3]} index={4} />
           <ItemAlbum item={ITEMS[4]} index={5} />
         </S.CurationItemBox>
       </S.Magazine>
 
-      <S.Magazine home={home}>
+      <S.Magazine>
         <div className="img-container">
           <img src={magazineImg3} alt="magazine" />
         </div>
@@ -91,7 +91,7 @@ export function TestMagazine({ data, home }: any) {
             건강한 피부로 가는 지름길. 사랑하는 나 또는 누군가를 위해 Dr.esthe를 선물해보세요.
           </p>
         </S.CurationTextBox>
-        <S.CurationItemBox home={home}>
+        <S.CurationItemBox>
           <ItemAlbum item={ITEMS[5]} index={21} />
           <ItemAlbum item={ITEMS[6]} index={24} />
         </S.CurationItemBox>
