@@ -1,5 +1,6 @@
 import React from 'react';
 import * as S from './style';
+import todayBanner from 'assets/images/today_banner_img.png';
 import { getTomorrowDate } from 'components/home/Date/getDate';
 import TodayTimer from 'components/home/TodayTimer';
 
@@ -7,7 +8,7 @@ function TodayBanner() {
   return (
     <S.TodayBanner>
       <div className="img-container">
-        <img src="src/assets/images/today_banner_img.png" alt="today-banner" />
+        <img src={todayBanner} alt="today-banner" />
       </div>
       <div className="time-container">
         <div className="time">

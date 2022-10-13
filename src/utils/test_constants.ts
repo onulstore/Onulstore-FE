@@ -1,3 +1,9 @@
+import banner1 from 'assets/images/home_banner_img_1.png';
+import banner2 from 'assets/images/home_banner_img_2.png';
+import banner3 from 'assets/images/home_banner_img_3.png';
+import banner4 from 'assets/images/home_banner_img_4.png';
+import todayItem1 from 'assets/images/today_thumbnail_1.png';
+import todayItem2 from 'assets/images/today_thumbnail_2.png';
 import curationImg1 from 'assets/images/we-like_our-picks_img_1.png';
 import curationImg2 from 'assets/images/we-like_our-picks_img_2.png';
 import curationImg3 from 'assets/images/we-like_our-picks_img_3.png';
@@ -13,25 +19,25 @@ export const BANNER: { [key: string]: string }[] = [
   {
     id: 'DeUY6EWzDsEGARD5XcQg_',
     path: '/today',
-    url: 'src/assets/images/home_banner_img_1.png',
+    url: banner1,
     name: '이미지01',
   },
   {
     id: '5SAetnxye-2lVNMIV35Ey',
     path: '/',
-    url: 'src/assets/images/home_banner_img_2.png',
+    url: banner2,
     name: '이미지02',
   },
   {
     id: 'LnPOwcAxXCN-gREvCvFKW',
     path: '/',
-    url: 'src/assets/images/home_banner_img_3.png',
+    url: banner3,
     name: '이미지03',
   },
   {
     id: 'KnPOwcAxXCN-gREvCvFNW',
     path: '/',
-    url: 'src/assets/images/home_banner_img_4.png',
+    url: banner4,
     name: '이미지04',
   },
 ];
@@ -42,7 +48,7 @@ export const TODAY_ITEMS: { [key: string]: string | number | {}[] }[] = [
     brand: 'meelabs',
     productName: '픽스 손목 보호대',
     price: 3500,
-    productImage: [{ imageName: 'src/assets/images/today_thumbnail_1.png' }],
+    productImage: [{ imageName: todayItem1 }],
     discount: 10, // 데이터 확인 필요
   },
   {
@@ -50,7 +56,7 @@ export const TODAY_ITEMS: { [key: string]: string | number | {}[] }[] = [
     brand: 'CHIRO CARE',
     productName: '커브 넥',
     price: 8500,
-    productImage: [{ imageName: 'src/assets/images/today_thumbnail_2.png' }],
+    productImage: [{ imageName: todayItem2 }],
     discount: 12, // 데이터 확인 필요
   },
 ];
