@@ -34,8 +34,8 @@ import Privacy from 'components/user/Privacy';
 import Terms from 'components/user/Terms';
 import Today from 'pages/Today';
 import WeLike from 'pages/WeLike';
-import OurPicks from 'components/weLike/OurPicks';
 import Magazine from 'pages/WeLike/Magazine';
+import OurPicks from 'pages/WeLike/OurPicks';
 
 const App = () => {
   return (
