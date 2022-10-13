@@ -12,6 +12,8 @@ interface ToggleMenuProps {
 // Items 카테고리 api 통신 가능시 데이터 가져올 예정
 export const ToggleMenu = ({ menuName, categories }: ToggleMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const navigate = useNavigate();
   return (
     <>
       <S.NavMenuName
@@ -21,11 +23,21 @@ export const ToggleMenu = ({ menuName, categories }: ToggleMenuProps) => {
         }}
       >
         {menuName}
+
         {isOpen ? <AngleTopIcon /> : <AngleBottomIcon />}
       </S.NavMenuName>
       <S.ToggleMenuList className={isOpen ? 'open' : ''}>
         {categories.map((category, index) => (
-          <li key={index}>{category}</li>
+          <li
+            key={index}
+            //JH
+            onClick={() => {
+              navigate('/items');
+              setIsOpen(!isOpen);
+            }}
+          >
+            {category}
+          </li>
         ))}
       </S.ToggleMenuList>
     </>
@@ -41,6 +53,7 @@ export const NavMenu = ({ isOpen, setIsOpen }: MenuOpenProps) => {
           <S.MenuListTitle>
             <h2>ITEMS</h2>
           </S.MenuListTitle>
+
           <S.MenuList>
             <li>
               <ToggleMenu menuName="FASHION" categories={['ALL', 'BAG']} />
@@ -60,7 +73,7 @@ export const NavMenu = ({ isOpen, setIsOpen }: MenuOpenProps) => {
           <S.MenuList>
             <li
               onClick={() => {
-                navigate('/just-today');
+                navigate('/today');
                 setIsOpen(!isOpen);
               }}
             >
@@ -83,7 +96,7 @@ export const NavMenu = ({ isOpen, setIsOpen }: MenuOpenProps) => {
           <S.MenuList>
             <li
               onClick={() => {
-                navigate('/magazine');
+                navigate('/we-like/magazine');
                 setIsOpen(!isOpen);
               }}
             >
@@ -91,7 +104,7 @@ export const NavMenu = ({ isOpen, setIsOpen }: MenuOpenProps) => {
             </li>
             <li
               onClick={() => {
-                navigate('/our-picks');
+                navigate('/we-like/our-picks');
                 setIsOpen(!isOpen);
               }}
             >

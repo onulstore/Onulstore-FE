@@ -3,6 +3,7 @@ import React from 'react';
 import * as S from './style';
 //REACT-ROUNTER-DOM
 import { NavLink } from 'react-router-dom';
+
 //CONSTANTS
 import { DetailNavigationData, IdetailNavigationData } from 'utils/constants';
 import ScrollContainer from 'react-indiana-drag-scroll';

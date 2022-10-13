@@ -13,8 +13,8 @@ import {
   LargeLikeOnIcon,
 } from 'components/Icons';
 //DUMY BG
-import dumyBg from 'assets/dumyBg.png';
 
+import { itemDumyImg } from 'assets/dumyImg';
 interface Props {
   item: IallItemList;
   index: number;
@@ -40,7 +40,7 @@ const ItemAlbum = ({ item, index, ranking }: Props) => {
         <span className="item-icon" onClick={isLikeHandler}>
           {isLike ? <LargeLikeOnIcon /> : <LargeLikeOffIcon />}
         </span>
-        <img src={dumyBg} className="item-bg" />
+        <img src={itemDumyImg[index]?.itemBg} className="item-bg" />
       </section>
 
       <section className="item-info">

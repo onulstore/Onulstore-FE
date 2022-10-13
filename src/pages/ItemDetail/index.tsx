@@ -8,29 +8,37 @@ import DetailNavigation from 'components/itemDetail/DetailNavigation/index';
 //STYLED
 import * as S from './style';
 //DUMY
-import dumyBg from 'assets/dumyBg.png';
+import { itemDumyImg } from 'assets/dumyImg';
 //ICON
 import { LargeLikeOffIcon, LargeLikeOnIcon } from 'components/Icons/index';
 //UI
 import PurchaseBtn from 'components/ui/CommonBlackBtn';
 import WishListBtn from 'components/ui/WishListBtn';
 import AddWishListModal from 'components/itemDetail/AddWishListModal';
+import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 //API
 import { getSingleItemList } from 'utils/Api/itemApi';
 import { addCart } from 'utils/Api/cartApi';
+//STORE
+import { getDumyImageIndex } from 'store/slices/itemSlice';
 
 const ItemDetail = () => {
   const [isAddWishListModal, setIsAddWishListModal] = useState(false);
+  const [isLike, setIsLike] = useState(false);
 
-  const params = useParams();
+  const params: any = useParams();
 
   const dispatch = useAppDispatch();
-  const { singleItemList } = useItemSlice();
+  const { singleItemList, dumyImageIndex } = useItemSlice();
   const { userData } = useCartSlice();
 
   const addWishListModalHandler = () => {
     setIsAddWishListModal(!isAddWishListModal);
     // dispatch
+  };
+
+  const changeIconHandler = () => {
+    setIsLike(!isLike);
   };
 
   useEffect(() => {
@@ -42,16 +50,20 @@ const ItemDetail = () => {
     };
   }, []);
 
+  useEffect(() => {
+    dispatch(getDumyImageIndex(parseInt(params.id) - 48));
+  }, []);
+
   return (
     <S.ItemDetailContainer>
       {isAddWishListModal && <AddWishListModal addWishListModalHandler={addWishListModalHandler} />}
-      <img className="item-bg" src={dumyBg}></img>
+      <img className="item-bg" src={itemDumyImg[dumyImageIndex]?.itemBg}></img>
 
       <section className="item-info">
         <div className="item-brand">
           <p className="brand-name">{singleItemList.brand?.brandName}</p>
-          <span className="like-icon">
-            <LargeLikeOffIcon />
+          <span className="like-icon" onClick={changeIconHandler}>
+            {isLike ? <LargeLikeOnIcon /> : <LargeLikeOffIcon />}
           </span>
         </div>
 
@@ -81,4 +93,4 @@ const ItemDetail = () => {
   );
 };
 
-export default ItemDetail;
+export default SetHeaderBar(ItemDetail);
