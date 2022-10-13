@@ -31,10 +31,12 @@ function Home() {
           <MagazineList data={ITEMS[0]} home />
         </Section>
       </div>
-      <Section title={'OUR PICKS'}>
-        <OurPicksSwiper data={OUR_PICKS[0]} />
-        <OurPicksItemCard data={ITEMS[0]} />
-      </Section>
+      <div className="our-picks">
+        <Section title={'OUR PICKS'}>
+          <OurPicksSwiper data={OUR_PICKS[0]} />
+          <OurPicksItemCard data={ITEMS[0]} />
+        </Section>
+      </div>
       <div className="trend">
         <Section title={'TODAY’s TREND'}>
           <TodayTrend />

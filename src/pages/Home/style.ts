@@ -31,4 +31,7 @@ export const Home = styled.div`
   .trend {
     margin-top: 6.6rem;
   }
+  .our-picks {
+    margin-top: 4rem;
+  }
 `;
