@@ -25,8 +25,8 @@ export function MagazineList({ data, home }: any) {
           </p>
         </S.CurationTextBox>
         <S.CurationItemBox home={home}>
-          <ItemAlbum item={ITEMS[1]} index={11} />
-          <ItemAlbum item={ITEMS[2]} index={13} />
+          <ItemAlbum item={ITEMS[2]} index={11} />
+          <ItemAlbum item={ITEMS[3]} index={13} />
         </S.CurationItemBox>
       </S.Magazine>
     </>
@@ -53,8 +53,8 @@ export function TestMagazine() {
           </p>
         </S.CurationTextBox>
         <S.CurationItemBox>
-          <ItemAlbum item={ITEMS[1]} index={11} />
-          <ItemAlbum item={ITEMS[2]} index={13} />
+          <ItemAlbum item={ITEMS[2]} index={11} />
+          <ItemAlbum item={ITEMS[3]} index={13} />
         </S.CurationItemBox>
       </S.Magazine>
 
@@ -72,8 +72,8 @@ export function TestMagazine() {
           </p>
         </S.CurationTextBox>
         <S.CurationItemBox>
-          <ItemAlbum item={ITEMS[3]} index={4} />
-          <ItemAlbum item={ITEMS[4]} index={5} />
+          <ItemAlbum item={ITEMS[4]} index={4} />
+          <ItemAlbum item={ITEMS[5]} index={5} />
         </S.CurationItemBox>
       </S.Magazine>
 
@@ -92,8 +92,8 @@ export function TestMagazine() {
           </p>
         </S.CurationTextBox>
         <S.CurationItemBox>
-          <ItemAlbum item={ITEMS[5]} index={21} />
-          <ItemAlbum item={ITEMS[6]} index={24} />
+          <ItemAlbum item={ITEMS[6]} index={21} />
+          <ItemAlbum item={ITEMS[7]} index={24} />
         </S.CurationItemBox>
       </S.Magazine>
     </>
