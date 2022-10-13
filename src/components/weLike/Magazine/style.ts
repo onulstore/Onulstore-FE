@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Magazine = styled.div<{ home?: boolean }>`
   margin-bottom: ${({ home }) => (home ? '' : '4.5rem')};
   .img-container {
-    width: 37.5rem;
-    height: 37.5rem;
+    width: 100%;
+    height: 100%;
   }
   img {
     width: 100%;
@@ -42,11 +42,8 @@ export const CurationTextBox = styled.div`
     word-break: keep-all;
   }
   p {
-    width: 100%;
-    margin: 1.4rem 0 1.8rem;
-    box-sizing: content-box;
+    margin: 1.4rem 2rem 1.8rem 0;
     font-family: 'Montserrat';
-    font-weight: 400;
     font-size: 1.4rem;
     line-height: 1.7rem;
     word-break: keep-all;
