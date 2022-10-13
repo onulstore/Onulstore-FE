@@ -1,15 +1,22 @@
 import { CloseIcon, SettingsIcon } from 'components/Icons';
 import { useNavigate } from 'react-router-dom';
+import { useUserSlice } from 'store/hooks';
 import { MenuOpenProps } from '..';
 import * as S from './style';
 
 const UserNameContainer = ({ isOpen, setIsOpen }: MenuOpenProps) => {
+  const { lastName, firstName } = useUserSlice();
   const navigate = useNavigate();
   return (
     <S.UserNameWrapper>
-      <div className="user-name">
-        <span>아즈마 미유키{/* {user.name} */}</span>님
-      </div>
+      {lastName ? (
+        <div className="user-name">
+          <span>{lastName}</span>
+          <span>{firstName}</span>님
+        </div>
+      ) : (
+        <span>로그인이 필요합니다.</span>
+      )}
       <div className="icon-wrapper">
         <i
           onClick={() => {
