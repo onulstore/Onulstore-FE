@@ -11,7 +11,7 @@ const getCookie = (name: string) => {
 };
 
 const api = axios.create({
-  baseURL: 'https://onulstore.breon.ml',
+  baseURL: 'https://onulstore.breon.ml/',
   headers: {
     'content-type': 'application/json',
   },
