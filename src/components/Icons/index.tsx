@@ -390,7 +390,7 @@ export const UploadIcon = () => (
 );
 
 //HURRY ICONS
-export const LeftHurryIcon = ({
+export const HurryIcon = ({
   className,
   color = '#FF5A50',
   width = '8rem',

@@ -1,6 +1,4 @@
-import React from 'react';
 import { useCurrentTime } from 'store/hooks/useCurrentTime';
-import { LeftHurryIcon, WhiteHurryIcon } from 'components/Icons';
 import * as S from './style';
 import { ShowProgressBarProps, TodayTimerProgressBarProps } from '../home';
 
@@ -17,7 +15,7 @@ const ShowProgressBar = (props: ShowProgressBarProps) => {
         ) : props.width! > 75 ? (
           <S.ReverseHurry />
         ) : (
-          <S.LeftHurry />
+          <S.Hurry />
         )}
       </S.InnerBar>
     </S.BaseBar>

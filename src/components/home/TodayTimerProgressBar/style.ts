@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ShowProgressBarProps } from '../home';
 import {
-  LeftHurryIcon,
+  HurryIcon,
   ReverseHurryIcon,
   ReverseWhiteHurryIcon,
   WhiteHurryIcon,
@@ -35,7 +35,7 @@ export const InnerBar = styled.div<ShowProgressBarProps>`
   }
 `;
 
-export const LeftHurry = styled(LeftHurryIcon)`
+export const Hurry = styled(HurryIcon)`
   position: absolute;
   right: -7.9rem;
   margin-top: 1rem;
