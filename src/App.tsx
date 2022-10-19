@@ -9,15 +9,10 @@ import Home from './pages/Home';
 
 import Items from 'pages/Items/index';
 import ItemDetail from 'pages/ItemDetail';
-import ItemInfo from 'pages/ItemDetail/DetailInfo/ItemInfo';
 import Payment from 'pages/Payment';
 import Cart from 'pages/Cart';
 import QnA from 'pages/QnA';
 import Review from 'pages/Review';
-import ReviewInfo from 'pages/ItemDetail/DetailInfo/ReviewInfo';
-import QandAInfo from 'pages/ItemDetail/DetailInfo/QnAInfo';
-import OrderGuide from 'pages/ItemDetail/DetailInfo/OrderGuide';
-import SimilarItem from 'pages/ItemDetail/DetailInfo/SimilarItem';
 
 import SignUp from 'pages/SignUp';
 import SignIn from 'pages/SignIn';
@@ -46,15 +41,7 @@ const App = () => {
           <Route index element={<Home />} />
 
           <Route path="/items" element={<Items />} />
-
-          <Route path="/items/:id" element={<ItemDetail />}>
-            <Route path="iteminfo" element={<ItemInfo />} />
-            <Route path="reviewinfo" element={<ReviewInfo />} />
-            <Route path="qandainfo" element={<QandAInfo />} />
-            <Route path="orderguide" element={<OrderGuide />} />
-            <Route path="similaritem" element={<SimilarItem />} />
-          </Route>
-
+          <Route path="/items/:id" element={<ItemDetail />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/review" element={<Review />} />
           <Route path="qna" element={<QnA />} />

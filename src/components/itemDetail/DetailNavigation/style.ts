@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const DetailNavigationContainer = styled.ul`
+  width: 43.8rem;
+  height: 5.9rem;
   display: flex;
   border-top: 0.1rem solid #f5f5f5;
   border-bottom: 0.3rem solid #f5f5f5;

@@ -62,23 +62,28 @@ export interface IorderGuideTitle {
   id: string;
   title: string;
 }
+
+export interface IsmallCategoryModalItemContent {
+  id: string;
+  category: string;
+  categoryElement: IcategoryElement[];
+}
+
+export interface IcategoryElement {
+  id: string;
+  title: string;
+  parent: string;
+}
+
 // Item 영역 상수 모음
 export const FilterBarTitle: IfilterBarTitle[] = [
   {
     id: nanoid(),
-    title: '최신순',
+    title: '이름순',
   },
   {
     id: nanoid(),
-    title: '판매순',
-  },
-  {
-    id: nanoid(),
-    title: '리뷰순',
-  },
-  {
-    id: nanoid(),
-    title: '인기순',
+    title: '가격순',
   },
 ];
 
@@ -126,5 +131,125 @@ export const orderGuideTitle: IorderGuideTitle[] = [
   {
     id: nanoid(),
     title: '교환/환불안내',
+  },
+];
+
+export const SmallCategoryModalItemContent: IsmallCategoryModalItemContent[] = [
+  {
+    id: nanoid(),
+    category: 'ITEMS',
+    categoryElement: [
+      {
+        title: 'ALL',
+        id: nanoid(),
+        parent: 'ITEMS',
+      },
+    ],
+  },
+
+  {
+    id: nanoid(),
+    category: 'FASHION',
+    categoryElement: [
+      {
+        title: 'ALL',
+        id: nanoid(),
+        parent: 'FASHION',
+      },
+
+      {
+        title: 'BAG',
+        id: nanoid(),
+        parent: 'FASHION',
+      },
+    ],
+  },
+
+  {
+    id: nanoid(),
+    category: 'LIVING',
+    categoryElement: [
+      {
+        title: 'ALL',
+        id: nanoid(),
+        parent: 'LIVING',
+      },
+
+      {
+        title: 'SPORTS',
+        id: nanoid(),
+        parent: 'LIVING',
+      },
+
+      {
+        title: 'LIFE STYLE',
+        id: nanoid(),
+        parent: 'LIVING',
+      },
+    ],
+  },
+
+  {
+    id: nanoid(),
+    category: 'BEAUTY',
+    categoryElement: [
+      {
+        title: 'ALL',
+        id: nanoid(),
+        parent: 'BEAUTY',
+      },
+
+      {
+        title: 'COSME',
+        id: nanoid(),
+        parent: 'BEAUTY',
+      },
+    ],
+  },
+];
+
+export const BANNER: { [key: string]: string }[] = [
+  {
+    id: 'DeUY6EWzDsEGARD5XcQg_',
+    path: '/today',
+    url: 'src/assets/images/home_banner_img_1.png',
+    name: '이미지01',
+  },
+  {
+    id: '5SAetnxye-2lVNMIV35Ey',
+    path: '/',
+    url: 'src/assets/images/home_banner_img_2.png',
+    name: '이미지02',
+  },
+  {
+    id: 'LnPOwcAxXCN-gREvCvFKW',
+    path: '/',
+    url: 'src/assets/images/home_banner_img_3.png',
+    name: '이미지03',
+  },
+  {
+    id: 'KnPOwcAxXCN-gREvCvFNW',
+    path: '/',
+    url: 'src/assets/images/home_banner_img_4.png',
+    name: '이미지04',
+  },
+];
+
+export const TODAY_ITEMS: { [key: string]: string | number | {}[] }[] = [
+  {
+    id: 1,
+    brand: 'meelabs',
+    productName: '픽스 손목 보호대',
+    price: 3500,
+    productImage: [{ imageName: 'src/assets/images/today_thumbnail_1.png' }],
+    discount: 10, // 데이터 확인 필요
+  },
+  {
+    id: 2,
+    brand: 'CHIRO CARE',
+    productName: '커브 넥',
+    price: 8500,
+    productImage: [{ imageName: 'src/assets/images/today_thumbnail_2.png' }],
+    discount: 12, // 데이터 확인 필요
   },
 ];

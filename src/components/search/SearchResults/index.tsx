@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import * as S from './style';
-import ItemFilterBar from 'components/item/ItemFilterBar';
+// import ItemFilterBar from 'components/item/ItemFilterBar';
 import ItemAlbum from 'components/item/ItemAlbum';
 import { useSearchResult } from '../hooks';
 
@@ -12,10 +12,10 @@ function SearchResults({ searchedItemList }: any) {
       <div className="search-keyword">
         <span>{searchResult}</span> 에 대한 검색결과 입니다.
       </div>
-      <ItemFilterBar
+      {/* <ItemFilterBar
         filterSeletBoxHandler={setIsShowFilterSelectBox}
         isShowFilterSelectBox={isShowFilterSelectBox}
-      />
+      /> */}
       <S.ItemBoxCopy>
         {searchedItemList?.length > 0 ? (
           searchedItemList.map((item: any, index: number) => {

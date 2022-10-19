@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+//REACT-ROUTER
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from 'store/hooks';
+//STORE
 import { priceFomater } from 'store/slices/itemSlice';
 import { IallItemList } from 'store/slices/itemSlice';
 //STYLED
@@ -31,7 +32,7 @@ const ItemAlbum = ({ item, index, ranking }: Props) => {
   };
 
   const moveDetailPage = () => {
-    navigate(`/items/${item.id}/iteminfo`, { state: item });
+    navigate(`/items/${item.id}`, { state: item });
   };
   return (
     <S.ItemAlbumContainer onClick={moveDetailPage}>
@@ -45,7 +46,7 @@ const ItemAlbum = ({ item, index, ranking }: Props) => {
 
       <section className="item-info">
         <div className="item-title-container">
-          <p className="item-title">{item.brand.brandName} </p>
+          <p className="item-title">{item.brand?.brandName} </p>
           <p className="item-status">{item.productStatus}</p>
         </div>
 
@@ -66,4 +67,4 @@ const ItemAlbum = ({ item, index, ranking }: Props) => {
   );
 };
 
-export default React.memo(ItemAlbum);
+export default ItemAlbum;

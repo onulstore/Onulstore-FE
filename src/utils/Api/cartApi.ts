@@ -10,15 +10,22 @@ const getUser = createAsyncThunk('cartSlice/getUser', async () => {
   return data;
 });
 
+const getCart = createAsyncThunk('cartSlice/getCart', async () => {
+  const { data } = await cart({
+    method: 'GET',
+    url: '/carts',
+  });
+  return data;
+});
+
 //addCart
 const addCart = createAsyncThunk('cartSlice/addCart', async (payload: any) => {
-  const { memberEmail, productId, quantity } = payload;
+  const { productId, quantity } = payload;
 
   const { data } = await cart({
     method: 'POST',
     url: '/carts',
     data: {
-      memberEmail,
       productId,
       quantity,
     },
@@ -26,4 +33,4 @@ const addCart = createAsyncThunk('cartSlice/addCart', async (payload: any) => {
   return data;
 });
 
-export { getUser, addCart };
+export { getUser, addCart, getCart };

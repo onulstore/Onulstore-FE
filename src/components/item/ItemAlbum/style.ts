@@ -4,6 +4,8 @@ export const ItemAlbumContainer = styled.div`
   width: 16.2rem;
   height: 29.1rem;
 
+  font-family: 'Montserrat', sans-serif;
+
   box-sizing: border-box;
 
   position: relative;
@@ -27,6 +29,8 @@ export const ItemAlbumContainer = styled.div`
       box-sizing: border-box;
       z-index: 2;
 
+      font-family: 'Pretendard', sans-serif;
+
       color: #fff;
       background-color: #2f2f33;
 
@@ -47,9 +51,6 @@ export const ItemAlbumContainer = styled.div`
       height: 3rem;
     }
     .item-bg {
-      width: 16.2rem;
-      height: 16.2rem;
-
       position: absolute;
       top: 0;
     }
@@ -57,6 +58,7 @@ export const ItemAlbumContainer = styled.div`
   .item-info {
     display: flex;
     flex-direction: column;
+
     .item-title-container {
       display: flex;
       justify-content: space-between;
@@ -67,7 +69,7 @@ export const ItemAlbumContainer = styled.div`
         width: 10rem;
 
         font-weight: 700;
-        font-size: 12px;
+        font-size: 1.2rem;
         line-height: 130%;
         color: #2f2f33;
       }
@@ -88,7 +90,7 @@ export const ItemAlbumContainer = styled.div`
     }
     .item-description {
       padding: 0.7rem 0.4rem 0;
-      font-size: 15px;
+      font-size: 1.5rem;
       line-height: 1.3;
       box-sizing: border-box;
 
@@ -98,7 +100,7 @@ export const ItemAlbumContainer = styled.div`
 
     .item-price {
       font-weight: 500;
-      font-size: 16px;
+      font-size: 1.6rem;
       line-height: 150%;
       color: #2f2f33;
       padding: 0.7rem 0.4rem;
@@ -106,7 +108,7 @@ export const ItemAlbumContainer = styled.div`
       .discount-purcent {
         color: #d86145;
         font-weight: 600;
-        font-size: 14px;
+        font-size: 1.4rem;
         line-height: 150%;
         box-sizing: border-box;
         padding-right: 0.8rem;
