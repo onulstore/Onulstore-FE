@@ -2,10 +2,9 @@ import styled from 'styled-components';
 export const FilterSelectBoxContainer = styled.div`
   position: absolute;
   top: 9.5rem;
-  right: 2.3rem;
+  right: 2rem;
   width: 9.1rem;
-  height: 14rem;
-  z-index: 9999;
+  z-index: 999;
   box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.15);
   border-radius: 0.5rem;
 

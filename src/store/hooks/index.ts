@@ -8,20 +8,42 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 export const useItemSlice = () => {
   const {
     isShowLargeCategoryModal,
-    allItemList,
-    singleItemList,
+    isShowSmallCategoryModal,
+    isShowBrandSelectdBox,
+    isShowItemSortSelectBox,
     isDetailPage,
     isLoding,
+
+    allItemList,
+    singleItemList,
+
+    allBrandList,
+    filteredBrandList,
+
+    nowPostionTitle,
+
     searchAddress,
     dumyImageIndex,
   } = useAppSelector((state) => state.item);
   return {
     isShowLargeCategoryModal,
+    isShowSmallCategoryModal,
+    isShowBrandSelectdBox,
+    isShowItemSortSelectBox,
+
+    isLoding,
+    isDetailPage,
+
     allItemList,
     singleItemList,
-    isDetailPage,
+
+    allBrandList,
+    filteredBrandList,
+
+    nowPostionTitle,
+
     searchAddress,
-    isLoding,
+
     dumyImageIndex,
   };
 };

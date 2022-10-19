@@ -15,7 +15,6 @@ const api = axios.create({
   baseURL: 'http://15.164.124.56/',
   headers: {
     'content-type': 'application/json',
-    Authorization: `${document.cookie ? `Bearer ${getCookie('accessToken')}` : ''}`,
   },
 });
 
@@ -27,7 +26,7 @@ api.interceptors.request.use(
     // }
     // return config;
     config.headers = {
-      Authorization: ` bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     };
     return config;
   },

@@ -8,7 +8,7 @@ import { CookiesProvider } from 'react-cookie';
 import store from './store';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+  <>
     <BrowserRouter>
       <Provider store={store}>
         <CookiesProvider>
@@ -16,5 +16,5 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         </CookiesProvider>
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </>,
 );

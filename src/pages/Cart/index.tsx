@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 //Api
-import { getUser } from 'utils/Api/cartApi';
+import { getUser, getCart } from 'utils/Api/cartApi';
 //hooks
 import { useAppDispatch, useCartSlice } from 'store/hooks/index';
 import SetHeaderBar from 'utils/HOC/SetHeaderBar';
@@ -10,6 +10,7 @@ const Cart = () => {
 
   useEffect(() => {
     dispatch(getUser());
+    dispatch(getCart());
   }, []);
 
   return <div></div>;

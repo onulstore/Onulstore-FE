@@ -5,7 +5,7 @@ export const LargeCategoryModalContainer = styled.div`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
-  top: 5rem;
+  top: 0;
   z-index: 9999;
   .content {
     height: 32.6rem;
@@ -18,6 +18,7 @@ export const LargeCategoryModalContainer = styled.div`
     gap: 10px;
     box-sizing: border-box;
     p {
+      font-family: 'Montserrat', sans-serif;
       font-weight: 600;
       line-height: 1.5;
       font-size: 2rem;

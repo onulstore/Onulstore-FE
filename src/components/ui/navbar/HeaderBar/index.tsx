@@ -10,7 +10,7 @@ import {
 import { useLocation, useNavigate } from 'react-router-dom';
 import * as S from './style';
 import { pageName } from 'utils/constants';
-import { largeCategoryModalHandler } from 'store/slices/itemSlice';
+import { largeCategoryModalHandler, smallCategoryModalHandler } from 'store/slices/itemSlice';
 import { useAppDispatch, useItemSlice } from 'store/hooks/index';
 
 function HeaderBar() {
@@ -18,8 +18,8 @@ function HeaderBar() {
   const pathname: string = useLocation().pathname;
 
   const dispatch = useAppDispatch();
-  const { isDetailPage, isShowLargeCategoryModal } = useItemSlice();
-  console.log(pathname);
+  const { isDetailPage, isShowLargeCategoryModal, isShowSmallCategoryModal } = useItemSlice();
+
   return (
     <S.HeaderBar>
       <>
@@ -38,6 +38,9 @@ function HeaderBar() {
               <span
                 className="Catagory"
                 onClick={() => {
+                  if (isShowSmallCategoryModal) {
+                    return dispatch(smallCategoryModalHandler());
+                  }
                   dispatch(largeCategoryModalHandler());
                 }}
               >
