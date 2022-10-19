@@ -9,6 +9,9 @@ const getCookie = (name: string) => {
   );
   return matches ? decodeURIComponent(matches[1]) : undefined;
 };
+const deleteCookie = (name: string) => {
+  document.cookie = name + '=; expires=Thu, 01 Jan 1999 00:00:10 GMT;';
+};
 
 const api = axios.create({
   baseURL: 'https://onulstore.breon.ml',
@@ -50,9 +53,12 @@ api.interceptors.response.use(
         })
         .catch((err) => {
           //로그아웃 처리
+          deleteCookie('accessToken');
+          deleteCookie('refreshToken');
         });
       prevRequest.headers['Authorization'] = `Bearer ${new_at}`;
       //setToken
+      cookies.set();
 
       console.log('New Access Token is', new_at);
       console.log('New refresh Token is', new_rt);
