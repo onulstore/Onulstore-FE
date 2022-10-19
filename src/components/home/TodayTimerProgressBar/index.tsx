@@ -1,6 +1,4 @@
-import React from 'react';
 import { useCurrentTime } from 'store/hooks/useCurrentTime';
-import { LeftHurryIcon, WhiteHurryIcon } from 'components/Icons';
 import * as S from './style';
 import { ShowProgressBarProps, TodayTimerProgressBarProps } from '../home';
 
@@ -8,7 +6,17 @@ const ShowProgressBar = (props: ShowProgressBarProps) => {
   return (
     <S.BaseBar baseColor={props.baseColor}>
       <S.InnerBar width={props.width} innerColor={props.innerColor}>
-        {props.className !== 'home' ? <S.WhiteHurry /> : <S.LeftHurry />}
+        {props.className !== 'home' ? (
+          props.width! > 25 ? (
+            <S.WhiteHurry />
+          ) : (
+            <S.ReverseWhiteHurry />
+          )
+        ) : props.width! > 75 ? (
+          <S.ReverseHurry />
+        ) : (
+          <S.Hurry />
+        )}
       </S.InnerBar>
     </S.BaseBar>
   );
