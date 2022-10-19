@@ -7,18 +7,27 @@ import {
   WhiteHurryIcon,
 } from 'components/Icons';
 
-export const BaseBar = styled.div<ShowProgressBarProps>`
+export const BaseBar = styled.div.attrs((props: { baseColor: string }) => ({
+  style: {
+    backgroundColor: props.baseColor,
+  },
+}))<ShowProgressBarProps>`
   width: 100%;
   height: 0.4rem;
   border-radius: 0.2rem;
-  background-color: ${(props) => props.baseColor || props.theme.palette.midGrey};
+  background-color: ${(props) => props.theme.palette.midGrey};
 `;
-export const InnerBar = styled.div<ShowProgressBarProps>`
+export const InnerBar = styled.div.attrs((props: { width: string; innerColor: string }) => ({
+  style: {
+    width: `${props.width}%`,
+    backgroundColor: props.innerColor,
+  },
+}))<ShowProgressBarProps>`
   position: relative;
-  width: ${(props) => props.width || 0}%;
+  width: 0%;
   height: 0.4rem;
   border-radius: 0.2rem;
-  background-color: ${(props) => props.innerColor || props.theme.palette.main};
+  background-color: ${(props) => props.theme.palette.main};
   z-index: 2;
   &::after {
     content: '';
