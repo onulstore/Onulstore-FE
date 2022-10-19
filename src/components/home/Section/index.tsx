@@ -5,20 +5,24 @@ import * as S from './style';
 import theme from 'style/theme';
 import { SectionProps, SectionTitleProps } from '../home';
 
-const SectionTitle = ({ title }: SectionTitleProps) => {
+const SectionTitle = ({ title, instar, fontSize }: any) => {
   return (
-    <S.SectionTile>
+    <S.SectionTile fontSize={fontSize}>
       {title}
-      <AngleRightIcon color={theme.palette.black} width={'0.7rem'} height={'1.4rem'} />
+      {instar ? (
+        <AngleRightIcon color="#fff" width={'0.8rem'} height={'1.5rem'} />
+      ) : (
+        <AngleRightIcon color={theme.palette.black} width={'0.7rem'} height={'1.4rem'} />
+      )}
     </S.SectionTile>
   );
 };
 
-function Section({ title, children }: SectionProps) {
+function Section(props: any) {
   return (
     <S.Section>
-      <SectionTitle title={title} />
-      {children}
+      <SectionTitle {...props} />
+      {props.children}
     </S.Section>
   );
 }

@@ -8,13 +8,11 @@ import { CookiesProvider } from 'react-cookie';
 import store from './store';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <>
-    <BrowserRouter>
-      <Provider store={store}>
-        <CookiesProvider>
-          <App />
-        </CookiesProvider>
-      </Provider>
-    </BrowserRouter>
-  </>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <CookiesProvider>
+        <App />
+      </CookiesProvider>
+    </Provider>
+  </BrowserRouter>,
 );

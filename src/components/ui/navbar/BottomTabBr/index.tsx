@@ -16,7 +16,7 @@ function BottomTabBar() {
           </li>
           <li>
             <NavLink
-              to="today"
+              to="/today"
               children={({ isActive }) =>
                 isActive ? <TodayIcon color="#D86145" /> : <TodayIcon />
               }
@@ -31,7 +31,7 @@ function BottomTabBar() {
           </li>
           <li>
             <NavLink
-              to="my-page"
+              to="/my-page"
               children={({ isActive }) =>
                 isActive ? <MyPageIcon color="#D86145" /> : <MyPageIcon />
               }
@@ -39,7 +39,7 @@ function BottomTabBar() {
           </li>
           <li>
             <NavLink
-              to="recent"
+              to="/recent"
               children={({ isActive }) =>
                 isActive ? <RecentIcon color="#D86145" /> : <RecentIcon />
               }

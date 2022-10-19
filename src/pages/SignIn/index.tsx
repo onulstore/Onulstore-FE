@@ -38,7 +38,7 @@ function SignIn() {
           font
           color="#6C6C6C"
           onClick={() => {
-            navigate('/signup');
+            navigate('/sign-up');
           }}
         >
           신규회원가입
