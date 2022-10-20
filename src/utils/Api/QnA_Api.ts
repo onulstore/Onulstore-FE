@@ -7,22 +7,24 @@ const getAllQuestion = createAsyncThunk('QnASlice/getAllQuestion', async (produc
     method: 'GET',
     url: `/questions/${productId}`,
   });
+
   return data;
 });
 
 const getSingleQuestion = createAsyncThunk(
   'QnASlice/getSingleQuestion',
-  async (productId: number, questionId: any) => {
+  async (productId: number) => {
     const { data } = await QnA({
       method: 'GET',
-      url: `/questions/${productId}/${questionId}`,
+      url: `/questions/${productId}`,
     });
     return data;
   },
 );
+
 // post
 export interface QuestionType {
-  secret: string;
+  secret: boolean;
   content: string;
   productId: number;
   title: string;
@@ -75,4 +77,4 @@ const getAllAnswer = createAsyncThunk('QnASlice/getAllAnswer', async (payload: I
   return data;
 });
 
-export { addQuestion };
+export { addQuestion, getAllQuestion };

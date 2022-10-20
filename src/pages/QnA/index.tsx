@@ -10,7 +10,7 @@ import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 const QnA = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [isSecret, setIsSecret] = useState('');
+  const [isSecret, setIsSecret] = useState(false);
 
   const { state } = useLocation();
   const dispatch = useAppDispatch();
@@ -78,7 +78,7 @@ const QnA = () => {
             className="private-or-public__input"
             value="N"
             onClick={(e: React.MouseEvent<HTMLInputElement>) => {
-              setIsSecret(e.currentTarget.value);
+              setIsSecret(false);
             }}
           />
           <label htmlFor="privateOrPublic" className="private-or-public__label">
@@ -91,7 +91,7 @@ const QnA = () => {
             className="private-or-public__input"
             value="Y"
             onClick={(e: React.MouseEvent<HTMLInputElement>) => {
-              setIsSecret(e.currentTarget.value);
+              setIsSecret(true);
             }}
           />
           <label htmlFor="privateOrPublic" className="private-or-public__label">

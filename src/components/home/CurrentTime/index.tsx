@@ -4,7 +4,7 @@ import { FontStyleProps, ShowTimeProps } from '../home';
 import * as S from './style';
 
 const ShowTime = (props: ShowTimeProps) => {
-  return <S.ShowTime>{`${props.hours}:${props.minutes}:${props.seconds}`}</S.ShowTime>;
+  return <S.ShowTime {...props}>{`${props.hours}:${props.minutes}:${props.seconds}`}</S.ShowTime>;
 };
 
 export const CurrentTime = (props: FontStyleProps) => {

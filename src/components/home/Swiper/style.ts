@@ -51,9 +51,7 @@ export const BannerSwiperSlide = styled(SwiperSlide)`
     & img {
       width: 100%;
       height: 100%;
-      // 실제 배너 크기에 따라 object-fit 속성 값을 수정할 예정
-      /* object-fit: contain; */
-      object-fit: cover;
+      object-fit: contain;
       margin: auto;
     }
   }
@@ -109,8 +107,6 @@ export const JustForTodaySwiperSlide = styled(SwiperSlide)`
       height: 25.5rem;
       margin: 6.1rem 4rem 3.2rem;
       border-radius: 50%;
-      // 실제 배너 크기에 따라 object-fit 속성 값을 수정할 예정
-      /* object-fit: contain; */
       object-fit: cover;
     }
     & .item-info-box {
@@ -123,14 +119,13 @@ export const JustForTodaySwiperSlide = styled(SwiperSlide)`
     & .item-info {
       margin: 1.6rem 1.2rem;
       font-family: 'Montserrat';
+      font-weight: 600;
       color: ${({ theme }) => theme.palette.darkGrey};
       h2 {
-        font-weight: 300;
         font-size: 1.4rem;
         line-height: 130%;
       }
       h3 {
-        font-weight: 500;
         font-size: 1.6rem;
         line-height: 130%;
         margin: 0.2rem 0;

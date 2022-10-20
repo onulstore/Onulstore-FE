@@ -222,7 +222,7 @@ export const AddWishListModalIcon = () => (
 
 //ArrowIcon
 export const ArrowBottomIcon = ({
-  width = '.6rem',
+  width = '0.6rem',
   height = '1rem',
   color = '#000',
 }: IconPropsType) => (
@@ -279,8 +279,14 @@ export const GoogleIcon = () => (
   </svg>
 );
 
-export const CategoryArrowRightIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+export const CategoryArrowRightIcon = ({ width = '0.6rem', height = '1rem' }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width}
+    height={height}
+    viewBox="0 0 6 10"
+    fill="none"
+  >
     <path
       d="M0.229439 0.220115C0.0825295 0.361098 0 0.552285 0 0.751634C0 0.950983 0.0825295 1.14217 0.229439 1.28315L4.10846 5.00454L0.229439 8.72592C0.086693 8.86771 0.0077061 9.05762 0.00949156 9.25474C0.011277 9.45186 0.0936919 9.64042 0.238985 9.77981C0.384278 9.91919 0.580825 9.99826 0.786293 9.99997C0.991761 10.0017 1.18971 9.92591 1.33751 9.78896L5.77056 5.53606C5.91747 5.39508 6 5.20389 6 5.00454C6 4.80519 5.91747 4.614 5.77056 4.47302L1.33751 0.220115C1.19055 0.0791756 0.991266 0 0.783473 0C0.57568 0 0.376394 0.0791756 0.229439 0.220115Z"
       fill="#A9A9A9"
@@ -288,11 +294,17 @@ export const CategoryArrowRightIcon = () => (
   </svg>
 );
 //Like
-export const LargeLikeOffIcon = () => {
+export const LargeLikeOffIcon = ({ width = '2.3rem', height = '2.1rem' }) => {
   const { isDetailPage } = useItemSlice();
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      viewBox="0 0 23 21"
+      fill="none"
+    >
       <path
         d="M20.2913 2.61183C19.7805 2.10083 19.1741 1.69547 18.5066 1.41891C17.8392 1.14235 17.1238 1 16.4013 1C15.6788 1 14.9634 1.14235 14.2959 1.41891C13.6285 1.69547 13.022 2.10083 12.5113 2.61183L11.4513 3.67183L10.3913 2.61183C9.3596 1.58013 7.96032 1.00053 6.50129 1.00053C5.04226 1.00053 3.64298 1.58013 2.61129 2.61183C1.5796 3.64352 1 5.04279 1 6.50183C1 7.96086 1.5796 9.36013 2.61129 10.3918L3.67129 11.4518L11.4513 19.2318L19.2313 11.4518L20.2913 10.3918C20.8023 9.88107 21.2076 9.27464 21.4842 8.60718C21.7608 7.93972 21.9031 7.22431 21.9031 6.50183C21.9031 5.77934 21.7608 5.06393 21.4842 4.39647C21.2076 3.72901 20.8023 3.12258 20.2913 2.61183V2.61183Z"
         stroke={isDetailPage ? '#a9a9a9' : '#fff'}
@@ -304,8 +316,14 @@ export const LargeLikeOffIcon = () => {
   );
 };
 
-export const LargeLikeOnIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
+export const LargeLikeOnIcon = ({ width = '2.3rem', height = '2.1rem' }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width}
+    height={height}
+    viewBox="0 0 23 21"
+    fill="none"
+  >
     <path
       d="M20.2913 2.61183C19.7805 2.10083 19.1741 1.69547 18.5066 1.41891C17.8392 1.14235 17.1238 1 16.4013 1C15.6788 1 14.9634 1.14235 14.2959 1.41891C13.6285 1.69547 13.022 2.10083 12.5113 2.61183L11.4513 3.67183L10.3913 2.61183C9.3596 1.58013 7.96032 1.00053 6.50129 1.00053C5.04226 1.00053 3.64298 1.58013 2.61129 2.61183C1.5796 3.64352 1 5.04279 1 6.50183C1 7.96086 1.5796 9.36013 2.61129 10.3918L3.67129 11.4518L11.4513 19.2318L19.2313 11.4518L20.2913 10.3918C20.8023 9.88107 21.2076 9.27464 21.4842 8.60718C21.7608 7.93972 21.9031 7.22431 21.9031 6.50183C21.9031 5.77934 21.7608 5.06393 21.4842 4.39647C21.2076 3.72901 20.8023 3.12258 20.2913 2.61183Z"
       fill="#D86145"
@@ -390,7 +408,7 @@ export const UploadIcon = () => (
 );
 
 //HURRY ICONS
-export const LeftHurryIcon = ({
+export const HurryIcon = ({
   className,
   color = '#FF5A50',
   width = '8rem',
@@ -441,6 +459,63 @@ export const LeftHurryIcon = ({
           mode="normal"
           in="SourceGraphic"
           in2="effect1_dropShadow_642_11669"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+export const ReverseHurryIcon = ({
+  className,
+  color = '#FF5A50',
+  width = '8rem',
+  height = '3.4rem',
+}: IconPropsType) => (
+  <svg
+    className={className}
+    width={width}
+    height={height}
+    viewBox="0 0 80 34"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g filter="url(#filter0_d_1806_27315)">
+      <path
+        d="M1 16C1 24.2843 7.71573 31 16 31H62C70.2843 31 77 24.2843 77 16V1H16C7.71573 1 1 7.71573 1 16Z"
+        fill={color}
+        shapeRendering="crispEdges"
+      />
+      <path
+        d="M20.3468 10.7V14.564H15.8948V10.7H13.6268V20.5H15.8948V16.482H20.3468V20.5H22.6148V10.7H20.3468ZM29.2875 20.668C32.0735 20.668 33.7255 19.072 33.7255 16.188V10.7H31.4855V16.104C31.4855 17.966 30.6875 18.736 29.3015 18.736C27.9295 18.736 27.1175 17.966 27.1175 16.104V10.7H24.8495V16.188C24.8495 19.072 26.5015 20.668 29.2875 20.668ZM44.6467 20.5L42.4487 17.35C43.7227 16.804 44.4647 15.726 44.4647 14.256C44.4647 12.058 42.8267 10.7 40.2087 10.7H35.9667V20.5H38.2347V17.77H40.2087H40.3207L42.2107 20.5H44.6467ZM42.1687 14.256C42.1687 15.32 41.4687 15.964 40.0827 15.964H38.2347V12.548H40.0827C41.4687 12.548 42.1687 13.178 42.1687 14.256ZM54.9416 20.5L52.7436 17.35C54.0176 16.804 54.7596 15.726 54.7596 14.256C54.7596 12.058 53.1216 10.7 50.5036 10.7H46.2616V20.5H48.5296V17.77H50.5036H50.6156L52.5056 20.5H54.9416ZM52.4636 14.256C52.4636 15.32 51.7636 15.964 50.3776 15.964H48.5296V12.548H50.3776C51.7636 12.548 52.4636 13.178 52.4636 14.256ZM64.9318 10.7H62.7058L60.0878 15.054L57.4698 10.7H55.0618L58.8558 17V20.5H61.1238V17.028L64.9318 10.7ZM66.1542 17.098H67.8902L68.3242 10.7H65.7202L66.1542 17.098ZM67.0222 20.612C67.8062 20.612 68.3662 20.038 68.3662 19.338C68.3662 18.624 67.8062 18.092 67.0222 18.092C66.2382 18.092 65.6782 18.624 65.6782 19.338C65.6782 20.038 66.2382 20.612 67.0222 20.612Z"
+        fill="white"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_d_1806_27315"
+        x="0"
+        y="0"
+        width="80"
+        height="34"
+        filterUnits="userSpaceOnUse"
+        colorInterpolation-filters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dx="1" dy="1" />
+        <feGaussianBlur stdDeviation="1" />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0" />
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1806_27315" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="effect1_dropShadow_1806_27315"
           result="shape"
         />
       </filter>
@@ -499,6 +574,64 @@ export const WhiteHurryIcon = ({
           mode="normal"
           in="SourceGraphic"
           in2="effect1_dropShadow_363_4620"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+
+export const ReverseWhiteHurryIcon = ({
+  className,
+  color = 'white',
+  width = '8.5rem',
+  height = '3.7rem',
+}: IconPropsType) => (
+  <svg
+    className={className}
+    width={width}
+    height={height}
+    viewBox="0 0 85 37"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g filter="url(#filter0_d_1806_27317)">
+      <path
+        d="M1 16C1 7.71573 7.71573 1 16 1H67C75.2843 1 82 7.71573 82 16V19C82 27.2843 75.2843 34 67 34H1V16Z"
+        fill={color}
+        shapeRendering="crispEdges"
+      />
+      <path
+        d="M20.882 13.2V17.064H16.43V13.2H14.162V23H16.43V18.982H20.882V23H23.15V13.2H20.882ZM29.8226 23.168C32.6086 23.168 34.2606 21.572 34.2606 18.688V13.2H32.0206V18.604C32.0206 20.466 31.2226 21.236 29.8366 21.236C28.4646 21.236 27.6526 20.466 27.6526 18.604V13.2H25.3846V18.688C25.3846 21.572 27.0366 23.168 29.8226 23.168ZM45.1818 23L42.9838 19.85C44.2578 19.304 44.9998 18.226 44.9998 16.756C44.9998 14.558 43.3618 13.2 40.7438 13.2H36.5018V23H38.7698V20.27H40.7438H40.8558L42.7458 23H45.1818ZM42.7038 16.756C42.7038 17.82 42.0038 18.464 40.6178 18.464H38.7698V15.048H40.6178C42.0038 15.048 42.7038 15.678 42.7038 16.756ZM55.4768 23L53.2788 19.85C54.5528 19.304 55.2948 18.226 55.2948 16.756C55.2948 14.558 53.6568 13.2 51.0388 13.2H46.7968V23H49.0648V20.27H51.0388H51.1508L53.0408 23H55.4768ZM52.9988 16.756C52.9988 17.82 52.2988 18.464 50.9128 18.464H49.0648V15.048H50.9128C52.2988 15.048 52.9988 15.678 52.9988 16.756ZM65.467 13.2H63.241L60.623 17.554L58.005 13.2H55.597L59.391 19.5V23H61.659V19.528L65.467 13.2ZM66.6893 19.598H68.4253L68.8593 13.2H66.2553L66.6893 19.598ZM67.5573 23.112C68.3413 23.112 68.9013 22.538 68.9013 21.838C68.9013 21.124 68.3413 20.592 67.5573 20.592C66.7733 20.592 66.2133 21.124 66.2133 21.838C66.2133 22.538 66.7733 23.112 67.5573 23.112Z"
+        fill="#D86145"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_d_1806_27317"
+        x="0"
+        y="0"
+        width="85"
+        height="37"
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dx="1" dy="1" />
+        <feGaussianBlur stdDeviation="1" />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0" />
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1806_27317" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="effect1_dropShadow_1806_27317"
           result="shape"
         />
       </filter>

@@ -17,9 +17,8 @@ interface bannerDataProps {
   data: bannerData[];
 }
 
-export const BannerSwiper = (props: bannerDataProps) => {
+export const BannerSwiper = ({ data }: any) => {
   const navigate = useNavigate();
-  const { data } = props;
   return (
     <S.BannerSwiper
       className="banner-swiper"
@@ -32,7 +31,7 @@ export const BannerSwiper = (props: bannerDataProps) => {
       pagination={{ type: 'fraction' }}
       autoplay={{ delay: 2000 }}
     >
-      {data?.map((bannerData) => (
+      {data?.map((bannerData: any) => (
         <S.BannerSwiperSlide
           className="banner"
           key={bannerData.id}
@@ -56,9 +55,8 @@ interface itemData {
 interface itemDataProps {
   data: itemData[];
 }
-export const JustForTodaySwiper = (props: itemDataProps) => {
+export const JustForTodaySwiper = ({ data }: any) => {
   const navigate = useNavigate();
-  const { data } = props;
   return (
     <S.JustForTodaySwiper
       className="today-swiper"
@@ -69,7 +67,7 @@ export const JustForTodaySwiper = (props: itemDataProps) => {
       navigation
       pagination={{ clickable: true }}
     >
-      {data?.map((itemData, index) => (
+      {data?.map((itemData: any, index: number) => (
         <S.JustForTodaySwiperSlide
           className="today"
           key={itemData.id}
@@ -88,7 +86,8 @@ export const JustForTodaySwiper = (props: itemDataProps) => {
                 {itemData.discount ? (
                   <>
                     <span className="price">
-                      ¥ {(itemData.price * (100 - itemData.discount)).toLocaleString('jp-JP')}
+                      ¥{' '}
+                      {(itemData.price * ((100 - itemData.discount) / 100)).toLocaleString('jp-JP')}
                     </span>
                     <span className="prediscount">¥ {itemData.price.toLocaleString('jp-JP')}</span>
                     <div className="discount-wrapper">
