@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ItemFilterBarContainer = styled.div`
+export const CustomSelectBoxContainer = styled.div`
   height: 5.1rem;
 
   display: flex;
@@ -31,8 +31,13 @@ export const ItemFilterBarContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    p {
+    .filter-bar-title {
       padding-right: 1.8rem;
+      box-sizing: border-box;
+
+      font-weight: 500;
+      font-size: 1.4rem;
+      color: #505050;
     }
   }
 `;

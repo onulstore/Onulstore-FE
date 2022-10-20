@@ -16,7 +16,8 @@ export const pageName: { [key: string]: string } = {
   '/payment': 'CHECKOUT',
   '/order-confirm': 'APPOINTENT',
   '/today': 'TODAY',
-  '/we-like': 'WE LIKE',
+  '/we-like/magazine': 'WE LIKE',
+  '/we-like/our-picks': 'WE LIKE',
   '/wish-list': 'WISH LIST',
   '/recent': 'RECENT',
   '/completed': 'COMPLETED',
@@ -61,23 +62,28 @@ export interface IorderGuideTitle {
   id: string;
   title: string;
 }
+
+export interface IsmallCategoryModalItemContent {
+  id: string;
+  category: string;
+  categoryElement: IcategoryElement[];
+}
+
+export interface IcategoryElement {
+  id: string;
+  title: string;
+  parent: string;
+}
+
 // Item 영역 상수 모음
 export const FilterBarTitle: IfilterBarTitle[] = [
   {
     id: nanoid(),
-    title: '최신순',
+    title: '이름순',
   },
   {
     id: nanoid(),
-    title: '판매순',
-  },
-  {
-    id: nanoid(),
-    title: '리뷰순',
-  },
-  {
-    id: nanoid(),
-    title: '인기순',
+    title: '가격순',
   },
 ];
 
@@ -125,6 +131,80 @@ export const orderGuideTitle: IorderGuideTitle[] = [
   {
     id: nanoid(),
     title: '교환/환불안내',
+  },
+];
+
+export const SmallCategoryModalItemContent: IsmallCategoryModalItemContent[] = [
+  {
+    id: nanoid(),
+    category: 'ITEMS',
+    categoryElement: [
+      {
+        title: 'ALL',
+        id: nanoid(),
+        parent: 'ITEMS',
+      },
+    ],
+  },
+
+  {
+    id: nanoid(),
+    category: 'FASHION',
+    categoryElement: [
+      {
+        title: 'ALL',
+        id: nanoid(),
+        parent: 'FASHION',
+      },
+
+      {
+        title: 'BAG',
+        id: nanoid(),
+        parent: 'FASHION',
+      },
+    ],
+  },
+
+  {
+    id: nanoid(),
+    category: 'LIVING',
+    categoryElement: [
+      {
+        title: 'ALL',
+        id: nanoid(),
+        parent: 'LIVING',
+      },
+
+      {
+        title: 'SPORTS',
+        id: nanoid(),
+        parent: 'LIVING',
+      },
+
+      {
+        title: 'LIFE STYLE',
+        id: nanoid(),
+        parent: 'LIVING',
+      },
+    ],
+  },
+
+  {
+    id: nanoid(),
+    category: 'BEAUTY',
+    categoryElement: [
+      {
+        title: 'ALL',
+        id: nanoid(),
+        parent: 'BEAUTY',
+      },
+
+      {
+        title: 'COSME',
+        id: nanoid(),
+        parent: 'BEAUTY',
+      },
+    ],
   },
 ];
 

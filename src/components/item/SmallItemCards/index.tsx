@@ -19,7 +19,7 @@ export const ReviewItemCard = ({ data }: any) => {
 export const OurPicksItemCard = ({ data }: any) => {
   const navigate = useNavigate();
   return (
-    <S.SmallItemCard className="our-picks" onClick={() => navigate(`items/${data.id}`)}>
+    <S.SmallItemCard className="our-picks" onClick={() => navigate(`/items/${data.id}`)}>
       <img src={data.productImage[0].imageName} alt={data.productName} />
       <S.ItemInfo>
         <div className="brand-name">{data.brand.brandName}</div>

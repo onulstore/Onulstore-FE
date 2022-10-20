@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, Outlet, useNavigate, useParams } from 'react-router-dom';
 //STORE
-import { headerBarHandler, priceFomater } from 'store/slices/itemSlice';
+import { headerBarHandler, priceFomater, getDumyImageIndex } from 'store/slices/itemSlice';
 import { useAppDispatch, useItemSlice, useCartSlice } from 'store/hooks/index';
 //COMPONENTS
 import DetailNavigation from 'components/itemDetail/DetailNavigation/index';
@@ -20,21 +20,33 @@ import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 import { getSingleItemList } from 'utils/Api/itemApi';
 import { addCart } from 'utils/Api/cartApi';
 //STORE
-import { getDumyImageIndex } from 'store/slices/itemSlice';
+import {} from 'store/slices/itemSlice';
+//PAGES
+import ItemInfo from 'pages/ItemDetail/ItemInfo';
+import ReviewInfo from 'pages/ItemDetail/Review';
+import QandAInfo from 'pages/ItemDetail/QnA';
+import OrderGuide from 'pages/ItemDetail/OrderGuide';
+import SimilarItem from 'pages/ItemDetail/SimilarItem';
 
 const ItemDetail = () => {
   const [isAddWishListModal, setIsAddWishListModal] = useState(false);
   const [isLike, setIsLike] = useState(false);
+  const [nestingPage, setNestingPage] = useState('상품정보');
 
   const params: any = useParams();
 
   const dispatch = useAppDispatch();
   const { singleItemList, dumyImageIndex } = useItemSlice();
-  const { userData } = useCartSlice();
 
   const addWishListModalHandler = () => {
     setIsAddWishListModal(!isAddWishListModal);
-    // dispatch
+
+    dispatch(
+      addCart({
+        quantity: singleItemList.quantity,
+        productId: singleItemList.id,
+      }),
+    );
   };
 
   const changeIconHandler = () => {
@@ -79,8 +91,15 @@ const ItemDetail = () => {
           </div>
         </div>
       </section>
-      <DetailNavigation />
-      <Outlet />
+      <DetailNavigation setNestingPage={setNestingPage} />
+
+      {/* <Outlet /> */}
+      {nestingPage === '상품정보' && <ItemInfo />}
+      {nestingPage === '리뷰보기' && <ReviewInfo />}
+      {nestingPage === '문의하기' && <QandAInfo />}
+      {nestingPage === '도움말' && <OrderGuide />}
+      {nestingPage === '비슷한상품' && <SimilarItem />}
+
       <section className="actions">
         <div onClick={addWishListModalHandler}>
           <WishListBtn />
