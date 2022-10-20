@@ -3,16 +3,6 @@ import { Cookies } from 'react-cookie';
 
 const cookies = new Cookies();
 
-const getCookie = (name: string) => {
-  let matches = document.cookie.match(
-    new RegExp('(?:^|; )' + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'),
-  );
-  return matches ? decodeURIComponent(matches[1]) : undefined;
-};
-const deleteCookie = (name: string) => {
-  document.cookie = name + '=; expires=Thu, 01 Jan 1999 00:00:10 GMT;';
-};
-
 const api = axios.create({
   baseURL: 'https://onulstore.breon.ml/',
   headers: {
@@ -53,17 +43,20 @@ api.interceptors.response.use(
         })
         .catch((err) => {
           //로그아웃 처리
-          deleteCookie('accessToken');
-          deleteCookie('refreshToken');
+          cookies.remove('refreshToken');
+          cookies.remove('accessToken');
+          window.location.reload();
         });
       prevRequest.headers['Authorization'] = `Bearer ${new_at}`;
+
       //setToken
-      cookies.set();
+      cookies.set('accessToken', new_at, { path: '/' });
+      cookies.set('refreshToken', new_rt, { path: '/' });
 
       console.log('New Access Token is', new_at);
       console.log('New refresh Token is', new_rt);
       console.log('Previous request', prevRequest);
-      // return request(prevRequest)
+      return api(prevRequest);
     }
     return Promise.reject(error);
   },
