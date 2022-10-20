@@ -95,3 +95,11 @@ export const useUserSlice = () => {
     username,
   };
 };
+
+//Curation
+export const useCurationSlice = () => {
+  const { curationsData, magazineData, recommendData, magazineInHomePage, recommendInHomePage } =
+    useAppSelector((state) => state.curation);
+
+  return { curationsData, magazineData, recommendData, magazineInHomePage, recommendInHomePage };
+};
