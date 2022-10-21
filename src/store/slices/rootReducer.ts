@@ -8,6 +8,7 @@ import QnA from './QnASlice';
 import cart from './cartSlice';
 import user from './userSlice';
 import curation from './curationSlice';
+import search from './searchSlice';
 
 const persistConfig = {
   key: 'root', // root에서부터 저장
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   cart,
   user,
   curation,
+  search,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
