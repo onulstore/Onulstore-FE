@@ -103,3 +103,10 @@ export const useCurationSlice = () => {
 
   return { curationsData, magazineData, recommendData, magazineInHomePage, recommendInHomePage };
 };
+
+//Search
+export const useSearchSlice = () => {
+  const { searchData } = useAppSelector((state) => state.search);
+
+  return { searchData };
+};
