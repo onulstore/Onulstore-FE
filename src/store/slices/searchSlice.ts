@@ -14,7 +14,21 @@ const initialState: StateType = {
 const searchSlice = createSlice({
   name: 'searchSlice',
   initialState,
-  reducers: {},
+  reducers: {
+    sortNew: (state) => {
+      state.searchData = state.searchData.sort((a: any, b: any) => b.id - a.id);
+    },
+    sortPurchaseCount: (state) => {
+      state.searchData = state.searchData.sort(
+        (a: any, b: any) => b.purchaseCount - a.purchaseCount,
+      );
+    },
+    sortWishListCount: (state) => {
+      state.searchData = state.searchData.sort(
+        (a: any, b: any) => b.wishListCount - a.wishListCount,
+      );
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getSearch.pending, (state) => {
       state.isLoding = true;
@@ -30,3 +44,4 @@ const searchSlice = createSlice({
 });
 
 export default searchSlice.reducer;
+export const { sortNew, sortPurchaseCount, sortWishListCount } = searchSlice.actions;
