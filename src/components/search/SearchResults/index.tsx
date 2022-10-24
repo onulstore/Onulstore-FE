@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import * as S from './style';
 import ItemAlbum from 'components/item/ItemAlbum';
 import { useSearchResult } from '../hooks';
 import { useAppDispatch, useSearchSlice } from 'store/hooks';
 import { getSearch } from 'utils/Api/searchApi';
+import TotalResultValueBar from '../TotalResultValueBar';
 
 function SearchResults() {
   const searchResult = useSearchResult();
@@ -17,6 +18,7 @@ function SearchResults() {
       <div className="search-keyword">
         <span>{searchResult}</span> 에 대한 검색결과 입니다.
       </div>
+      <TotalResultValueBar data={searchData} />
       <S.ItemBoxCopy>
         {searchData?.length > 0 ? (
           searchData.map((item: any, index: number) => {
