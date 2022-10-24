@@ -23,6 +23,9 @@ const searchSlice = createSlice({
         (a: any, b: any) => b.purchaseCount - a.purchaseCount,
       );
     },
+    sortRating: (state) => {
+      state.searchData = state.searchData.sort((a: any, b: any) => b.rating - a.rating);
+    },
     sortWishListCount: (state) => {
       state.searchData = state.searchData.sort(
         (a: any, b: any) => b.wishListCount - a.wishListCount,
@@ -44,4 +47,4 @@ const searchSlice = createSlice({
 });
 
 export default searchSlice.reducer;
-export const { sortNew, sortPurchaseCount, sortWishListCount } = searchSlice.actions;
+export const { sortNew, sortPurchaseCount, sortRating, sortWishListCount } = searchSlice.actions;
