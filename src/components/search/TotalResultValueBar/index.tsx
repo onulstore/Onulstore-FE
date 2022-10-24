@@ -2,14 +2,23 @@ import React, { useState } from 'react';
 import * as S from './style';
 import { ArrowBottomIcon, ArrowTopIcon } from 'components/Icons';
 import theme from 'style/theme';
+import { useDispatch } from 'react-redux';
+import {
+  sortNew,
+  sortPurchaseCount,
+  sortRating,
+  sortWishListCount,
+} from 'store/slices/searchSlice';
 
 const SelectBox = () => {
+  const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
+  const [sortOption, setSortOption] = useState('최신순');
   const darkGrey = theme.palette.darkGrey;
   return (
     <S.SelectBox>
       <S.SelectContatiner onClick={() => setIsOpen(!isOpen)}>
-        <span>{'최신순'}</span>
+        <span>{sortOption}</span>
         {isOpen ? (
           <ArrowTopIcon width="0.7rem" height="0.4rem" color={darkGrey} />
         ) : (
@@ -18,10 +27,38 @@ const SelectBox = () => {
       </S.SelectContatiner>
       {isOpen && (
         <S.SelectOptionList>
-          <li>최신순</li>
-          <li>판매순</li>
-          <li>리뷰순</li>
-          <li>인기순</li>
+          <li
+            onClick={() => {
+              setSortOption('최신순');
+              dispatch(sortNew());
+            }}
+          >
+            최신순
+          </li>
+          <li
+            onClick={() => {
+              setSortOption('판매순');
+              dispatch(sortPurchaseCount());
+            }}
+          >
+            판매순
+          </li>
+          <li
+            onClick={() => {
+              setSortOption('리뷰순');
+              dispatch(sortRating());
+            }}
+          >
+            리뷰순
+          </li>
+          <li
+            onClick={() => {
+              setSortOption('인기순');
+              dispatch(sortWishListCount());
+            }}
+          >
+            인기순
+          </li>
         </S.SelectOptionList>
       )}
     </S.SelectBox>
