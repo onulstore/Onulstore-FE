@@ -9,10 +9,13 @@ const black = theme.palette.black;
 export const TotalResultValueBar = styled.div`
   width: 33.5rem;
   height: 5.1rem;
+  margin: 0 2rem;
+  border-bottom: 1px solid ${whiteGrey};
   display: flex;
   justify-content: space-between;
   align-items: center;
   .total-result-value {
+    margin-left: 1rem;
     font-weight: 600;
     font-size: 1.6rem;
     color: ${black};
@@ -21,6 +24,7 @@ export const TotalResultValueBar = styled.div`
 
 export const SelectBox = styled.div`
   position: relative;
+  margin-right: 1rem;
 `;
 export const SelectContatiner = styled.div`
   width: 8.5rem;

@@ -20,9 +20,9 @@ const SelectBox = () => {
       <S.SelectContatiner onClick={() => setIsOpen(!isOpen)}>
         <span>{sortOption}</span>
         {isOpen ? (
-          <ArrowTopIcon width="0.7rem" height="0.4rem" color={darkGrey} />
+          <ArrowTopIcon width="0.8rem" height="0.4rem" color={darkGrey} />
         ) : (
-          <ArrowBottomIcon width="0.7rem" height="0.4rem" color={darkGrey} />
+          <ArrowBottomIcon width="0.8rem" height="0.4rem" color={darkGrey} />
         )}
       </S.SelectContatiner>
       {isOpen && (
