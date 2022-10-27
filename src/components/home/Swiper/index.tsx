@@ -9,12 +9,9 @@ import * as S from './style';
 
 interface bannerData {
   id: string;
-  path: string;
-  url: string;
-  name: string;
-}
-interface bannerDataProps {
-  data: bannerData[];
+  content: string;
+  noticeImg: string;
+  title: string;
 }
 
 export const BannerSwiper = ({ data }: any) => {
@@ -31,13 +28,16 @@ export const BannerSwiper = ({ data }: any) => {
       pagination={{ type: 'fraction' }}
       autoplay={{ delay: 2000 }}
     >
-      {data?.map((bannerData: any) => (
+      {data?.map((bannerData: bannerData) => (
         <S.BannerSwiperSlide
           className="banner"
           key={bannerData.id}
-          onClick={() => navigate(bannerData.path)}
+          onClick={() => navigate(bannerData.content)}
         >
-          <img src={bannerData.url} alt={bannerData.name} />
+          <img
+            src={`https://onulstorebucket.s3.ap-northeast-2.amazonaws.com/${bannerData.noticeImg}`}
+            alt={bannerData.title}
+          />
         </S.BannerSwiperSlide>
       ))}
     </S.BannerSwiper>
