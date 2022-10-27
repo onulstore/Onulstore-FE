@@ -13,9 +13,6 @@ interface bannerData {
   noticeImg: string;
   title: string;
 }
-// interface bannerDataProps {
-//   data: bannerData[];
-// }
 
 export const BannerSwiper = ({ data }: any) => {
   const navigate = useNavigate();
