@@ -110,3 +110,10 @@ export const useSearchSlice = () => {
 
   return { searchData };
 };
+
+//Notice
+export const useNoticeSlice = () => {
+  const { noticesData, homeBannerData } = useAppSelector((state) => state.notice);
+
+  return { noticesData, homeBannerData };
+};

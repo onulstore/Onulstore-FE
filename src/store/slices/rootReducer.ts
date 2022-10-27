@@ -9,11 +9,12 @@ import cart from './cartSlice';
 import user from './userSlice';
 import curation from './curationSlice';
 import search from './searchSlice';
+import notice from './noticeSlice';
 
 const persistConfig = {
   key: 'root', // root에서부터 저장
   storage, // storage = localStorage , storageSession = sessionStorage
-  whitelist: ['item', 'curation'], // 지속시킬 reducer
+  whitelist: ['notice', 'item', 'curation'], // 지속시킬 reducer
 };
 const rootReducer = combineReducers({
   item,
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
   user,
   curation,
   search,
+  notice,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
