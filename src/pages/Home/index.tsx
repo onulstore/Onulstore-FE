@@ -15,15 +15,19 @@ import TodayTrend from 'components/home/TodayTrend';
 import SetHeaderBar from 'utils/HOC/SetHeaderBar';
 import SetBottomTabBar from 'utils/HOC/SetBottomBar';
 import { TODAY_ITEMS, OUR_PICKS, ITEMS } from 'utils/test_constants';
-import { useAppDispatch, useNoticeSlice } from 'store/hooks';
+import { useAppDispatch, useNoticeSlice, useCurationSlice } from 'store/hooks';
 import { getNotice } from 'utils/Api/noticeApi';
+import { getCurations } from 'utils/Api/curationApi';
 
 function Home() {
   const dispatch = useAppDispatch();
-
+  const { magazineData, recommendData, magazineInHomePage, recommendInHomePage } =
+    useCurationSlice();
   const { homeBannerData } = useNoticeSlice();
+  console.log(magazineInHomePage, recommendInHomePage);
   useEffect(() => {
     dispatch(getNotice());
+    dispatch(getCurations());
   }, []);
   return (
     <S.Home>
@@ -38,7 +42,7 @@ function Home() {
       </Section>
       <div className="magazine">
         <Section title={'MAGAZINE'}>
-          <MagazineList data={ITEMS[0]} home />
+          <MagazineList data={magazineInHomePage} home />
         </Section>
       </div>
       <div className="our-picks">

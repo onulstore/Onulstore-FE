@@ -8,27 +8,26 @@ import * as S from './style';
 export function MagazineList({ data, home }: any) {
   return (
     <>
-      <S.Magazine home={home}>
-        <div className="img-container">
-          <img src={magazineImg1} alt="magazine" />
-        </div>
-        <S.CurationTextBox>
-          <h2>
-            <span>향기가 있어 더욱 즐거운 드라이브</span>
-          </h2>
-          <p>
-            {/* . ? 다음에 <br />태그 넣는 로직 넣기*/}
-            일상의 소소한 즐거움과 행복의 요소들이 더욱 소중해진 요즘. Lukta의 향기로 채워보는 건
-            어때요?
-            <br />
-            달리는 여정 속 어디든 좋은 향기를 꽉 채워보아요.
-          </p>
-        </S.CurationTextBox>
-        <S.CurationItemBox home={home}>
-          <ItemAlbum item={ITEMS[2]} index={11} />
-          <ItemAlbum item={ITEMS[3]} index={13} />
-        </S.CurationItemBox>
-      </S.Magazine>
+      {data.map((magazine: any) => (
+        <S.Magazine home={home} key={magazine.curationId}>
+          <div className="img-container">
+            <img
+              src={`https://onulstorebucket.s3.ap-northeast-2.amazonaws.com/${magazine.curationImg}`}
+              alt="magazine"
+            />
+          </div>
+          <S.CurationTextBox>
+            <h2>
+              <span>{magazine.title}</span>
+            </h2>
+            <p>{magazine.content}</p>
+          </S.CurationTextBox>
+          <S.CurationItemBox home={home}>
+            <ItemAlbum item={ITEMS[2]} index={11} />
+            <ItemAlbum item={ITEMS[3]} index={13} />
+          </S.CurationItemBox>
+        </S.Magazine>
+      ))}
     </>
   );
 }
