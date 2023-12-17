@@ -5,8 +5,13 @@ declare module 'styled-components' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   export interface DefaultTheme {
     palette: {
-      blackColor: string;
-      whiteColor: string;
+      black: string;
+      white: string;
+      main: string;
+      darkGrey: string;
+      midGrey: string;
+      lightMidGrey: string;
+      whiteGrey: string;
     };
   }
 }
